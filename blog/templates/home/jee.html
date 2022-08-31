@@ -1,0 +1,2271 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: white;">
+   <head>
+      <script type="text/javascript">
+         if ('localStorage' in window) {
+             window.NREUM||(NREUM={}),__nr_require=function(t,n,e){function r(e){if(!n[e]){var o=n[e]={exports:{}};t[e][0].call(o.exports,function(n){var o=t[e][1][n];return r(o||n)},o,o.exports)}return n[e].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<e.length;o++)r(e[o]);return r}({1:[function(t,n,e){function r(t){try{s.console&&console.log(t)}catch(n){}}var o,i=t("ee"),a=t(15),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,n,e){r(e.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,n){return t}).join(", ")))},{}],2:[function(t,n,e){function r(t,n,e,r,s){try{p?p-=1:o(s||new UncaughtException(t,n,e),!0)}catch(f){try{i("ierr",[f,c.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,n,e){this.message=t||"Uncaught error with no additional information",this.sourceURL=n,this.line=e}function o(t,n){var e=n?null:c.now();i("err",[t,e])}var i=t("handle"),a=t(16),s=t("ee"),c=t("loader"),f=t("gos"),u=window.onerror,d=!1,l="nr@seenError",p=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(8),t(7),"addEventListener"in window&&t(5),c.xhrWrappable&&t(9),d=!0)}s.on("fn-start",function(t,n,e){d&&(p+=1)}),s.on("fn-err",function(t,n,e){d&&!e[l]&&(f(e,l,function(){return!0}),this.thrown=!0,o(e))}),s.on("fn-end",function(){d&&!this.thrown&&p>0&&(p-=1)}),s.on("internal-error",function(t){i("ierr",[t,c.now(),!0])})},{}],3:[function(t,n,e){t("loader").features.ins=!0},{}],4:[function(t,n,e){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),s=t(7),c="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState",g=t("loader");g.features.stn=!0,t(6);var b=NREUM.o.EV;o.on(m,function(t,n){var e=t[0];e instanceof b&&(this.bstStart=g.now())}),o.on(w,function(t,n){var e=t[0];e instanceof b&&i("bst",[e,n,this.bstStart,g.now()])}),a.on(m,function(t,n,e){this.bstStart=g.now(),this.bstType=e}),a.on(w,function(t,n){i(v,[n,this.bstStart,g.now(),this.bstType])}),s.on(m,function(){this.bstStart=g.now()}),s.on(w,function(t,n){i(v,[n,this.bstStart,g.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=g.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+c]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+c]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+c]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,n,e){function r(t){for(var n=t;n&&!n.hasOwnProperty(u);)n=Object.getPrototypeOf(n);n&&o(n)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,n){return t[1]}var a=t("ee").get("events"),s=t(18)(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";n.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,n){var e=t[1],r=c(e,"nr@wrapped",function(){function t(){if("function"==typeof e.handleEvent)return e.handleEvent.apply(e,arguments)}var n={object:t,"function":e}[typeof e];return n?s(n,"fn-",null,n.name||"anonymous"):e});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,n,e){var r=t("ee").get("history"),o=t(18)(r);n.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,n,e){var r=t("ee").get("raf"),o=t(18)(r),i="equestAnimationFrame";n.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,n,e){function r(t,n,e){t[0]=a(t[0],"fn-",null,e)}function o(t,n,e){this.method=e,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,e)}var i=t("ee").get("timer"),a=t(18)(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";n.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],9:[function(t,n,e){function r(t,n){d.inPlace(n,["onreadystatechange"],"fn-",s)}function o(){var t=this,n=u.context(t);t.readyState>3&&!n.resolved&&(n.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,y,"fn-",s)}function i(t){g.push(t),h&&(x?x.then(a):w?w(a):(E=-E,O.data=E))}function a(){for(var t=0;t<g.length;t++)r([],g[t]);g.length&&(g=[])}function s(t,n){return n}function c(t,n){for(var e in t)n[e]=t[e];return n}t(5);var f=t("ee"),u=f.get("xhr"),d=t(18)(u),l=NREUM.o,p=l.XHR,h=l.MO,m=l.PR,w=l.SI,v="readystatechange",y=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],g=[];n.exports=u;var b=window.XMLHttpRequest=function(t){var n=new p(t);try{u.emit("new-xhr",[n],n),n.addEventListener(v,o,!1)}catch(e){try{u.emit("internal-error",[e])}catch(r){}}return n};if(c(p,b),b.prototype=p.prototype,d.inPlace(b.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,n){r(t,n),i(n)}),u.on("open-xhr-start",r),h){var x=m&&m.resolve();if(!w&&!m){var E=1,O=document.createTextNode(E);new h(a).observe(O,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===v||a()})},{}],10:[function(t,n,e){function r(t){var n=this.params,e=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!n.aborted){if(e.duration=a.now()-this.startTime,4===t.readyState){n.status=t.status;var i=o(t,this.lastSize);if(i&&(e.rxSize=i),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;e.cbTime=this.cbTime,f.emit("xhr-done",[t],t),s("xhr",[n,e,this.startTime])}}}function o(t,n){var e=t.responseType;if("json"===e&&null!==n)return n;var r="arraybuffer"===e||"blob"===e||"json"===e?t.response:t.responseText;return h(r)}function i(t,n){var e=c(n),r=t.params;r.host=e.hostname+":"+e.port,r.pathname=e.pathname,t.sameOrigin=e.sameOrigin}var a=t("loader");if(a.xhrWrappable){var s=t("handle"),c=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var n=this;n.totalCbs=0,n.called=0,n.cbTime=0,n.end=r,n.ended=!1,n.xhrGuids={},n.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){n.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,n){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&n.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,n){var e=this.metrics,r=t[0],o=this;if(e&&r){var i=h(r);i&&(e.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof n.onload))&&o.end(n)}catch(e){try{f.emit("internal-error",[e])}catch(r){}}};for(var s=0;s<d;s++)n.addEventListener(u[s],this.listener,!1)}),f.on("xhr-cb-time",function(t,n,e){this.cbTime+=t,n?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof e.onload||this.end(e)}),f.on("xhr-load-added",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&!this.xhrGuids[e]&&(this.xhrGuids[e]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&this.xhrGuids[e]&&(delete this.xhrGuids[e],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],n)}),f.on("removeEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],n)}),f.on("fn-start",function(t,n,e){n instanceof m&&("onload"===e&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),f.on("fn-end",function(t,n){this.xhrCbStart&&f.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,n],n)})}},{}],11:[function(t,n,e){n.exports=function(t){var n=document.createElement("a"),e=window.location,r={};n.href=t,r.port=n.port;var o=n.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=n.hostname||e.hostname,r.pathname=n.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!n.protocol||":"===n.protocol||n.protocol===e.protocol,a=n.hostname===document.domain&&n.port===e.port;return r.sameOrigin=i&&(!n.hostname||a),r}},{}],12:[function(t,n,e){function r(){}function o(t,n,e){return function(){return i(t,[f.now()].concat(s(arguments)),n?null:this,e),n?void 0:this}}var i=t("handle"),a=t(15),s=t(16),c=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,n){u[n]=o(l+n,!0,"api")}),u.addPageAction=o(l+"addPageAction",!0),u.setCurrentRouteName=o(l+"routeName",!0),n.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,n){var e={},r=this,o="function"==typeof n;return i(p+"tracer",[f.now(),t,e],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],e),o)try{return n.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],e),t}finally{c.emit("fn-end",[f.now()],e)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,n){h[n]=o(p+n)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,f.now()])}},{}],13:[function(t,n,e){n.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(n){return}}}},{}],14:[function(t,n,e){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),n.exports=r},{}],15:[function(t,n,e){function r(t,n){var e=[],r="",i=0;for(r in t)o.call(t,r)&&(e[i]=n(r,t[r]),i+=1);return e}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],16:[function(t,n,e){function r(t,n,e){n||(n=0),"undefined"==typeof e&&(e=t?t.length:0);for(var r=-1,o=e-n||0,i=Array(o<0?0:o);++r<o;)i[r]=t[n+r];return i}n.exports=r},{}],17:[function(t,n,e){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],18:[function(t,n,e){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(16),a="nr@original",s=Object.prototype.hasOwnProperty,c=!1;n.exports=function(t,n){function e(t,n,e,o){function nrWrapper(){var r,a,s,c;try{a=this,r=i(arguments),s="function"==typeof e?e(r,a):e||{}}catch(f){l([f,"",[r,a,o],s])}u(n+"start",[r,a,o],s);try{return c=t.apply(a,r)}catch(d){throw u(n+"err",[r,a,d],s),d}finally{u(n+"end",[r,a,c],s)}}return r(t)?t:(n||(n=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,n,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<n.length;c++)s=n[c],a=t[s],r(a)||(t[s]=e(a,f?s+o:o,i,s))}function u(e,r,o){if(!c||n){var i=c;c=!0;try{t.emit(e,r,o,n)}catch(a){l([a,e,r,o])}c=i}}function d(t,n){if(Object.defineProperty&&Object.keys)try{var e=Object.keys(t);return e.forEach(function(e){Object.defineProperty(n,e,{get:function(){return t[e]},set:function(n){return t[e]=n,n}})}),n}catch(r){l([r])}for(var o in t)s.call(t,o)&&(n[o]=t[o]);return n}function l(n){try{t.emit("internal-error",n)}catch(e){}}return t||(t=o),e.inPlace=f,e.flag=a,e}},{}],ee:[function(t,n,e){function r(){}function o(t){function n(t){return t&&t instanceof r?t:t?c(t,s,i):i()}function e(e,r,o,i){if(!l.aborted||i){t&&t(e,r,o);for(var a=n(o),s=h(e),c=s.length,f=0;f<c;f++)s[f].apply(a,r);var d=u[y[e]];return d&&d.push([g,e,r,a]),a}}function p(t,n){v[t]=h(t).concat(n)}function h(t){return v[t]||[]}function m(t){return d[t]=d[t]||o(e)}function w(t,n){f(t,function(t,e){n=n||"feature",y[e]=n,n in u||(u[n]=[])})}var v={},y={},g={on:p,emit:e,get:m,listeners:h,context:n,buffer:w,abort:a,aborted:!1};return g}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var s="nr@context",c=t("gos"),f=t(15),u={},d={},l=n.exports=o();l.backlog=u},{}],gos:[function(t,n,e){function r(t,n,e){if(o.call(t,n))return t[n];var r=e();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(t,n,e){function r(t,n,e,r){o.buffer([t],r),o.emit(t,n,e)}var o=t("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(t,n,e){function r(t){var n=typeof t;return!t||"object"!==n&&"function"!==n?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");n.exports=r},{}],loader:[function(t,n,e){function r(){if(!x++){var t=b.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&n))return u.abort();f(y,function(n,e){t[n]||(t[n]=e)}),c("mark",["onload",a()+b.offset],null,"api");var e=l.createElement("script");e.src="https://"+t.agent,n.parentNode.insertBefore(e,n)}}function o(){"complete"===l.readyState&&i()}function i(){c("mark",["domContent",a()+b.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(s=Math.max((new Date).getTime(),s))-b.offset}var s=(new Date).getTime(),c=t("handle"),f=t(15),u=t("ee"),d=window,l=d.document,p="addEventListener",h="attachEvent",m=d.XMLHttpRequest,w=m&&m.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:m,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1071.min.js"},g=m&&w&&w[p]&&!/CriOS/.test(navigator.userAgent),b=n.exports={offset:s,now:a,origin:v,features:{},xhrWrappable:g};t(12),l[p]?(l[p]("DOMContentLoaded",i,!1),d[p]("load",r,!1)):(l[h]("onreadystatechange",o),d[h]("onload",r)),c("mark",["firstbyte",s],null,"api");var x=0,E=t(17)},{}]},{},["loader",2,10,4,3]);
+             ;NREUM.info={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",licenseKey:"64f039be37",applicationID:"86081572",sa:1}
+         }
+      </script>
+      <link rel="dns-prefetch" href="//static-cf.toppr.com">
+      <link rel="dns-prefetch" href="//www.googletagmanager.com">
+      <link rel="dns-prefetch" href="//cdn.segment.com">
+      <link rel="preconnect" href="//static-cf.toppr.com" crossorigin>
+      <link rel="prefetch" href="//static-cf.toppr.com/marketing/7af27c4/images/toppr-logo.svg">
+      <link rel="prefetch" href="//static-cf.toppr.com/marketing/7af27c4/images/toppr-logo-horizontal-white.svg">
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+      <title>IIT JEE | stackunfold</title>
+      <meta name="keywords" content="JEE Main, JEE Main Question Paper, IIT Entrance Exam 2020, IIT JEE Mains 2020, IIT Physics, IIT JEE Books, IIT JEE Preparation, JEE Mains Sample Papers, JEE Main 2020, AIEEE" />
+      <meta name="description" content="JEE Main 2020 exam dates have been announced by NTA (National Testing Agency) which will be conducted twice a year. Want to crack JEE Main and get into an IIT? Don&#39;t miss out on this super important exam related information." />
+      <meta property="og:title" content="JEE Main 2020 Registration, Exam dates, Admit Card, Answer Key, Eligibility, Exam Pattern, Cutoff - Toppr" />
+      <meta property="og:image" content="">
+      <meta property="og:description" content="JEE Main 2020 exam dates have been announced by NTA (National Testing Agency) which will be conducted twice a year. Want to crack JEE Main and get into an IIT? Don&#39;t miss out on this super important exam related information." />
+      <meta name="facebook-domain-verification" content="ezfo666hyiic25vqwwfy236ms91ppv" />
+      <link rel="stylesheet" href="../static/home/main-home.css">
+      <meta content="website" property="og:type"><link rel='stylesheet' href='../static/d33wubrfki0l68.cloudfront.net/css/40e85f98a6bb117ebc3f5db5c0609ad10574594c/styles/style.css'/>
+      <link rel="stylesheet" href="../static/home/goals.css">
+   </head>
+   <body>
+	{% include 'partials/header.html' %}
+      <div id="root">
+      <div id="syllabus_overlay" class="syllabusOverlay"></div>
+<!--      <div id="iframeContainer" class="iframeContainer">-->
+<!--         <div class="iframeContainer_closeBtn js-iframeContainer-closeBtn">-->
+<!--            close -->
+<!--            <svg width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">-->
+<!--               <title>menu</title>-->
+<!--               <path d="M1.082 2.565l14.382 14.382c.324.324.913.261 1.314-.14.402-.402.464-.99.14-1.315L2.536 1.11c-.324-.324-.913-.261-1.314.14-.402.402-.464.99-.14 1.315z" />-->
+<!--               <path d="M2.536 16.947L16.918 2.565c.324-.324.262-.913-.14-1.315-.401-.401-.99-.464-1.314-.14L1.082 15.492c-.324.324-.262.913.14 1.315.401.401.99.464 1.314.14z" />-->
+<!--            </svg>-->
+<!--         </div>-->
+<!--         <div id="iframeContainerLoader" class="iframeContainer_loader"></div>-->
+<!--         <iframe class="iframeContainer_iframe hide"></iframe>-->
+<!--      </div>-->
+      <section class="
+         boardExamHeader_background
+         exams  firstFold">
+         <div class="mainContainer ">
+
+         <div class="header_blankSpace"></div>
+         <div class="container first_fold">
+         <div class="boardExamHeader examsSection">
+         <div class="boardExamHeader_left examsSection_titleContent">
+         <div class="boardExamHeader_title">
+         <picture>
+         <img class="boardExamHeader_titleImage" alt='jee-main' srcset="../static/images/atom-jee-icon.jpg" onerror="this.srcset='//static-cf.toppr.com/marketing/7af27c4/images/icons/exams/placeholder.png'" />
+         </picture>
+         <h1 class="headings_h1 examsSection_title">
+         IIT JEE
+         </h1>
+         </div>
+         <div class="boardExamHeader_description examsSection_description">
+         JEE (Joint Entrance Examination)  Main  is an all-India level exam for getting admission into IITs, NITs, IIITs and some of India’s best engineering colleges that are Government funded or privately owned. The exam is held at an undergraduate level.
+         </div>
+         </div>
+         </div>
+         </div>
+
+         <button class="knowMore_button" style="position: absolute;right: 42%;margin-top:6rem;" type=“button” aria-label=“Know more” color=“black”>Know more</button>
+
+
+         </div>
+
+
+
+      </section>
+      <section id="content">
+      <section class="examSubjects">
+<!--      <div class="boardExamHeader_card">-->
+<!--      <div class="boardExamHeader_card_content">-->
+<!--      <ul class="boardExamHeader_card_content_details">-->
+<!--      <li class="boardExamHeader_card_content_details_list">-->
+<!--      <div class="boardExamHeader_card_content_details_label">Field</div>-->
+<!--      <div class="boardExamHeader_card_content_details_value">Engineering</div>-->
+<!--      </li>-->
+<!--      <li class="boardExamHeader_card_content_details_list">-->
+<!--      <div class="boardExamHeader_card_content_details_label">Eligibility</div>-->
+<!--      <div class="boardExamHeader_card_content_details_value">12th Standard Science Students</div>-->
+<!--      </li>-->
+<!--      <li class="boardExamHeader_card_content_details_list">-->
+<!--      <div class="boardExamHeader_card_content_details_label">Subjects</div>-->
+<!--      <div class="boardExamHeader_card_content_details_value">Physics, Chemistry and Maths</div>-->
+<!--      </li>-->
+<!--      <li class="boardExamHeader_card_content_details_list">-->
+<!--      <div class="boardExamHeader_card_content_details_label">Applicants</div>-->
+<!--      <div class="boardExamHeader_card_content_details_value">1.2 Million</div>-->
+<!--      </li>-->
+<!--      <li class="boardExamHeader_card_content_details_list">-->
+<!--      <div class="boardExamHeader_card_content_details_label">Qualified</div>-->
+<!--      <div class="boardExamHeader_card_content_details_value">2,20,000</div>-->
+<!--      </li>-->
+<!--      <li class="boardExamHeader_card_content_details_list">-->
+<!--      <div class="boardExamHeader_card_content_details_label">Questions Type</div>-->
+<!--      <div class="boardExamHeader_card_content_details_value">Objective MCQs and Blank type Questions</div>-->
+<!--      </li>-->
+<!--      <li class="boardExamHeader_card_content_details_list">-->
+<!--      <div class="boardExamHeader_card_content_details_label">Paper Pattern</div>-->
+<!--      <div class="boardExamHeader_card_content_details_value">75 Questions in 3 Hours</div>-->
+<!--      </li>-->
+<!--      <li class="boardExamHeader_card_content_details_list">-->
+<!--      <div class="boardExamHeader_card_content_details_label">Colleges</div>-->
+<!--      <div class="boardExamHeader_card_content_details_value">IITs, NITs and 100 Colleges </div>-->
+<!--      </li>-->
+<!--      <li class="boardExamHeader_card_content_details_list">-->
+<!--      <div class="boardExamHeader_card_content_details_label">Difficulty Level</div>-->
+<!--      <div class="boardExamHeader_card_content_details_value">Medium to Hard</div>-->
+<!--      </li>-->
+<!--      <li class="boardExamHeader_card_content_details_list">-->
+<!--      <div class="boardExamHeader_card_content_details_label">Time to Prepare</div>-->
+<!--      <div class="boardExamHeader_card_content_details_value">2 Years</div>-->
+<!--      </li>-->
+<!--      <li class="boardExamHeader_card_content_details_list">-->
+<!--      <div class="boardExamHeader_card_content_details_label">When</div>-->
+<!--      <div class="boardExamHeader_card_content_details_value">January and April</div>-->
+<!--      </li>-->
+<!--      </ul>-->
+<!--      <div class="boardExamHeader_card_content_link js-sign-up-btn">-->
+<!--      <span>start now</span>-->
+<!--      <span>-->
+<!--      <img class="boardExamHeader_card_content_linkImage" src="//static-cf.toppr.com/marketing/7af27c4/images/home/right_arrow_icon.svg" />-->
+<!--      </span>-->
+<!--      </div>-->
+<!--      </div>-->
+
+
+      <div class="examSubjects_container">
+      <div class="examSubjects_container_content js-examSubjects_container_content"></div>
+      </div>
+
+<!--      </div>-->
+      </section>
+      <section class="prepareSmartToppr">
+      <div class="container">
+      <div class="home_featuresDiv_header">
+      Unfold the smartness
+      </div>
+<!--      <div class="personalised_learning">-->
+<!--      <div class="personalised_learning_feature">-->
+<!--      <a href="/live/">-->
+<!--      <div class="personalised_learning_feature_image doubt">-->
+<!--      <img class="personalised_learning_feature_icon" src="//static-cf.toppr.com/marketing/7af27c4/images/home/live-classes.svg" alt="Live Classes at Toppr" />-->
+<!--      </div>-->
+<!--      <div class="personalised_learning_feature_data">-->
+<!--      <div class="personalised_learning_feature_title">-->
+<!--      Live Classes-->
+<!--      </div>-->
+<!--      <div class="personalised_learning_feature_description">-->
+<!--      Learn concepts and get tips from the best teachers with free Live Classes-->
+<!--      </div>-->
+<!--      </div>-->
+<!--      </a>-->
+<!--      </div>-->
+<!--      <div class="personalised_learning_feature">-->
+<!--      <a href="/features/online-classes/">-->
+<!--      <div class="personalised_learning_feature_image video">-->
+<!--      <img class="personalised_learning_feature_icon" src="//static-cf.toppr.com/marketing/7af27c4/images/home/learn.svg" alt="Video Lectures At Toppr" />-->
+<!--      </div>-->
+<!--      <div class="personalised_learning_feature_data">-->
+<!--      <div class="personalised_learning_feature_title">-->
+<!--      Online Classes-->
+<!--      </div>-->
+<!--      <div class="personalised_learning_feature_description">-->
+<!--      Learn at your own pace with short and simple to understand videos-->
+<!--      </div>-->
+<!--      </div>-->
+<!--      </a>-->
+<!--      </div>-->
+<!--      <div class="personalised_learning_feature">-->
+<!--      <a href="/features/adaptive-practice/">-->
+<!--      <div class="personalised_learning_feature_image practice">-->
+<!--      <img class="personalised_learning_feature_icon" src="//static-cf.toppr.com/marketing/7af27c4/images/home/practise.svg" alt="Video Lectures At Toppr" />-->
+<!--      </div>-->
+<!--      <div class="personalised_learning_feature_data">-->
+<!--      <div class="personalised_learning_feature_title">-->
+<!--      Adaptive Practice-->
+<!--      </div>-->
+<!--      <div class="personalised_learning_feature_description">-->
+<!--      Practice smart with questions created for your unique needs-->
+<!--      </div>-->
+<!--      </div>-->
+<!--      </a>-->
+<!--      </div>-->
+<!--      <div class="personalised_learning_feature">-->
+<!--      <a href="/features/mock-tests/">-->
+<!--      <div class="personalised_learning_feature_image test">-->
+<!--      <img class="personalised_learning_feature_icon" src="//static-cf.toppr.com/marketing/7af27c4/images/home/Maths.svg" alt="Video Lectures At Toppr" />-->
+<!--      </div>-->
+<!--      <div class="personalised_learning_feature_data">-->
+<!--      <div class="personalised_learning_feature_title">-->
+<!--      Mock Tests-->
+<!--      </div>-->
+<!--      <div class="personalised_learning_feature_description">-->
+<!--      Be exam ready by solving all India tests and previous years’ papers-->
+<!--      </div>-->
+<!--      </div>-->
+<!--      </a>-->
+<!--      </div>-->
+<!--      <div class="personalised_learning_feature">-->
+<!--      <a href="/features/live-doubts/">-->
+<!--      <div class="personalised_learning_feature_image doubt">-->
+<!--      <img class="personalised_learning_feature_icon" src="//static-cf.toppr.com/marketing/7af27c4/images/home/Doubts.svg" alt="Video Lectures At Toppr" />-->
+<!--      </div>-->
+<!--      <div class="personalised_learning_feature_data">-->
+<!--      <div class="personalised_learning_feature_title">-->
+<!--      Live Doubts-->
+<!--      </div>-->
+<!--      <div class="personalised_learning_feature_description">-->
+<!--      Chat with tutors and get your doubts resolved instantly, 24x7-->
+<!--      </div>-->
+<!--      </div>-->
+<!--      </a>-->
+<!--      </div>-->
+<!--      </div>-->
+      </div>
+      </section>
+<!--      <section class="examCollegesSection js-exam-colleges">-->
+<!--      </section>-->
+      <section class="home_customizeSyllabus">
+      <div class="home_container_inner">
+      <div class="home_customizeSyllabus_content js-exams-onboarding"></div>
+      </div>
+      </section>
+      <section class="knowAboutSection">
+      <div class="container phn-tab-ma">
+      <h2 class="knowAboutSection_mainHeading js-marker headings_h3" data-marker-id="1">
+      All you need to know about JEE Main
+      </h2>
+      <div class="knowAboutSection_lhsRhsWrap">
+
+<!--      <div class="knowAboutSection_lhs">-->
+<!--      <div class="js-exam-sections-lhs">-->
+<!--      <div class="knowAboutSection_lhsHeading flex_centered">-->
+<!--      Sections-->
+<!--      </div>-->
+<!--      <div class="knowAboutSection_lhsList">-->
+<!--      <div class="knowAboutSection_lhsItem js-marker-target" data-marker-target="1" data-default-marker-target="2">-->
+<!--      <p>Facts, Syllabus & Pattern</p>-->
+<!--      <ul class="knowAboutSection_lhsSubList">-->
+<!--      <li class="knowAboutSection_lhsSubListItem js-marker-target" data-marker-target="2" data-parent-marker-id="1">What is JEE Main?</li>-->
+<!--      <li class="knowAboutSection_lhsSubListItem js-marker-target" data-marker-target="3" data-parent-marker-id="1">Syllabus for JEE Main</li>-->
+<!--      <li class="knowAboutSection_lhsSubListItem js-marker-target" data-marker-target="4" data-parent-marker-id="1">Exam Pattern for JEE Main</li>-->
+<!--      </ul>-->
+<!--      </div>-->
+<!--      <div class="knowAboutSection_lhsItem js-marker-target" data-marker-target="5" data-default-marker-target="6">-->
+<!--      <p>How to apply</p>-->
+<!--      <ul class="knowAboutSection_lhsSubList">-->
+<!--      <li class="knowAboutSection_lhsSubListItem js-marker-target" data-marker-target="6" data-parent-marker-id="5">Eligibility Criteria for JEE Main</li>-->
+<!--      <li class="knowAboutSection_lhsSubListItem js-marker-target" data-marker-target="7" data-parent-marker-id="5">Registration for JEE Main</li>-->
+<!--      <li class="knowAboutSection_lhsSubListItem js-marker-target" data-marker-target="8" data-parent-marker-id="5">Application Fees for JEE Main</li>-->
+<!--      <li class="knowAboutSection_lhsSubListItem js-marker-target" data-marker-target="9" data-parent-marker-id="5">Admit Card for JEE Main</li>-->
+<!--      </ul>-->
+<!--      </div>-->
+<!--      <div class="knowAboutSection_lhsItem js-marker-target" data-marker-target="10" data-default-marker-target="11">-->
+<!--      <p>Important Dates</p>-->
+<!--      <ul class="knowAboutSection_lhsSubList">-->
+<!--      <li class="knowAboutSection_lhsSubListItem js-marker-target" data-marker-target="11" data-parent-marker-id="10">Exam Dates for JEE Main</li>-->
+<!--      <li class="knowAboutSection_lhsSubListItem js-marker-target" data-marker-target="12" data-parent-marker-id="10">Exam Schedule for JEE Main</li>-->
+<!--      </ul>-->
+<!--      </div>-->
+<!--      <div class="knowAboutSection_lhsItem js-marker-target" data-marker-target="13" data-default-marker-target="14">-->
+<!--      <p>Results and Cut-off</p>-->
+<!--      <ul class="knowAboutSection_lhsSubList">-->
+<!--      <li class="knowAboutSection_lhsSubListItem js-marker-target" data-marker-target="14" data-parent-marker-id="13">Answer Key for JEE Main</li>-->
+<!--      <li class="knowAboutSection_lhsSubListItem js-marker-target" data-marker-target="15" data-parent-marker-id="13">Rank Predictor for JEE Main</li>-->
+<!--      <li class="knowAboutSection_lhsSubListItem js-marker-target" data-marker-target="16" data-parent-marker-id="13">Results for JEE Main</li>-->
+<!--      <li class="knowAboutSection_lhsSubListItem js-marker-target" data-marker-target="17" data-parent-marker-id="13">Cut-off for JEE Main</li>-->
+<!--      <li class="knowAboutSection_lhsSubListItem js-marker-target" data-marker-target="18" data-parent-marker-id="13">Rank List for JEE Main</li>-->
+<!--      <li class="knowAboutSection_lhsSubListItem js-marker-target" data-marker-target="19" data-parent-marker-id="13">Counselling for JEE Main</li>-->
+<!--      </ul>-->
+<!--      </div>-->
+<!--      <div class="knowAboutSection_lhsItem js-marker-target" data-marker-target="20" data-default-marker-target="21">-->
+<!--      <p>How to Prepare</p>-->
+<!--      <ul class="knowAboutSection_lhsSubList">-->
+<!--      <li class="knowAboutSection_lhsSubListItem js-marker-target" data-marker-target="21" data-parent-marker-id="20">Preparation Tips for JEE Main</li>-->
+<!--      <li class="knowAboutSection_lhsSubListItem js-marker-target" data-marker-target="23" data-parent-marker-id="20">Study Material for JEE Main</li>-->
+<!--      <li class="knowAboutSection_lhsSubListItem js-marker-target" data-marker-target="24" data-parent-marker-id="20">Sample Papers for JEE Main</li>-->
+<!--      <li class="knowAboutSection_lhsSubListItem js-marker-target" data-marker-target="25" data-parent-marker-id="20">Previous Years’ Papers for JEE Main</li>-->
+<!--      </ul>-->
+<!--      </div>-->
+<!--      <div class="knowAboutSection_lhsItem js-marker-target" data-marker-target="26">-->
+<!--      <p>Frequently Asked Questions (FAQs)</p>-->
+<!--      </div>-->
+<!--      </div>-->
+<!--      </div>-->
+<!--      </div>-->
+
+      <div class="knowAboutSection_rhs">
+
+      <div class="knowAboutSection_rhsSection">
+      <h2 class="knowAboutSection_rhsHeading headings_h4 js-marker js-exam-sections-heading open" data-marker-id="1">
+      Facts, Syllabus and Pattern
+      <svg width="10" height="6" viewBox="0 0 10 6" xmlns="http://www.w3.org/2000/svg"><title>Stroke 396</title><path d="M9 1L5 5 1 1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" /></svg>
+      </h2>
+      <div class="knowAboutSection_rhsContent">
+      <h2 class="knowAboutSection_rhsSubHeading js-marker" data-marker-id="2">What is JEE Main?</h2>
+      <div class="knowAboutSection_rhsSubContent">
+      <p>JEE Main is among the <a rel="noopener" target="_blank" href="https://www.toppr.com/bytes/iit-jee-toughest-exam/">toughest exams</a> in the world. Every year, over 12 lakh students appear while only 2,20,000 <a rel="noopener" target="_blank" href="https://www.toppr.com/bytes/jee-advanced-crack-one-year/">qualify for JEE Advanced</a>. </p>
+      <ul class="knowAboutSection_list">
+      <li>The Joint Entrance Examination (JEE) is an All-India Common Entrance Exam for getting admissions into engineering colleges across India</li>
+      <li>JEE Main will be conducted twice a year in the month of January and April respectively by National Testing Agency (NTA).</li>
+      <li>It is conducted in two phases: JEE Main and JEE Advanced</li>
+      <li>If you clear the given cut-off for JEE Main, you qualify for JEE Advanced</li>
+      <li>With a JEE Main score you can apply to institutions like NITs, IIITs and other Central or State Funded Institutes</li>
+      <li>Whereas, IITs and ISM, Dhanbad consider results of JEE Advanced for admissions</li>
+      <li>From 2020 the examination will be held only in the computer based mode.</li>
+      </ul>
+      </div>
+      <h2 class="knowAboutSection_rhsSubHeading js-marker" data-marker-id="3">Syllabus for JEE Main</h2>
+      <div class="knowAboutSection_rhsSubContent">
+      <p>JEE Main 2020 follows the CBSE prescribed NCERT syllabus. The difficulty level of the examination will also be based on the difficulty level of NCERT.</p>
+      <div class="knowAboutSection_subject"><svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><title>Physics</title><g fill="none" fill-rule="evenodd"><circle fill="#F0C05B" cx="20" cy="20" r="20" /><path d="M7 7h26v26H7z" /><path d="M20.395 8.625h.08c.73 0 1.298.476 1.785.951.73.872 1.216 1.982 1.54 3.012.082.317.163.714.325 1.03.65-.158 1.379-.316 2.028-.475.973-.158 2.027-.158 3 .238.487.159.892.476 1.136.951.243.476.324 1.03.243 1.506a5.54 5.54 0 0 1-.892 1.982c-.487.793-1.135 1.506-1.865 2.14.81.793 1.622 1.665 2.19 2.695.324.555.567 1.19.567 1.903 0 .555-.162 1.189-.649 1.506-.486.476-1.216.634-1.865.713-1.379.159-2.676-.158-3.974-.475-.324 1.11-.649 2.22-1.216 3.25-.244.396-.568.872-.974 1.189-.405.396-.892.634-1.378.634h-.081c-.487 0-1.055-.238-1.379-.634-.487-.396-.811-.951-1.135-1.427-.487-.951-.811-1.902-1.136-2.933-.81.238-1.622.396-2.514.476-.81.079-1.622.079-2.433-.238-.405-.159-.81-.396-1.054-.714a1.773 1.773 0 0 1-.406-1.426c.082-.634.325-1.269.568-1.824.568-.95 1.298-1.823 2.109-2.695l-.811-.792c-.73-.872-1.46-1.744-1.784-2.854-.163-.555-.244-1.189-.082-1.744a2.363 2.363 0 0 1 1.217-1.11 4.237 4.237 0 0 1 2.19-.317c1.054 0 2.027.238 3 .555.081-.317.162-.713.325-1.03.324-1.11.81-2.14 1.54-3.013a2.572 2.572 0 0 1 1.785-1.03zm-.892 2.061c-.406.317-.73.713-.974 1.189a9.626 9.626 0 0 0-.973 2.061 17.78 17.78 0 0 1 2.839 1.189c.892-.476 1.865-.793 2.838-1.189-.324-1.03-.73-1.982-1.46-2.774-.324-.317-.73-.714-1.135-.793-.405-.159-.811.08-1.135.317zm-6.326 3.726c-.406.079-.811.237-1.054.554-.244.318-.325.714-.325 1.11.081.555.243 1.03.568 1.506.405.634.81 1.269 1.297 1.823a35.364 35.364 0 0 1 2.028-1.585c.081-.08.243-.158.324-.238 0-.158 0-.237.081-.396.082-.872.244-1.823.406-2.695-1.054-.238-2.19-.317-3.325-.08zm11.11.079c.082.555.244 1.11.244 1.744.08.396.08.872.162 1.347.405.317.73.555 1.135.793.487.317.892.713 1.298 1.03.405-.396.73-.871 1.054-1.347.406-.555.73-1.19.811-1.903.081-.396 0-.95-.324-1.268-.487-.475-1.136-.555-1.784-.634-.811-.08-1.703.08-2.596.238zm-6.974.158c-.243.793-.324 1.586-.487 2.378a32.418 32.418 0 0 1 2.839-1.585 27.346 27.346 0 0 0-2.352-.793zm3.893.793c.973.476 1.865 1.03 2.838 1.585a12.388 12.388 0 0 0-.486-2.378c-.811.238-1.622.476-2.352.793zm-4.46 2.457c-.082.159 0 .317-.082.397a28.556 28.556 0 0 0 0 3.725c0 .08.162.159.243.238a23.364 23.364 0 0 0 3.407 1.903h.08a23.008 23.008 0 0 0 3.57-2.061l.08-.08a34.94 34.94 0 0 0 0-4.122c0-.079-.162-.158-.243-.237a29.144 29.144 0 0 0-3.406-1.982c-1.217.713-2.514 1.427-3.65 2.22zM14.23 19.96a17.71 17.71 0 0 0 1.865 1.586 21.73 21.73 0 0 1 0-3.25c-.648.555-1.297 1.11-1.865 1.664zm10.543-1.585c.081 1.03.081 2.14 0 3.17a17.71 17.71 0 0 0 1.865-1.585c-.648-.555-1.216-1.11-1.865-1.585zm-12.651 4.518c-.244.555-.406 1.11-.244 1.665.081.317.406.634.73.793.487.237 1.054.317 1.622.396.73 0 1.541-.08 2.27-.238-.08-.555-.161-1.03-.242-1.585-.081-.476-.081-.951-.163-1.427-.08-.08-.162-.159-.243-.238l-2.19-1.664c-.567.713-1.135 1.426-1.54 2.298zm13.705-1.268c-.324.317-.73.555-1.135.793-.081.475-.081.872-.162 1.347l-.244 1.665 1.704.238c.648 0 1.378 0 2.027-.238.406-.159.811-.396.892-.872.162-.555 0-1.19-.243-1.665-.406-.872-.973-1.585-1.541-2.298-.406.317-.811.713-1.298 1.03zm-9.002 1.268c.081.793.244 1.586.487 2.378.81-.237 1.54-.475 2.352-.792a14.3 14.3 0 0 1-2.839-1.586zm4.38 1.665c.73.317 1.54.555 2.352.793.243-.793.324-1.586.486-2.378-.973.554-1.865 1.11-2.838 1.585zm-3.65 1.506c.244.634.487 1.268.811 1.902.325.476.649.952 1.055 1.348.324.238.73.476 1.216.317.568-.158.973-.555 1.379-1.03a8.132 8.132 0 0 0 1.216-2.537 17.812 17.812 0 0 1-2.838-1.189 17.78 17.78 0 0 1-2.839 1.189zm2.433-8.64c.568-.08 1.217 0 1.703.317.568.317 1.055.872 1.217 1.506a2.41 2.41 0 0 1-.162 1.982 3.028 3.028 0 0 1-1.541 1.268 2.825 2.825 0 0 1-1.622 0c-.65-.238-1.217-.634-1.541-1.268-.325-.634-.406-1.506-.162-2.14.405-.873 1.216-1.507 2.108-1.665z" fill="#FFF" fill-rule="nonzero" /></g></svg> Physics</div>
+      <div class="knowAboutSection_blockWrap">
+      <ol class="knowAboutSection_orderedList">
+      <li>Physics and Measurement</li>
+      <li>Kinematics</li>
+      <li>Laws of Motion</li>
+      <li>Work, Energy and Power</li>
+      <li>Rotational Motion</li>
+      <li>Gravitation</li>
+      <li>Properties of Solid and Liquids</li>
+      <li>Thermodynamics</li>
+      <li>Kinetic Theory of Gases</li>
+      <li>Oscillations and Waves</li>
+      <li>Electrostatics</li>
+      </ol>
+      <ol class="knowAboutSection_orderedList" start="12">
+      <li>Current Electricity</li>
+      <li>Magnetic Effects of Currents and Magnetism</li>
+      <li>Electromagnetic Induction & Alternating Currents</li>
+      <li>Electromagnetic Waves</li>
+      <li>Optics</li>
+      <li>Dual Nature of Matter and Radiation</li>
+      <li>Atoms and Nuclei</li>
+      <li>Electronic Devices</li>
+      <li>Communication Systems and Experimental Skills</li>
+      </ol>
+      </div>
+      <div class="knowAboutSection_subject"><svg width="41" height="40" viewBox="0 0 41 40" xmlns="http://www.w3.org/2000/svg"><title>Chemistryyyyy</title><g transform="translate(.143)" fill="none" fill-rule="evenodd"><circle fill="#EC7C7C" cx="20" cy="20" r="20" /><path d="M7 7h26v26H7z" /><path d="M15.843 11.136a960.04 960.04 0 0 1 8.314 0v1.69h-.83c-.002 1.558 0 3.115-.002 4.672.004.116-.022.246.057.343.205.3.447.573.68.85l1.95 2.22c.89 1.045 1.766 2.112 2.45 3.31.332.624.644 1.288.679 2.008.001.349-.02.704-.128 1.038-.204.77-.764 1.408-1.44 1.795-.757.439-1.631.619-2.493.672H14.865c-.49-.04-.98-.112-1.453-.252-.733-.22-1.444-.608-1.923-1.226-.483-.602-.681-1.404-.618-2.17.057-.607.31-1.169.581-1.703.439-.813.982-1.56 1.551-2.283.978-1.232 2.052-2.38 3.073-3.572.176-.207.35-.415.51-.636.043-.066.095-.136.088-.22v-4.846h-.83v-1.69zm2.494 6.793c-.007.358-.209.664-.4.948-.362.5-.774.958-1.18 1.42-1.2 1.377-2.458 2.714-3.464 4.249-.262.422-.516.855-.681 1.327-.164.452-.104 1.002.212 1.37.285.331.696.507 1.1.631.045-.702.325-1.359.596-1.997.437-.954.953-1.87 1.514-2.754.384-.628.792-1.241 1.213-1.844h6.86c-.557-.64-1.128-1.267-1.672-1.92-.229-.285-.458-.574-.629-.902a1.266 1.266 0 0 1-.144-.57v-5.055h-3.324v5.097zm.112 4.215a1.295 1.295 0 0 0-.85.638c-.242.424-.215.987.062 1.388.349.538 1.11.726 1.664.413.555-.285.83-1.007.61-1.598-.199-.606-.874-.987-1.486-.84zm4.013 1.587a1.755 1.755 0 0 0-1.616 1.192 1.803 1.803 0 0 0 .131 1.462 1.734 1.734 0 0 0 2.558.548c.385-.291.65-.749.694-1.236a1.773 1.773 0 0 0-.411-1.347c-.33-.4-.843-.629-1.356-.619zM21.155 7.817c.381-.033.772.134 1.012.438.264.321.342.787.198 1.18a1.193 1.193 0 0 1-1.14.796 1.193 1.193 0 0 1-1.02-.627 1.236 1.236 0 0 1 .001-1.167 1.19 1.19 0 0 1 .95-.62zm-.215 7.453a1.23 1.23 0 0 1-.288 1.42 1.179 1.179 0 0 1-1.382.143 1.22 1.22 0 0 1-.587-1.195c.052-.499.442-.934.925-1.034.526-.128 1.109.166 1.332.666z" fill="#FFF" /></g></svg> Chemistry</div>
+      <div class="knowAboutSection_blockWrap">
+      <ol class="knowAboutSection_orderedList">
+      <li>Some Basic Concepts in Chemistry</li>
+      <li>The States of Matter</li>
+      <li>Atomic Structure</li>
+      <li>Chemical Bonding and Molecular Structure</li>
+      <li>Chemical Thermodynamics</li>
+      <li>Solutions</li>
+      <li>Equilibrium</li>
+      <li>Redox Reactions and Electrochemistry</li>
+      <li>Chemical Kinetics</li>
+      <li>Surface Chemistry</li>
+      <li>Classification of Elements and Periodicity in Properties</li>
+      <li>General Principles and Processes of Isolation of Metals</li>
+      <li>Hydrogen</li>
+      <li>s-Block Elements</li>
+      </ol>
+      <ol class="knowAboutSection_orderedList" start="15">
+      <li>p-Block Elements</li>
+      <li>d- and f-Block Elements</li>
+      <li>Coordination Compounds</li>
+      <li>Environmental Chemistry</li>
+      <li>Purification and Characterisation of Organic Compounds</li>
+      <li>Some Basic Principles of Organic Chemistry</li>
+      <li>Hydrocarbons</li>
+      <li>Organic Compounds Containing Halogens</li>
+      <li>Organic Compounds Containing Oxygen</li>
+      <li>Organic Compounds Containing Nitrogen</li>
+      <li>Polymers</li>
+      <li>Biomolecules</li>
+      <li>Chemistry in Everyday Life</li>
+      <li>Principles Related to Practical Chemistry</li>
+      </ol>
+      </div>
+      <div class="knowAboutSection_subject"><svg width="41" height="40" viewBox="0 0 41 40" xmlns="http://www.w3.org/2000/svg"><title>maths</title><g transform="translate(.286)" fill="none" fill-rule="evenodd"><circle fill="#6197DD" cx="20" cy="20" r="20" /><path d="M7 7h26v26H7z" /><path d="M21.556 21c.26-.157.564-.219.864-.218 2.037-.001 4.074-.002 6.11 0a1.61 1.61 0 0 1 1.09.39c.335.286.522.72.536 1.157v6.282a1.59 1.59 0 0 1-.542 1.16 1.617 1.617 0 0 1-1 .385h-6.282a1.588 1.588 0 0 1-1.297-.716c-.185-.278-.258-.616-.254-.946v-5.677c.001-.239-.01-.479.024-.716.068-.455.353-.871.751-1.102zm.788 2.126v1.563c2.083 0 4.166 0 6.25-.002v-1.562h-6.25zm0 3.124v1.564c2.083 0 4.166 0 6.25-.002V26.25h-6.25zM10.38 21.172a1.608 1.608 0 0 1 1.09-.39c2.05 0 4.1-.002 6.15 0a1.58 1.58 0 0 1 1.38.774c.18.293.228.643.22.982-.002 1.997 0 3.995-.002 5.992.002.328-.081.66-.268.932a1.59 1.59 0 0 1-1.28.694h-6.28a1.595 1.595 0 0 1-1.162-.543 1.614 1.614 0 0 1-.384-.998v-6.283c.013-.438.2-.873.536-1.16zm1.39 2.64c.551.553 1.105 1.104 1.656 1.657l-1.657 1.657 1.105 1.105c.553-.552 1.104-1.105 1.657-1.656.554.551 1.105 1.104 1.658 1.656l1.105-1.105c-.552-.553-1.105-1.104-1.656-1.657.551-.553 1.104-1.104 1.655-1.656a726.24 726.24 0 0 0-1.106-1.106l-1.656 1.657-1.656-1.658c-.368.37-.737.737-1.106 1.107zM22.33 9.845h6.28c.44.014.874.204 1.16.541.244.274.37.637.386 1v6.283c-.01.576-.348 1.134-.87 1.384-.281.147-.604.173-.915.168-1.97-.002-3.94 0-5.91 0a1.929 1.929 0 0 1-.607-.085 1.556 1.556 0 0 1-.988-.987c-.098-.285-.085-.59-.085-.887v-5.673c-.004-.288.024-.584.153-.846.244-.536.81-.888 1.396-.898zm.015 3.906c-.002.521-.002 1.043-.002 1.563l6.25-.001V13.75h-6.248zm-10.96-3.906h6.282c.439.013.874.2 1.161.536.266.296.395.696.39 1.09.002 2.037.001 4.074 0 6.11a1.65 1.65 0 0 1-.263.938 1.555 1.555 0 0 1-1.053.676c-.251.037-.505.023-.758.025h-5.672a1.61 1.61 0 0 1-1.091-.39 1.596 1.596 0 0 1-.537-1.158V11.39c.015-.364.141-.728.385-1.003a1.596 1.596 0 0 1 1.156-.542zm2.365 1.562v2.344h-2.344v1.563h2.344v2.344h1.562v-2.344h2.345V13.75h-2.343v-2.344H13.75z" fill="#FFF" /></g></svg> Maths</div>
+      <div class="knowAboutSection_blockWrap">
+      <ol class="knowAboutSection_orderedList">
+      <li>Sets, Relations, and Functions</li>
+      <li>Complex Numbers and Quadratic Equations</li>
+      <li>Matrices and Determinants</li>
+      <li>Permutations and Combinations</li>
+      <li>Mathematical Induction</li>
+      <li>Binomial Theorem and its Simple Applications</li>
+      <li>Sequences and Series</li>
+      <li>Limits Continuity and Differentiability</li>
+      </ol>
+      <ol class="knowAboutSection_orderedList" start="9">
+      <li>Integral Calculus</li>
+      <li>Differential Equations</li>
+      <li>Coordinate Geometry</li>
+      <li>Three-dimensional Geometry</li>
+      <li>Vector Algebra</li>
+      <li>Statistics and Probability</li>
+      <li>Trigonometry</li>
+      <li>Mathematical Reasoning</li>
+      </ol>
+      </div>
+      </div>
+      <h2 class="knowAboutSection_rhsSubHeading js-marker" data-marker-id="4">Exam Pattern for JEE Main</h2>
+      <div class="knowAboutSection_rhsSubContent">
+      <div>The JEE Main 2020 Examination is divided into two parts: </div>
+      <ul class="knowAboutSection_list">
+      <li>Paper 1 for B.E. and B. Tech. (Computer based only)</li>
+      <li>Paper 2 for B. Arch. &amp; B. Planning (Pen and paper only)</li>
+      </ul>
+      <table class="knowAboutSection_table">
+      <thead>
+      <tr>
+      <th class="ac" colspan="2">
+      <strong>Paper 1</strong>
+      </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+      <td>
+      <strong>Particulars</strong>
+      </td>
+      <td>
+      <strong>Details</strong>
+      </td>
+      </tr>
+      <tr>
+      <td>
+      Subjects
+      </td>
+      <td>
+      Physics, Chemistry and Mathematics
+      </td>
+      </tr>
+      <tr>
+      <td>
+      Type of questions
+      </td>
+      <td>
+      Objective (MCQs) & Blank Type Questions
+      </td>
+      </tr>
+      <tr>
+      <td>
+      Mode of examination
+      </td>
+      <td>
+      Computer based mode only
+      </td>
+      </tr>
+      <tr>
+      <td>
+      Exam duration
+      </td>
+      <td>
+      3 hours
+      </td>
+      </tr>
+      <tr>
+      <td>
+      Number of questions
+      </td>
+      <td>
+      75 (25 questions from each subject)
+      </td>
+      </tr>
+      <tr>
+      <td>
+      Marking scheme
+      </td>
+      <td>
+      4 marks awarded for each correct answer
+      </td>
+      </tr>
+      <tr>
+      <td>
+      Negative marking
+      </td>
+      <td>
+      1/4 marks deducted for each Objective Type incorrect response & No negative marks for Black Type Questions
+      </td>
+      </tr>
+      </tbody>
+      </table>
+      <table class="knowAboutSection_table">
+      <thead>
+      <tr>
+      <th class="ac" colspan="2">
+      <strong>Paper 2</strong>
+      </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+      <td>
+      <strong>Sections</strong>
+      </td>
+      <td>
+      <strong>Type of Question</strong>
+      </td>
+      </tr>
+      <tr>
+      <td>
+      Section 1: Mathematics
+      </td>
+      <td>
+      Objective (MCQs)
+      </td>
+      </tr>
+      <tr>
+      <td>
+      Section 2: Aptitude test
+      </td>
+      <td>
+      Objective (MCQs)
+      </td>
+      </tr>
+      <tr>
+      <td>
+      Section 3: Drawing test
+      </td>
+      <td>
+      -
+      </td>
+      </tr>
+      <tr>
+      <td>
+      <strong>Particulars</strong>
+      </td>
+      <td>
+      <strong>Details</strong>
+      </td>
+      </tr>
+      <tr>
+      <td>
+      Mode of Examination
+      </td>
+      <td>
+      Offline
+      </td>
+      </tr>
+      <tr>
+      <td>
+      Exam Duration
+      </td>
+      <td>
+      3 hours
+      </td>
+      </tr>
+      </tbody>
+      </table>
+      <div class="mt-15 phn-tab-mt-10"><a rel="noopener" target="_blank" href="https://www.toppr.com/bytes/language-options-jee/">Language Mediums</a> in JEE Main 2020</div>
+      <table class="knowAboutSection_table">
+      <thead>
+      <tr>
+      <th>
+      <strong>Medium of Language</strong>
+      </th>
+      <th>
+      <strong>Exam Centres</strong>
+      </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+      <td>
+      English and Hindi
+      </td>
+      <td>
+      All examination centres
+      </td>
+      </tr>
+      <tr>
+      <td>
+      Gujarati
+      </td>
+      <td>
+      Exam centres in Gujarat, Daman &amp; Diu and Dadra &amp; Nagar Haveli
+      </td>
+      </tr>
+      <tr>
+      <td>
+      Marathi
+      </td>
+      <td>
+      Exam centres in Maharashtra
+      </td>
+      </tr>
+      <tr>
+      <td>
+      Urdu
+      </td>
+      <td>
+      Exam centres in Maharashtra
+      </td>
+      </tr>
+      </tbody>
+      </table>
+      <div class="mt-15 phn-tab-mt-10">Here are a few important guidelines you need to keep in <a rel="noopener" target="_blank" class="js-modal-trigger" data-modal-id="1">mind</a>.</div>
+      <div class="js-modal-trigger-target hide" data-modal-id="1">
+      <ul class="knowAboutSection_list">
+      <li>There is only one correct response for a question. More than one response(s) to any question is considered incorrect and marks are deducted accordingly.</li>
+      <li>Electronic gadgets are not allowed in the exam hall.</li>
+      </ul>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div class="knowAboutSection_rhsSection">
+      <h2 class="knowAboutSection_rhsHeading headings_h4 js-marker js-exam-sections-heading" data-marker-id="5">
+      How to apply
+      <svg width="10" height="6" viewBox="0 0 10 6" xmlns="http://www.w3.org/2000/svg"><title>Stroke 396</title><path d="M9 1L5 5 1 1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" /></svg>
+      </h2>
+      <div class="knowAboutSection_rhsContent">
+      <h2 class="knowAboutSection_rhsSubHeading js-marker" data-marker-id="6">Eligibility Criteria for JEE Main</h2>
+      <div class="knowAboutSection_rhsSubContent">
+      <ul class="knowAboutSection_list knowAboutSection_list-withoutDots">
+      <li>
+      <strong>Age</strong>:
+      <p>General category candidates must have been born on or after 1st October, 1994.</p>
+      <p>SC, ST and PWD candidates must have been born on or after 1st October, 1989.</p>
+      </li>
+      <li>
+      <strong>Subjects</strong>:
+      <p>You must have studied at least 5 subjects in 10+2.</p>
+      <p>Physics and Mathematics are compulsory subjects.</p>
+      <p>Chemistry, Biotechnology, Biology or Technical vocational are the other subjects to select from.</p>
+      </li>
+      <li>
+      <strong>Score in 12th standard or equivalent exam</strong>:
+      <p>General category candidates require a minimum score of least 75% or should be in the top 20 percentile in their respective 12th board or equivalent examination. </p>
+      <p>For an SC or ST candidate, the minimum score is 65%.</p>
+      <p>Here is the list of <a rel="noopener" target="_blank" href="https://www.toppr.com/bytes/wp-content/uploads/2015/07/Equivalent-exam.pdf">equivalent exams</a> is available here.</p>
+      </li>
+      <li>
+      <strong>Year of passing 12th standard or equivalent exam</strong>:
+      <p>You must have passed Class 12th or any equivalent qualifying examination in the years 2017, 2019 or 2020.</p>
+      </li>
+      <li>
+      <strong>Aadhar Card requirement</strong>:
+      <p>You need a registered Aadhaar Card Number to be eligible to apply for JEE Main.</p>
+      </li>
+      <li>
+      <strong>Number of attempts</strong>:
+      <p>You can attempt JEE Main twice in a year - once in January and once in April. Your best score will be considered for qualifying into JEE Advanced and admissions to colleges.</p>
+      <p>You can attempt JEE Advanced only for 2 consecutive years.</p>
+      </li>
+      </ul>
+      </div>
+      <h2 class="knowAboutSection_rhsSubHeading js-marker" data-marker-id="7">Registration for JEE Main</h2>
+      <div class="knowAboutSection_rhsSubContent">
+      <p>The JEE Main application form has to be filled online. You need to provide details such as your name, email ID, mobile number etc. You will need to choose a username and password for login.</p>
+      <h4 class="mt-15 phn-tab-mt-10"><strong>Step 1: Filling the application form</strong></h4>
+      <p class="mt-10 phn-tab-mt-5">Checklist while filling the form - keep the following items ready:</p>
+      <div class="knowAboutSection_blockWrap">
+      <ol class="knowAboutSection_orderedList">
+      <li>Board examination details</li>
+      <li>Personal details like name, email id, mobile number</li>
+      <li>Academic qualification (Class 12 marks or appearing date)</li>
+      <li>Contact details of student and guardian</li>
+      <li>Scanned copy of your photograph, signature and left thumb print (the specification for which are mentioned <a rel="noopener" target="_blank" class="js-modal-trigger" data-modal-id="2">here</a>)</li>
+      </ol>
+      <div class="js-modal-trigger-target hide" data-modal-id="2">
+      <table class="knowAboutSection_table">
+      <thead>
+      <tr>
+      <th>
+      <strong>Details</strong>
+      </th>
+      <th>
+      <strong>File Format</strong>
+      </th>
+      <th>
+      <strong>File Size</strong>
+      </th>
+      <th>
+      <strong>Dimensions</strong>
+      </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+      <td>
+      <strong>Photograph with Name and Date Printed Below</strong>
+      </td>
+      <td>
+      JPEG
+      </td>
+      <td>
+      4 KB - 40 KB
+      </td>
+      <td>
+      3.5 cm x 4.5 cm
+      </td>
+      </tr>
+      <tr>
+      <td>
+      <strong>Signature</strong>
+      </td>
+      <td>
+      JPEG
+      </td>
+      <td>
+      1 KB - 30 KB
+      </td>
+      <td>
+      3.5 cm x 1.5 cm
+      </td>
+      </tr>
+      <tr>
+      <td>
+      <strong>Thumb Impression (Left Hand)</strong>
+      </td>
+      <td>
+      JPEG
+      </td>
+      <td>
+      1 KB - 30 KB
+      </td>
+      <td>
+      3.5 cm x 1.5 cm
+      </td>
+      </tr>
+      </tbody>
+      </table>
+      </div>
+      </div>
+      <p class="mt-15 phn-tab-mt-10">Once you’ve filled out this information and uploaded the required documents, you need to move to the next step.</p>
+      <div class="mt-15 phn-tab-mt-10"><strong>Step 2: Choosing your exam centre.</strong></div>
+      <div class="knowAboutSection_blockWrap">
+      <ol class="knowAboutSection_orderedList">
+      <li>Choose a centre according to your preference.</li>
+      </ol>
+      </div>
+      <div class="mt-15 phn-tab-mt-10"><strong>Step 3: Payment of fees</strong></div>
+      <div class="knowAboutSection_blockWrap">
+      <ol class="knowAboutSection_orderedList">
+      <li>You can pay your fees online through credit and debit cards.</li>
+      <li>If you wish to pay it offline, you can deposit the fee in cash at Syndicate, Canara, ICICI and HDFC banks through E-Challan.</li>
+      </ol>
+      </div>
+      <div class="mt-15 phn-tab-mt-10"><strong>Step 4: Confirmation page</strong></div>
+      <div class="knowAboutSection_blockWrap">
+      <ol class="knowAboutSection_orderedList">
+      <li>This page will mention all the details you have filled out in your application form.</li>
+      <li>Keep a copy of this page saved at all times.</li>
+      </ol>
+      </div>
+      </div>
+      <h2 class="knowAboutSection_rhsSubHeading js-marker" data-marker-id="8">Application Fees for JEE Main</h2>
+      <div class="knowAboutSection_rhsSubContent">
+      <div class="ac">
+      <strong>Fees for Exam Centres in India</strong>
+      </div>
+      <table class="knowAboutSection_table">
+      <thead>
+      <tr>
+      <th colspan="3">
+      <strong>Computer Based Test</strong>
+      </th>
+      </tr>
+      <tr>
+      <th>
+      <strong>Papers</strong>
+      </th>
+      <th>
+      <strong>General and OBC (Boys)</strong>
+      </th>
+      <th>
+      <strong>SC, ST, PWD and All Girls</strong>
+      </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+      <td>
+      Either Paper 1 or 2
+      </td>
+      <td>
+      500/-
+      </td>
+      <td>
+      250/-
+      </td>
+      </tr>
+      <tr>
+      <td>
+      Both Paper 1 and 2
+      </td>
+      <td>
+      1300/-
+      </td>
+      <td>
+      650/-
+      </td>
+      </tr>
+      </tbody>
+      </table>
+      <div class="ac mt-15 phn-tab-mt-5">
+      <strong>Fees for Exam Centres in a Foreign Country</strong>
+      </div>
+      <table class="knowAboutSection_table">
+      <thead>
+      <tr>
+      <th colspan="3">
+      <strong>Computer Based Test</strong>
+      </th>
+      </tr>
+      <tr>
+      <th>
+      <strong>Papers</strong>
+      </th>
+      <th>
+      <strong>General and OBC (Boys)</strong>
+      </th>
+      <th>
+      <strong>SC, ST, PWD and All Girls</strong>
+      </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+      <td>
+      Either Paper 1 or 2
+      </td>
+      <td>
+      2500/-
+      </td>
+      <td>
+      1250/-
+      </td>
+      </tr>
+      <tr>
+      <td>
+      Both Paper 1 and 2
+      </td>
+      <td>
+      3800/-
+      </td>
+      <td>
+      1900/-
+      </td>
+      </tr>
+      </tbody>
+      </table>
+      </div>
+      <h2 class="knowAboutSection_rhsSubHeading js-marker" data-marker-id="9">Admit Card for JEE Main</h2>
+      <div class="knowAboutSection_rhsSubContent">
+      <p class="mt-15 phn-tab-mt-10">Once you’ve completed the registration process, you will have to download your Admit Card.</p>
+      <ul class="knowAboutSection_list">
+      <li>It is <strong>mandatory </strong>to carry the Admit Card to the examination</li>
+      <li>Only eligible candidates who have completed the registration process can download the Admit Card</li>
+      <li>To do this, they need to enter their application number and their date of birth</li>
+      </ul>
+      <div class="mt-15 phn-tab-mt-10"><strong>The steps to download the JEE Main 2020 Admit Card:</strong></div>
+      <div class="knowAboutSection_blockWrap">
+      <ol class="knowAboutSection_orderedList">
+      <li>Click on JEE Main 2020 Admit Card link (Will be updated once released by the authorities).</li>
+      <li>Submit the form with the information you entered during registration.</li>
+      <li>Your <a rel="noopener" target="_blank" href="https://www.toppr.com/bytes/jee-main-admit-card/">JEE Main 2020 Admit Card</a> will be displayed on the screen.</li>
+      <li>Check and ensure that all the details on the Admit Card are correct and then download it.</li>
+      </ol>
+      </div>
+      <div class="mt-15 phn-tab-mt-10"><strong>Note</strong>: Take multiple printouts of your Admit Card for future reference.</div>
+      </div>
+      </div>
+      </div>
+      <div class="knowAboutSection_rhsSection">
+      <h2 class="knowAboutSection_rhsHeading headings_h4 js-marker js-exam-sections-heading" data-marker-id="10">
+      Important dates
+      <svg width="10" height="6" viewBox="0 0 10 6" xmlns="http://www.w3.org/2000/svg"><title>Stroke 396</title><path d="M9 1L5 5 1 1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" /></svg>
+      </h2>
+      <div class="knowAboutSection_rhsContent">
+      <h2 class="knowAboutSection_rhsSubHeading js-marker" data-marker-id="11">Exam Dates for JEE Main</h2>
+      <div class="knowAboutSection_rhsSubContent">
+      <div>Exam dates for JEE Main 2020 are announced.</div>
+      <table class="knowAboutSection_table">
+      <tbody>
+      <tr>
+      <td class="ac" colspan="3">
+      <strong>Registration Deadlines</strong>
+      </td>
+      </tr>
+      <tr>
+      <td>
+      </td>
+      <td>
+      <strong>January 2020 Exam</strong>
+      </td>
+      <td>
+      <strong>April 2020 Exam</strong>
+      </td>
+      </tr>
+      <tr>
+      <td>
+      Start of online registration &amp; submission of application form
+      </td>
+      <td>
+      3rd September 2019
+      </td>
+      <td>
+      2nd week of February 2020
+      </td>
+      </tr>
+      <tr>
+      <td>
+      Last date for submission of application form
+      </td>
+      <td>
+      10th October 2019
+      </td>
+      <td>
+      4th week of February 2020
+      </td>
+      </tr>
+      <tr>
+      <td>
+      Last date for payment of application Fees through Credit or Debit Card
+      </td>
+      <td>
+      10th October 2019
+      </td>
+      <td>
+      4th week of February 2020
+      </td>
+      </tr>
+      <tr>
+      <td>
+      Last date for payment of application fees through E-Challan
+      </td>
+      <td>
+      10th October 2019
+      </td>
+      <td>
+      4th week of February 2020
+      </td>
+      </tr>
+      <tr>
+      <td>
+      Admit card available
+      </td>
+      <td>
+      December 2019
+      </td>
+      <td>
+      March 2020
+      </td>
+      </tr>
+      <tr>
+      <td class="ac" colspan="3">
+      <strong>Exam Dates</strong>
+      </td>
+      </tr>
+      <tr>
+      <td>
+      Online JEE Main 2020 Exam
+      </td>
+      <td>
+      6th to 11th January 2020
+      </td>
+      <td>
+      7th to 21st April 2020
+      </td>
+      </tr>
+      <tr>
+      <td class="ac" colspan="3">
+      <strong>Result Dates</strong>
+      </td>
+      </tr>
+      <tr>
+      <td>
+      Answer Key and OMR Sheet Declaration
+      </td>
+      <td>
+      January 2020
+      </td>
+      <td>
+      April 2020
+      </td>
+      </tr>
+      <tr>
+      <td>
+      Acceptance of Challenge to Answer Keys (Rs. 1000/question)
+      </td>
+      <td>
+      January 2020
+      </td>
+      <td>
+      April 2020
+      </td>
+      </tr>
+      <tr>
+      <td>
+      Paper 1 - Result Declaration (Scores and AIR)
+      </td>
+      <td>
+      1st week of February 2020
+      </td>
+      <td>
+      1st week of May 2020
+      </td>
+      </tr>
+      <tr>
+      <td>
+      Paper 2 - Result Declaration
+      </td>
+      <td>
+      1st week of February 2020
+      </td>
+      <td>
+      1st week of May 2020
+      </td>
+      </tr>
+      </tbody>
+      </table>
+      </div>
+      <h2 class="knowAboutSection_rhsSubHeading js-marker" data-marker-id="12">Exam Schedule for JEE Main</h2>
+      <div class="knowAboutSection_rhsSubContent">
+      <p>The schedule for the JEE Main 2019 Exam, conducted on 8th April, 2019, was as follows:</p>
+      <div class="mt-15 phn-tab-mt-10"><strong>Exam schedule for Paper 1</strong></div>
+      <table class="knowAboutSection_table">
+      <thead>
+      <tr>
+      <th colspan="3">
+      <strong>Paper 1</strong>
+      </th>
+      </tr>
+      <tr>
+      <th>
+      <strong>Schedule </strong>
+      </th>
+      <th>
+      <strong>Offline Exam </strong>
+      </th>
+      <th>
+      <strong>Online Exam </strong>
+      </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+      <td>
+      Entry in the exam centre
+      </td>
+      <td>
+      8:00 AM
+      </td>
+      <td>
+      8:00 AM
+      </td>
+      </tr>
+      <tr>
+      <td>
+      Entry in the exam hall
+      </td>
+      <td>
+      9:00 AM
+      </td>
+      <td>
+      9:00 AM
+      </td>
+      </tr>
+      <tr>
+      <td>
+      Distribution of test paper
+      </td>
+      <td>
+      9:20 AM
+      </td>
+      <td>
+      -
+      </td>
+      </tr>
+      <tr>
+      <td>
+      Last entry in the exam hall
+      </td>
+      <td>
+      9:30 AM
+      </td>
+      <td>
+      9:30 AM
+      </td>
+      </tr>
+      <tr>
+      <td>
+      Commencement of the test
+      </td>
+      <td>
+      9:30 AM
+      </td>
+      <td>
+      9:30 AM
+      </td>
+      </tr>
+      <tr>
+      <td>
+      Conclusion of the test
+      </td>
+      <td>
+      12:30 AM
+      </td>
+      <td>
+      12:30 AM
+      </td>
+      </tr>
+      </tbody>
+      </table>
+      <div class="mt-15 phn-tab-mt-10"><strong>Exam schedule for Paper 2</strong></div>
+      <table class="knowAboutSection_table">
+      <thead>
+      <tr>
+      <th colspan="3">
+      <strong>Paper 2</strong>
+      </th>
+      </tr>
+      <tr>
+      <th>
+      <strong>Schedule </strong>
+      </th>
+      <th>
+      <strong>Offline Exam </strong>
+      </th>
+      <th>
+      <strong>Online Exam </strong>
+      </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+      <td>
+      Entry in the exam centre
+      </td>
+      <td>
+      1:00 PM
+      </td>
+      <td>
+      1:00 PM
+      </td>
+      </tr>
+      <tr>
+      <td>
+      Entry in the exam hall
+      </td>
+      <td>
+      1:30 PM
+      </td>
+      <td>
+      1:30 PM
+      </td>
+      </tr>
+      <tr>
+      <td>
+      Distribution of test paper
+      </td>
+      <td>
+      1:50 PM
+      </td>
+      <td>
+      -
+      </td>
+      </tr>
+      <tr>
+      <td>
+      Last entry in the exam hall
+      </td>
+      <td>
+      2:00 PM
+      </td>
+      <td>
+      2:00 PM
+      </td>
+      </tr>
+      <tr>
+      <td>
+      Commencement of the test
+      </td>
+      <td>
+      2:00 PM
+      </td>
+      <td>
+      2:00 PM
+      </td>
+      </tr>
+      <tr>
+      <td>
+      Conclusion of the test
+      </td>
+      <td>
+      5:00 PM
+      </td>
+      <td>
+      5:00 PM
+      </td>
+      </tr>
+      </tbody>
+      </table>
+      </div>
+      </div>
+      </div>
+      <div class="knowAboutSection_rhsSection">
+      <h2 class="knowAboutSection_rhsHeading headings_h4 js-marker js-exam-sections-heading" data-marker-id="13">
+      Results and cut-off
+      <svg width="10" height="6" viewBox="0 0 10 6" xmlns="http://www.w3.org/2000/svg"><title>Stroke 396</title><path d="M9 1L5 5 1 1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" /></svg>
+      </h2>
+      <div class="knowAboutSection_rhsContent">
+      <h2 class="knowAboutSection_rhsSubHeading js-marker" data-marker-id="14">Answer Key for JEE Main</h2>
+      <div class="knowAboutSection_rhsSubContent">
+      <ul class="knowAboutSection_list">
+      <li>The official answer key will be released within a week after the last exam</li>
+      <li>You can compare your answers and predict your score </li>
+      <li>You can even challenge the answer key if you believe the answer is incorrect or has more than one correct answer</li>
+      <li>To challenge the answer key, you need to pay a fee of Rs.1000 for each question you challenge</li>
+      </ul>
+      <div class="mt-15 phn-tab-mt-10">Here is how you can <a rel="noopener" target="_blank" class="js-modal-trigger" data-modal-id="3">challenge the answer key</a> .</div>
+      <div class="js-modal-trigger-target hide" data-modal-id="3">
+      <div><strong>Challenging the answer key</strong></div>
+      <div>The process of challenging the JEE Main 2020 Answer Key is explained in detail below: </div>
+      <div class="knowAboutSection_blockWrap">
+      <ol class="knowAboutSection_orderedList">
+      <li>Log in to the JEE Main official website.</li>
+      <li>Select the question booklet number and the corresponding question number.</li>
+      <li>The answer as per the answer key will appear in the next box by default.</li>
+      <li>Enter your claimed answer and click on &lsquo;Add to Claims List&rsquo; tab.</li>
+      <li>All claims must be submitted in one click.</li>
+      <li>Click on &lsquo;Save Your Claims Finally&rsquo; tab.</li>
+      </ol>
+      </div>
+      </div>
+      </div>
+      <h2 class="knowAboutSection_rhsSubHeading js-marker" data-marker-id="15">Rank Predictor for JEE Main</h2>
+      <div class="knowAboutSection_rhsSubContent">
+      <p>The rank predictor helps you guess your rank before the official results are declared, in order to shortlist colleges that might admit you on the basis of your rank. The All India Rank in JEE Main 2020 is calculated on the basis of your JEE Main 2020 result only and not the 12th standard percentile.</p>
+      <div class="mt-15 phn-tab-mt-10"><strong>Note</strong>: These estimated ranks may not be 100% accurate.</div>
+      <div class="mt-15 phn-tab-mt-10">Find out your own rank in <a rel="noopener" target="_blank" href="https://www.toppr.com/bytes/jee-main-rank-predictor/">JEE Main 2020</a>!</div>
+      </div>
+      <h2 class="knowAboutSection_rhsSubHeading js-marker" data-marker-id="16">Results for JEE Main</h2>
+      <div class="knowAboutSection_rhsSubContent">
+      <p>Your JEE Main result indicates whether you are eligible for JEE Advanced or not. Follow these simple steps to check your result for JEE Main:</p>
+      <div class="knowAboutSection_blockWrap">
+      <ol class="knowAboutSection_orderedList">
+      <li>Keep your admit card ready.</li>
+      <li>Click on the link to access your JEE Main 2020 result.</li>
+      <li>Enter your JEE Main roll number and date of birth.</li>
+      <li>Click on the &lsquo;Submit&rsquo; tab.</li>
+      <li>Your JEE Main score and All India Rank (AIR) will be reflected on the screen.</li>
+      </ol>
+      </div>
+      <p class="mt-15 phn-tab-mt-10">Download your score card from the link provided on the same page itself.</p>
+      <p class="">Incase of a tie, take a look at the <a rel="noopener" target="_blank" class="js-modal-trigger" data-modal-id="5">Tie-breaking Criteria for Paper 1</a>.</p>
+      <div class="js-modal-trigger-target hide" data-modal-id="5">
+      <ul class="knowAboutSection_list">
+      <li>The candidate with more marks in Mathematics will be given a better rank</li>
+      <li>In case marks in Mathematics are the same, candidates with more marks in Physics will be given a better rank</li>
+      <li>The ratio of positive marks and negative marks obtained by each candidate will be considered next. The candidate who has a higher absolute value of the ratio will be awarded a higher rank.</li>
+      <li>If the tie still persists, the candidates will be given the same JEE Main 2020 rank</li>
+      </ul>
+      </div>
+      </div>
+      <h2 class="knowAboutSection_rhsSubHeading js-marker" data-marker-id="17">Cut-off for JEE Main</h2>
+      <div class="knowAboutSection_rhsSubContent">
+      <p>The JEE Main cut-off indicates the closing ranks or minimum scores that you need to score to qualify for JEE Advanced . Candidates who don&rsquo;t meet the cut-off will be considered ineligible. However, in that case, they can still participate in the JEE Main counselling, conducted by JoSAA.</p>
+      <div class="mt-15 phn-tab-mt-10"><strong>JEE Main 2019 Category-wise Cut-off:</strong></div>
+      <table class="knowAboutSection_table">
+      <thead>
+      <tr>
+      <th>
+      <strong>Category</strong>
+      </th>
+      <th>
+      <strong>Cut-Off</strong>
+      </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+      <td>
+      Common Rank List
+      </td>
+      <td>
+      89
+      </td>
+      </tr>
+      <tr>
+      <td>
+      General - EWS
+      </td>
+      <td>
+      78
+      </td>
+      </tr>
+      <tr>
+      <td>
+      OBC - NCL
+      </td>
+      <td>
+      74
+      </td>
+      </tr>
+      <tr>
+      <td>
+      SC
+      </td>
+      <td>
+      54
+      </td>
+      </tr>
+      <tr>
+      <td>
+      ST
+      </td>
+      <td>
+      44
+      </td>
+      </tr>
+      <tr>
+      <td>
+      PWD
+      </td>
+      <td>
+      0.1
+      </td>
+      </tr>
+      </tbody>
+      </table>
+      <div class="mt-15 phn-tab-mt-10">Check out the opening and closing ranks for some of the <a rel="noopener" target="_blank" href="https://www.toppr.com/bytes/top-engineering-colleges-in-india/">best colleges</a> for JEE Main.</div>
+      </div>
+      <h2 class="knowAboutSection_rhsSubHeading js-marker" data-marker-id="18">Rank List for JEE Main</h2>
+      <div class="knowAboutSection_rhsSubContent">
+      <p>The JEE Main 2020 rank list reflects the All India Ranks (AIRs) and the respective category ranks of the candidates. </p>
+      <ul class="knowAboutSection_list">
+      <li>You can download your rank card after you&rsquo;ve checked your JEE Main 2020 results</li>
+      <li>A separate rank list is prepared for B. Arch. and B. Planning which is declared after the results of Paper 1</li>
+      </ul>
+      <div class="mt-15 phn-tab-mt-10">Here are the steps to download the JEE Main 2020 Rank List:</div>
+      <div class="knowAboutSection_blockWrap">
+      <ol class="knowAboutSection_orderedList">
+      <li>Visit the <a rel="noopener" target="_blank" href="http://cbseresults.nic.in/jee_main_zxc/Jee_cbse_2017.htm">JEE Main official website</a>.</li>
+      <li>Enter your JEE Main 2020 roll number and date of birth.</li>
+      <li>Click on the &lsquo;Submit&rsquo; tab.</li>
+      <li>The JEE Main 2020 rank list will appear on the computer screen.</li>
+      <li>Check the JEE Main 2020 rank and save it for future reference.</li>
+      </ol>
+      </div>
+      </div>
+      <h2 class="knowAboutSection_rhsSubHeading js-marker" data-marker-id="19">Counselling for JEE Main</h2>
+      <div class="knowAboutSection_rhsSubContent">
+      <p>Once you clear the JEE Main, you are eligible for counselling. Counselling is a process of picking colleges that are the perfect fit for your score and interest.</p>
+      <ul class="knowAboutSection_list">
+      <li>The Joint Seat Allocation Authority (JoSAA) will conduct counselling</li>
+      <li>Seats to colleges are allotted for JEE Main 2020 through this process</li>
+      <li>It is conducted online in seven rounds tentatively</li>
+      <li>Counselling for JEE Main 2020 is likely to start from the first week of July, 2020</li>
+      </ul>
+      <div class="mt-15 phn-tab-mt-10">The following steps are involved in the JEE Main 2020 <a rel="noopener" target="_blank" href="https://www.toppr.com/bytes/jee-counselling/">counselling procedure:</a></div>
+      <div class="knowAboutSection_blockWrap">
+      <ol class="knowAboutSection_orderedList">
+      <li>Online Registration</li>
+      <li>Online Choice Filling and Locking</li>
+      <li>JoSAA 2020 Seat Allotment</li>
+      <li>Seat Acceptance and Fees Payment</li>
+      <li>Reporting to the Allotted College</li>
+      </ol>
+      </div>
+      <div class="mt-15 phn-tab-mt-10">Here&rsquo;s a list of documents required for the JEE Main 2020 counselling:</div>
+      <ul class="knowAboutSection_list">
+      <li>3 Passport Sized Photographs (same as the ones uploaded during the time of registration)</li>
+      <li>Provisional Seat Allotment Letter</li>
+      <li>Photo Identity Card</li>
+      <li>Proof of Seat Acceptance Payment</li>
+      <li>JEE Main 2020 Admit Card</li>
+      <li>Proof of Date of Birth</li>
+      <li>JEE Main 2020 Scorecard</li>
+      <li>Mark sheet of Class 12th, or any equivalent qualifying exam</li>
+      <li>Category Certificate (if applicable)</li>
+      </ul>
+      </div>
+      </div>
+      </div>
+      <div class="knowAboutSection_rhsSection">
+      <h2 class="knowAboutSection_rhsHeading headings_h4 js-marker js-exam-sections-heading" data-marker-id="20">
+      How to prepare
+      <svg width="10" height="6" viewBox="0 0 10 6" xmlns="http://www.w3.org/2000/svg"><title>Stroke 396</title><path d="M9 1L5 5 1 1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" /></svg>
+      </h2>
+      <div class="knowAboutSection_rhsContent">
+      <h2 class="knowAboutSection_rhsSubHeading js-marker" data-marker-id="21">Preparation Tips for JEE Main</h2>
+      <div class="knowAboutSection_rhsSubContent">
+      <ul class="knowAboutSection_list">
+      <li><strong>Practice is the key</strong>: Practice as much as you can. 70% of your JEE preparation comprises of practice. <a rel="noopener" target="_blank" href="https://www.toppr.com/">Toppr</a> offers over 5 lakh questions in our question bank to help you learn and strengthen concepts in each chapter.</li>
+      <li><strong>Take All-India Level mock tests</strong>: Give time-bound mock tests in a completely exam-like environment to improve your efficiency at attempting questions. Toppr offers an All-India Test Series that lets you compete with other students from all over India.</li>
+      <li><strong>Clear all your doubts</strong>: Don't get stuck with doubts. Discuss and clarify them with Subject Experts at Toppr to get an instant reply.</li>
+      <li><strong>Study from the best sources</strong>: NCERT and several <a rel="noopener" target="_blank" href="https://www.toppr.com/bytes/8-iit-jee-books-every-aspirant-should-have/">recommended books</a> for JEE are the minimum resources you need. Toppr offers the best study material from all over the web to help you prepare better.</li>
+      <li><strong>Revision is important</strong>: When you go through a formula or concept, maintain revision notes in the form of bullet points. <a rel="noopener" target="_blank" href="https://www.toppr.com/bytes/power-revision/">Revision will be useful</a> when the exam is close and a good revision pattern will take less time. Normally, without these notes, you would have to go through the entire chapter to understand important points once again.</li>
+      </ul>
+      </div>
+      <h2 class="knowAboutSection_rhsSubHeading js-marker" data-marker-id="23">Study Material for JEE Main</h2>
+      <div class="knowAboutSection_rhsSubContent">
+      <div>Here are some recommended books to help you prepare for JEE:</div>
+      <div class="knowAboutSection_subject"><svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><title>Physics</title><g fill="none" fill-rule="evenodd"><circle fill="#F0C05B" cx="20" cy="20" r="20" /><path d="M7 7h26v26H7z" /><path d="M20.395 8.625h.08c.73 0 1.298.476 1.785.951.73.872 1.216 1.982 1.54 3.012.082.317.163.714.325 1.03.65-.158 1.379-.316 2.028-.475.973-.158 2.027-.158 3 .238.487.159.892.476 1.136.951.243.476.324 1.03.243 1.506a5.54 5.54 0 0 1-.892 1.982c-.487.793-1.135 1.506-1.865 2.14.81.793 1.622 1.665 2.19 2.695.324.555.567 1.19.567 1.903 0 .555-.162 1.189-.649 1.506-.486.476-1.216.634-1.865.713-1.379.159-2.676-.158-3.974-.475-.324 1.11-.649 2.22-1.216 3.25-.244.396-.568.872-.974 1.189-.405.396-.892.634-1.378.634h-.081c-.487 0-1.055-.238-1.379-.634-.487-.396-.811-.951-1.135-1.427-.487-.951-.811-1.902-1.136-2.933-.81.238-1.622.396-2.514.476-.81.079-1.622.079-2.433-.238-.405-.159-.81-.396-1.054-.714a1.773 1.773 0 0 1-.406-1.426c.082-.634.325-1.269.568-1.824.568-.95 1.298-1.823 2.109-2.695l-.811-.792c-.73-.872-1.46-1.744-1.784-2.854-.163-.555-.244-1.189-.082-1.744a2.363 2.363 0 0 1 1.217-1.11 4.237 4.237 0 0 1 2.19-.317c1.054 0 2.027.238 3 .555.081-.317.162-.713.325-1.03.324-1.11.81-2.14 1.54-3.013a2.572 2.572 0 0 1 1.785-1.03zm-.892 2.061c-.406.317-.73.713-.974 1.189a9.626 9.626 0 0 0-.973 2.061 17.78 17.78 0 0 1 2.839 1.189c.892-.476 1.865-.793 2.838-1.189-.324-1.03-.73-1.982-1.46-2.774-.324-.317-.73-.714-1.135-.793-.405-.159-.811.08-1.135.317zm-6.326 3.726c-.406.079-.811.237-1.054.554-.244.318-.325.714-.325 1.11.081.555.243 1.03.568 1.506.405.634.81 1.269 1.297 1.823a35.364 35.364 0 0 1 2.028-1.585c.081-.08.243-.158.324-.238 0-.158 0-.237.081-.396.082-.872.244-1.823.406-2.695-1.054-.238-2.19-.317-3.325-.08zm11.11.079c.082.555.244 1.11.244 1.744.08.396.08.872.162 1.347.405.317.73.555 1.135.793.487.317.892.713 1.298 1.03.405-.396.73-.871 1.054-1.347.406-.555.73-1.19.811-1.903.081-.396 0-.95-.324-1.268-.487-.475-1.136-.555-1.784-.634-.811-.08-1.703.08-2.596.238zm-6.974.158c-.243.793-.324 1.586-.487 2.378a32.418 32.418 0 0 1 2.839-1.585 27.346 27.346 0 0 0-2.352-.793zm3.893.793c.973.476 1.865 1.03 2.838 1.585a12.388 12.388 0 0 0-.486-2.378c-.811.238-1.622.476-2.352.793zm-4.46 2.457c-.082.159 0 .317-.082.397a28.556 28.556 0 0 0 0 3.725c0 .08.162.159.243.238a23.364 23.364 0 0 0 3.407 1.903h.08a23.008 23.008 0 0 0 3.57-2.061l.08-.08a34.94 34.94 0 0 0 0-4.122c0-.079-.162-.158-.243-.237a29.144 29.144 0 0 0-3.406-1.982c-1.217.713-2.514 1.427-3.65 2.22zM14.23 19.96a17.71 17.71 0 0 0 1.865 1.586 21.73 21.73 0 0 1 0-3.25c-.648.555-1.297 1.11-1.865 1.664zm10.543-1.585c.081 1.03.081 2.14 0 3.17a17.71 17.71 0 0 0 1.865-1.585c-.648-.555-1.216-1.11-1.865-1.585zm-12.651 4.518c-.244.555-.406 1.11-.244 1.665.081.317.406.634.73.793.487.237 1.054.317 1.622.396.73 0 1.541-.08 2.27-.238-.08-.555-.161-1.03-.242-1.585-.081-.476-.081-.951-.163-1.427-.08-.08-.162-.159-.243-.238l-2.19-1.664c-.567.713-1.135 1.426-1.54 2.298zm13.705-1.268c-.324.317-.73.555-1.135.793-.081.475-.081.872-.162 1.347l-.244 1.665 1.704.238c.648 0 1.378 0 2.027-.238.406-.159.811-.396.892-.872.162-.555 0-1.19-.243-1.665-.406-.872-.973-1.585-1.541-2.298-.406.317-.811.713-1.298 1.03zm-9.002 1.268c.081.793.244 1.586.487 2.378.81-.237 1.54-.475 2.352-.792a14.3 14.3 0 0 1-2.839-1.586zm4.38 1.665c.73.317 1.54.555 2.352.793.243-.793.324-1.586.486-2.378-.973.554-1.865 1.11-2.838 1.585zm-3.65 1.506c.244.634.487 1.268.811 1.902.325.476.649.952 1.055 1.348.324.238.73.476 1.216.317.568-.158.973-.555 1.379-1.03a8.132 8.132 0 0 0 1.216-2.537 17.812 17.812 0 0 1-2.838-1.189 17.78 17.78 0 0 1-2.839 1.189zm2.433-8.64c.568-.08 1.217 0 1.703.317.568.317 1.055.872 1.217 1.506a2.41 2.41 0 0 1-.162 1.982 3.028 3.028 0 0 1-1.541 1.268 2.825 2.825 0 0 1-1.622 0c-.65-.238-1.217-.634-1.541-1.268-.325-.634-.406-1.506-.162-2.14.405-.873 1.216-1.507 2.108-1.665z" fill="#FFF" fill-rule="nonzero" /></g></svg> Physics</div>
+      <ul class="knowAboutSection_subjectColoredList physics">
+      <li>Physics NCERT Textbooks for Classes 11th and 12th</li>
+      <li>Arihant Series - D.C. Pandey</li>
+      <li>Concepts of Physics (both volumes) by H.C. Verma</li>
+      </ul>
+      <div class="knowAboutSection_subject"><svg width="41" height="40" viewBox="0 0 41 40" xmlns="http://www.w3.org/2000/svg"><title>Chemistry</title><g transform="translate(.143)" fill="none" fill-rule="evenodd"><circle fill="#EC7C7C" cx="20" cy="20" r="20" /><path d="M7 7h26v26H7z" /><path d="M15.843 11.136a960.04 960.04 0 0 1 8.314 0v1.69h-.83c-.002 1.558 0 3.115-.002 4.672.004.116-.022.246.057.343.205.3.447.573.68.85l1.95 2.22c.89 1.045 1.766 2.112 2.45 3.31.332.624.644 1.288.679 2.008.001.349-.02.704-.128 1.038-.204.77-.764 1.408-1.44 1.795-.757.439-1.631.619-2.493.672H14.865c-.49-.04-.98-.112-1.453-.252-.733-.22-1.444-.608-1.923-1.226-.483-.602-.681-1.404-.618-2.17.057-.607.31-1.169.581-1.703.439-.813.982-1.56 1.551-2.283.978-1.232 2.052-2.38 3.073-3.572.176-.207.35-.415.51-.636.043-.066.095-.136.088-.22v-4.846h-.83v-1.69zm2.494 6.793c-.007.358-.209.664-.4.948-.362.5-.774.958-1.18 1.42-1.2 1.377-2.458 2.714-3.464 4.249-.262.422-.516.855-.681 1.327-.164.452-.104 1.002.212 1.37.285.331.696.507 1.1.631.045-.702.325-1.359.596-1.997.437-.954.953-1.87 1.514-2.754.384-.628.792-1.241 1.213-1.844h6.86c-.557-.64-1.128-1.267-1.672-1.92-.229-.285-.458-.574-.629-.902a1.266 1.266 0 0 1-.144-.57v-5.055h-3.324v5.097zm.112 4.215a1.295 1.295 0 0 0-.85.638c-.242.424-.215.987.062 1.388.349.538 1.11.726 1.664.413.555-.285.83-1.007.61-1.598-.199-.606-.874-.987-1.486-.84zm4.013 1.587a1.755 1.755 0 0 0-1.616 1.192 1.803 1.803 0 0 0 .131 1.462 1.734 1.734 0 0 0 2.558.548c.385-.291.65-.749.694-1.236a1.773 1.773 0 0 0-.411-1.347c-.33-.4-.843-.629-1.356-.619zM21.155 7.817c.381-.033.772.134 1.012.438.264.321.342.787.198 1.18a1.193 1.193 0 0 1-1.14.796 1.193 1.193 0 0 1-1.02-.627 1.236 1.236 0 0 1 .001-1.167 1.19 1.19 0 0 1 .95-.62zm-.215 7.453a1.23 1.23 0 0 1-.288 1.42 1.179 1.179 0 0 1-1.382.143 1.22 1.22 0 0 1-.587-1.195c.052-.499.442-.934.925-1.034.526-.128 1.109.166 1.332.666z" fill="#FFF" /></g></svg> Chemistry</div>
+      <ul class="knowAboutSection_subjectColoredList chemistry">
+      <li>NCERT Textbooks for Inorganic Chemistry</li>
+      <li>Morrison and Boyd for Organic Chemistry</li>
+      <li>M.S. Chauhan for Problem Practice in Organic Chemistry</li>
+      <li>O.P. Tandon for Physical Chemistry</li>
+      <li>P. Bahadur for Problem Practice in Physical Chemistry</li>
+      </ul>
+      <div class="knowAboutSection_subject"><svg width="41" height="40" viewBox="0 0 41 40" xmlns="http://www.w3.org/2000/svg"><title>maths</title><g transform="translate(.286)" fill="none" fill-rule="evenodd"><circle fill="#6197DD" cx="20" cy="20" r="20" /><path d="M7 7h26v26H7z" /><path d="M21.556 21c.26-.157.564-.219.864-.218 2.037-.001 4.074-.002 6.11 0a1.61 1.61 0 0 1 1.09.39c.335.286.522.72.536 1.157v6.282a1.59 1.59 0 0 1-.542 1.16 1.617 1.617 0 0 1-1 .385h-6.282a1.588 1.588 0 0 1-1.297-.716c-.185-.278-.258-.616-.254-.946v-5.677c.001-.239-.01-.479.024-.716.068-.455.353-.871.751-1.102zm.788 2.126v1.563c2.083 0 4.166 0 6.25-.002v-1.562h-6.25zm0 3.124v1.564c2.083 0 4.166 0 6.25-.002V26.25h-6.25zM10.38 21.172a1.608 1.608 0 0 1 1.09-.39c2.05 0 4.1-.002 6.15 0a1.58 1.58 0 0 1 1.38.774c.18.293.228.643.22.982-.002 1.997 0 3.995-.002 5.992.002.328-.081.66-.268.932a1.59 1.59 0 0 1-1.28.694h-6.28a1.595 1.595 0 0 1-1.162-.543 1.614 1.614 0 0 1-.384-.998v-6.283c.013-.438.2-.873.536-1.16zm1.39 2.64c.551.553 1.105 1.104 1.656 1.657l-1.657 1.657 1.105 1.105c.553-.552 1.104-1.105 1.657-1.656.554.551 1.105 1.104 1.658 1.656l1.105-1.105c-.552-.553-1.105-1.104-1.656-1.657.551-.553 1.104-1.104 1.655-1.656a726.24 726.24 0 0 0-1.106-1.106l-1.656 1.657-1.656-1.658c-.368.37-.737.737-1.106 1.107zM22.33 9.845h6.28c.44.014.874.204 1.16.541.244.274.37.637.386 1v6.283c-.01.576-.348 1.134-.87 1.384-.281.147-.604.173-.915.168-1.97-.002-3.94 0-5.91 0a1.929 1.929 0 0 1-.607-.085 1.556 1.556 0 0 1-.988-.987c-.098-.285-.085-.59-.085-.887v-5.673c-.004-.288.024-.584.153-.846.244-.536.81-.888 1.396-.898zm.015 3.906c-.002.521-.002 1.043-.002 1.563l6.25-.001V13.75h-6.248zm-10.96-3.906h6.282c.439.013.874.2 1.161.536.266.296.395.696.39 1.09.002 2.037.001 4.074 0 6.11a1.65 1.65 0 0 1-.263.938 1.555 1.555 0 0 1-1.053.676c-.251.037-.505.023-.758.025h-5.672a1.61 1.61 0 0 1-1.091-.39 1.596 1.596 0 0 1-.537-1.158V11.39c.015-.364.141-.728.385-1.003a1.596 1.596 0 0 1 1.156-.542zm2.365 1.562v2.344h-2.344v1.563h2.344v2.344h1.562v-2.344h2.345V13.75h-2.343v-2.344H13.75z" fill="#FFF" /></g></svg> Maths</div>
+      <ul class="knowAboutSection_subjectColoredList maths">
+      <li>R.D. Sharma &ndash; Objective Mathematics, Part 1 and Part 2 (NCERT difficulty)</li>
+      <li>Arihant Series &ndash; Dr. S.K. Goyal</li>
+      </ul>
+      </div>
+      <h2 class="knowAboutSection_rhsSubHeading js-marker" data-marker-id="24">Sample Papers for JEE Main</h2>
+      <div class="knowAboutSection_rhsSubContent">
+      <p>
+      Solving <a rel="noopener" target="_blank" href="https://www.toppr.com/bytes/jee-sample-papers/">sample papers</a> and previous year papers is not only advisable, but also mandatory if you want to stay ahead of the stiff competition in JEE Main 2020. Solving sample papers will help you to prepare for the expected paper and its pattern while also assisting you in learning efficient time management. You can also assess your own performance by practicing sample papers and judge your level of preparations for JEE Main 2020.
+      </p>
+      </div>
+      <h2 class="knowAboutSection_rhsSubHeading js-marker" data-marker-id="25">Previous Years’ Papers for JEE Main</h2>
+      <div class="knowAboutSection_rhsSubContent">
+      <p>Practising previous years&rsquo; JEE papers is important as it helps you simulate the real exam. Toppr provides you with a complete set of all question banks from previous years which you can practice to sharpen your skills.</p>
+      </div>
+      </div>
+      </div>
+      <div class="knowAboutSection_rhsSection">
+      <h2 class="knowAboutSection_rhsHeading headings_h4 js-marker js-exam-sections-heading" data-marker-id="26">
+      Frequently Asked Questions (FAQs)
+      <svg width="10" height="6" viewBox="0 0 10 6" xmlns="http://www.w3.org/2000/svg"><title>Stroke 396</title><path d="M9 1L5 5 1 1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" /></svg>
+      </h2>
+      <div class="knowAboutSection_rhsContent">
+      <div class="knowAboutSection_askedQuestionItem">
+      <p><strong>Q1</strong>: Can a candidate change the mode of examination?</p>
+      <p><strong>Ans</strong>: The JEE Main exam will only be held in the computer based mode. The HRD ministry will organise practice centres from August. These will be free of cost for all aspirants who want to familiarise themselves with the new mode of examination.</p>
+      </div>
+      <div class="knowAboutSection_askedQuestionItem">
+      <p><strong>Q2</strong>: Can the candidates opt for both the papers of JEE Main 2020?</p>
+      <p><strong>Ans</strong>: Yes, the candidates can appear for both papers in JEE 2020, or can also have the liberty to appear for just one of the two.</p>
+      </div>
+      <div class="knowAboutSection_askedQuestionItem">
+      <p><strong>Q3</strong>: Can candidates change the date of their exam?</p>
+      <p><strong>Ans</strong>: Candidates can change the date of their exam only if it clashes with something important, like a board exam.</p>
+      </div>
+      <div class="knowAboutSection_askedQuestionItem">
+      <p><strong>Q4</strong>: Is it compulsory to have an Aadhaar Card Number to apply for JEE Main 2020?</p>
+      <p><strong>Ans</strong>: Yes, it&rsquo;s mandatory for candidates to enter their Aadhaar Card Number in the application form in order to register successfully. No application will be accepted without the Aadhaar Card Number.</p>
+      </div>
+      <div class="knowAboutSection_askedQuestionItem">
+      <p><strong>Q5</strong>: A candidate has applied for both Paper 1 and Paper 2. Can he or she opt for just one paper now?</p>
+      <p><strong>Ans:</strong> There is no compulsion for such candidates to appear in both papers. They can choose to appear for the paper of their choice. However, there will be no refund of fees.</p>
+      </div>
+      <div class="knowAboutSection_askedQuestionItem">
+      <p><strong>Q6</strong>: What action is to be taken if the candidate has opted for Hindi or Gujarati medium for the examination but now wants to appear in the English medium?</p>
+      <p><strong>Ans</strong>: The JEE Main 2020 question paper is bilingual (both in Hindi and English as well as Gujarati and English) for candidates who have opted for Hindi or Gujarati mediums. The candidate can attempt the questions in any medium during the examination.</p>
+      <p>To clarify all your doubts, check out the detailed list of <a rel="noopener" target="_blank" href="http://jeemain.nic.in/WebInfo/Handler/FileHandler.ashx?i=File&amp;ii=65&amp;iii=Y">JEE Main 2020 FAQs</a>.</p>
+      <p>That&rsquo;s all you need to know about JEE Main 2020. Don&rsquo;t lose heart if you don&rsquo;t get through to JEE Advanced as some <a rel="noopener" target="_blank" href="https://www.toppr.com/bytes/nits-vs-iits/">NITs</a> are even better than a few IITs.</p>
+      </div>
+      <div class="knowAboutSection_askedQuestionItem">
+      <p><strong>Q7</strong>: What colleges can I get into through JEE Main?</p>
+      <p><strong>Ans</strong>: IITs, NITs, IIITs and a list of 100 or so central or state funded institutions participate in JEE Main. Though IITs and ISM don&rsquo;t accept the JEE Main score, they require the JEE Advanced score, this is the first step to getting into the best colleges. </p>
+      <p class="mt-15 phn-tab-mt-10" id="faq">Here's a list of participating Colleges in JEE Main 2020.</p>
+      <table class="knowAboutSection_table">
+      <thead>
+      <tr>
+      <th class="knowAboutSection_table-smallCell">
+      <strong>Sr No </strong>
+      </th>
+      <th>
+      <strong>Colleges</strong>
+      </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+      <td class="knowAboutSection_table-smallCell">
+      1
+      </td>
+      <td>
+      National Institute of Technology (NIT Trichy), Tiruchirappalli
+      </td>
+      </tr>
+      <tr>
+      <td class="knowAboutSection_table-smallCell">
+      2
+      </td>
+      <td>
+      Indian Institute of Information Technology (IIIT), Pune
+      </td>
+      </tr>
+      <tr>
+      <td class="knowAboutSection_table-smallCell">
+      3
+      </td>
+      <td>
+      Indian Institute of Information Technology (IIIT-A), Allahabad
+      </td>
+      </tr>
+      <tr>
+      <td class="knowAboutSection_table-smallCell">
+      4
+      </td>
+      <td>
+      National Institute of Foundry and Forge Technology (NIFFT), Ranchi
+      </td>
+      </tr>
+      <tr>
+      <td class="knowAboutSection_table-smallCell">
+      5
+      </td>
+      <td>
+      Netaji Subhas Institute of Technology (NSIT), Delhi
+      </td>
+      </tr>
+      <tr>
+      <td class="knowAboutSection_table-smallCell">
+      6
+      </td>
+      <td>
+      Indian Institute of Information Technology (IIITG), Guwahati, Assam
+      </td>
+      </tr>
+      <tr>
+      <td class="knowAboutSection_table-smallCell">
+      7
+      </td>
+      <td>
+      National Institute of Technology Warangal (NITW), Telangana
+      </td>
+      </tr>
+      <tr>
+      <td class="knowAboutSection_table-smallCell">
+      8
+      </td>
+      <td>
+      National Institute of Technology Patna (NIT Patna), Bihar
+      </td>
+      </tr>
+      <tr>
+      <td class="knowAboutSection_table-smallCell">
+      9
+      </td>
+      <td>
+      Thapar University, Patiala
+      </td>
+      </tr>
+      <tr>
+      <td class="knowAboutSection_table-smallCell">
+      10
+      </td>
+      <td>
+      PSG College of Technology, Coimbatore
+      </td>
+      </tr>
+      </tbody>
+      </table>
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
+      </section>
+<!--      <section class="happyUsersSection">-->
+<!--      <div class="happyUsersSectionContainer">-->
+<!--      <div class="happyUsersSectionContainerInner">-->
+<!--      <h3 class="titleText">Our Happy Users</h3>-->
+<!--      <div class="happyUsersNew js-happy-users js-exams-happy-users"></div>-->
+<!--      </div>-->
+<!--      </div>-->
+<!--      </section>-->
+
+<!--      <section class="bookDemoSection">-->
+<!--      <div class="js-book-demo-mobile home_bookDemo_mobile">-->
+<!--      <div class="home_bookDemo_mobile_container">-->
+<!--      <div class="home_bookDemo_mobile_container_icon">-->
+<!--      </div>-->
+<!--      <div class="home_bookDemo_mobile_container_text">-->
+<!--      Book a free home Demo now!-->
+<!--      </div>-->
+<!--      </div>-->
+<!--      </div>-->
+<!--      <div id="js-book-demo"></div>-->
+<!--      </section>-->
+
+<!--      <div class="productStats">-->
+<!--      <div class="home_container_inner">-->
+<!--      <ul class="productStats_wrap">-->
+<!--      <li class="productStats_statItem">-->
+<!--      <picture class="productStats_icon productStats_circleIcon">-->
+<!--      <img src="//static-cf.toppr.com/marketing/7af27c4/images/home/happy-students.svg" alt="Happy Students" />-->
+<!--      </picture>-->
+<!--      <div class="productStats_statContent">-->
+<!--      <p class="productStats_number">-->
+<!--      1,957,310-->
+<!--      </p>-->
+<!--      <small class="productStats_statDesc">Happy Students</small>-->
+<!--      </div>-->
+<!--      </li>-->
+<!--      <li class="productStats_statItem">-->
+<!--      <picture class="productStats_icon">-->
+<!--      <img src="//static-cf.toppr.com/marketing/7af27c4/images/home/ques-attempted.svg" alt="Questions Attempted" />-->
+<!--      </picture>-->
+<!--      <div class="productStats_statContent">-->
+<!--      <p class="productStats_number">-->
+<!--      1,070,788,487-->
+<!--      </p>-->
+<!--      <small class="productStats_statDesc">Questions Attempted</small-->
+<!--         >-->
+<!--      </div>-->
+<!--      </li>-->
+<!--      <li class="productStats_statItem">-->
+<!--      <picture class="productStats_icon">-->
+<!--      <img src="//static-cf.toppr.com/marketing/7af27c4/images/home/tests-taken.svg" alt="Tests" />-->
+<!--      </picture>-->
+<!--      <div class="productStats_statContent">-->
+<!--      <p class="productStats_number">-->
+<!--      4,925,772-->
+<!--      </p>-->
+<!--      <small class="productStats_statDesc">Tests Taken</small>-->
+<!--      </div>-->
+<!--      </li>-->
+<!--      <li class="productStats_statItem">-->
+<!--      <picture class="productStats_icon">-->
+<!--      <img src="//static-cf.toppr.com/marketing/7af27c4/images/home/doubts-answered.svg" alt="Doubts Answered" />-->
+<!--      </picture>-->
+<!--      <div class="productStats_statContent">-->
+<!--      <p class="productStats_number">-->
+<!--      32,445,000-->
+<!--      </p>-->
+<!--      <small class="productStats_statDesc">Doubts Answered</small>-->
+<!--      </div>-->
+<!--      </li>-->
+<!--      </ul>-->
+<!--      </div>-->
+<!--      </div>-->
+      </section>
+
+      {% include 'partials/footer.html' %}
+
+<!--      <footer class="footer">-->
+<!--      <div class="breadcrumb">-->
+<!--      <div class="mainContainer">-->
+<!--      <ol class="breadcrumb_list" item-scope item-type="http://schema.org/BreadcrumbList">-->
+<!--      <li class="breadcrumb_listItem breadcrumb_listItemHome" item-prop="itemListElement" item-scope item-type="http://schema.org/ListItem">-->
+<!--      <a href="/" title="Home" item-prop="item">-->
+<!--      <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><title>Shape</title><g fill="none" fill-rule="evenodd"><path d="M0 0h16v16H0z" /><path d="M6.295 16v-4.637c0-.558.446-1.01 1.004-1.01H8.7c.555 0 1.005.443 1.005 1.01V16h3.263a1 1 0 0 0 1-1V8.47h1.561c.55 0 .673-.321.284-.707L8 0 .187 7.763c-.394.39-.267.708.284.708h1.561V15c0 .551.456.999 1 .999h3.263z" fill="#FFF" opacity=".4" /></g></svg>-->
+<!--      </a>-->
+<!--      <meta item-prop="position" content="1" />-->
+<!--      </li>-->
+<!--      <li item-scope item-prop="itemListElement" item-type="http://schema.org/ListItem" class="breadcrumb_listItem">-->
+<!--      <svg width="4" height="6" viewBox="0 0 4 6" xmlns="http://www.w3.org/2000/svg"><title>Triangle Copy 2</title><path fill="currentColor" d="M0 5.2l.624.8L4 3 .624 0 0 .8 2.476 3z" /></svg>-->
+<!--      <span item-prop="name">JEE Main</span>-->
+<!--      <meta item-prop="position" content="2" />-->
+<!--      </li>-->
+<!--      </ol>-->
+<!--      </div>-->
+<!--      </div>-->
+<!--      <div class="footer_container_1">-->
+<!--      <div class="mainContainer footer_content">-->
+<!--      <div class="footer_content-left">-->
+<!--      <div class="footer_column-left">-->
+<!--      <div class="footer_heading js-footer-heading">-->
+<!--      Classes <svg width="10" height="6" viewBox="0 0 10 6" xmlns="http://www.w3.org/2000/svg"><title>Stroke 396</title><path d="M9 1L5 5 1 1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" /></svg>-->
+<!--      </div>-->
+<!--      <div class="footer_navListContainer js-nav-list">-->
+<!--      <ul class="footer_navList">-->
+<!--      <li>-->
+<!--      <a href="https://www.toppr.com/content/cbse/class-5/" title="Class 5">Class 5</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      <li>-->
+<!--      <a href="https://www.toppr.com/content/cbse/class-6/" title="Class 6">Class 6</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      <li>-->
+<!--      <a href="https://www.toppr.com/content/cbse/class-7/" title="Class 7">Class 7</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      <li>-->
+<!--      <a href="https://www.toppr.com/content/cbse/class-8/" title="Class 8">Class 8</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      <li>-->
+<!--      <a href="https://www.toppr.com/content/cbse/class-9/" title="Class 9">Class 9</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      <li>-->
+<!--      <a href="https://www.toppr.com/content/cbse/class-10/" title="Class 10">Class 10</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      <li>-->
+<!--      <a href="https://www.toppr.com/content/cbse/class-11-commerce/" title="Class 11 Commerce">Class 11 Commerce</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      <li>-->
+<!--      <a href="https://www.toppr.com/content/cbse/class-11-engineering/" title="Class 11 Engineering">Class 11 Engineering</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      <li>-->
+<!--      <a href="https://www.toppr.com/content/cbse/class-11-medical/" title="Class 11 Medical">Class 11 Medical</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      <li>-->
+<!--      <a href="https://www.toppr.com/content/cbse/class-12-commerce/" title="Class 12 Commerce">Class 12 Commerce</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      <li>-->
+<!--      <a href="https://www.toppr.com/content/cbse/class-12-engineering/" title="Class 12 Engineering">Class 12 Engineering</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      <li>-->
+<!--      <a href="https://www.toppr.com/content/cbse/class-12-medical/" title="Class 12 Medical">Class 12 Medical</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      </ul>-->
+<!--      </div>-->
+<!--      </div>-->
+<!--      <div class="footer_column">-->
+<!--      <div class="footer_heading footer_heading-topBorder js-footer-heading">-->
+<!--      Boards <svg width="10" height="6" viewBox="0 0 10 6" xmlns="http://www.w3.org/2000/svg"><title>Stroke 396</title><path d="M9 1L5 5 1 1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" /></svg>-->
+<!--      </div>-->
+<!--      <div class="footer_navListContainer js-nav-list">-->
+<!--      <ul class="footer_navList">-->
+<!--      <li>-->
+<!--      <a href="/boards/cbse/" title="CBSE">CBSE</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      <li>-->
+<!--      <a href="/boards/icse/" title="ICSE">ICSE</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      <li>-->
+<!--      <a href="/boards/igcse/" title="IGCSE">IGCSE</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      <li>-->
+<!--      <a href="/boards/andhra-pradesh/" title="Andhra Pradesh">Andhra Pradesh</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      <li>-->
+<!--      <a href="/boards/bihar/" title="Bihar">Bihar</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      <li>-->
+<!--      <a href="/boards/gujarat/" title="Gujarat">Gujarat</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      <li>-->
+<!--      <a href="/boards/jharkhand/" title="Jharkhand">Jharkhand</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      <li>-->
+<!--      <a href="/boards/karnataka/" title="Karnataka">Karnataka</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      <li>-->
+<!--      <a href="/boards/kerala/" title="Kerala">Kerala</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      <li>-->
+<!--      <a href="/boards/madhya-pradesh/" title="Madhya Pradesh">Madhya Pradesh</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      <li>-->
+<!--      <a href="/boards/maharashtra/" title="Maharashtra">Maharashtra</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      </ul>-->
+<!--      <ul class="footer_navList">-->
+<!--      <li>-->
+<!--      <a href="/boards/punjab/" title="Punjab">Punjab</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      <li>-->
+<!--      <a href="/boards/rajasthan/" title="Rajasthan">Rajasthan</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      <li>-->
+<!--      <a href="/boards/tamil-nadu/" title="Tamil Nadu">Tamil Nadu</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      <li>-->
+<!--      <a href="/boards/telangana/" title="Telangana">Telangana</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      <li>-->
+<!--      <a href="/boards/uttar-pradesh/" title="Uttar Pradesh">Uttar Pradesh</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      </ul>-->
+<!--      </div>-->
+<!--      </div>-->
+<!--      </div>-->
+<!--      <div class="footer_content-right">-->
+<!--      <div class="footer_heading footer_heading-topBorder js-footer-heading">-->
+<!--      Exams <svg width="10" height="6" viewBox="0 0 10 6" xmlns="http://www.w3.org/2000/svg"><title>Stroke 396</title><path d="M9 1L5 5 1 1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" /></svg>-->
+<!--      </div>-->
+<!--      <div class="footer_navListContainer js-nav-list">-->
+<!--      <ul class="footer_navList">-->
+<!--      <li>-->
+<!--      <a href="/exams/jee-main/" title="JEE Main">JEE Main</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      <li>-->
+<!--      <a href="/exams/jee-advanced/" title="JEE Advanced">JEE Advanced</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      <li>-->
+<!--      <a href="/exams/uptu-upsee/" title="UPSEE">UPSEE</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      <li>-->
+<!--      <a href="/exams/bitsat/" title="BITSAT">BITSAT</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      <li>-->
+<!--      <a href="/exams/ts-eamcet/" title="TS Eamcet">TS Eamcet</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      <li>-->
+<!--      <a href="/exams/wbjee/" title="WBJEE">WBJEE</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      <li>-->
+<!--      <a href="/exams/viteee/" title="VITEEE">VITEEE</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      <li>-->
+<!--      <a href="/exams/mht-cet/" title="MHT-CET">MHT-CET</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      <li>-->
+<!--      <a href="/exams/sat/" title="SAT">SAT</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      <li>-->
+<!--      <a href="/exams/ijso/" title="IJSO">IJSO</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      <li>-->
+<!--      <a href="/exams/nda/" title="NDA">NDA</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      </ul>-->
+<!--      <ul class="footer_navList">-->
+<!--      <li>-->
+<!--      <a href="/exams/aipmt-neet/" title="NEET">NEET</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      <li>-->
+<!--      <a href="/exams/aiims/" title="AIIMS">AIIMS</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      <li>-->
+<!--      <a href="/exams/ap-eamcet/" title="AP Eamcet">AP Eamcet</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      <li>-->
+<!--      <a href="/exams/comedk-uget/" title="COMEDK">COMEDK</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      <li>-->
+<!--      <a href="/exams/jipmer/" title="JIPMER">JIPMER</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      <li>-->
+<!--      <a href="/exams/bcece/" title="BCECE">BCECE</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      <li>-->
+<!--      <a href="/exams/kcet/" title="KCET">KCET</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      <li>-->
+<!--      <a href="/exams/keam/" title="KEAM">KEAM</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      <li>-->
+<!--      <a href="/exams/imo/" title="IMO">IMO</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      <li>-->
+<!--      <a href="/exams/ieo/" title="IEO">IEO</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      <li>-->
+<!--      <a href="/exams/hbbvs/" title="HBBVS">HBBVS</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      </ul>-->
+<!--      <ul class="footer_navList">-->
+<!--      <li>-->
+<!--      <a href="/exams/ca-foundation/" title="CA Foundation">CA Foundation</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      <li>-->
+<!--      <a href="/exams/cs-foundation/" title="CS Foundation">CS Foundation</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      <li>-->
+<!--      <a href="/exams/cma-foundation/" title="CMA Foundation">CMA Foundation</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      <li>-->
+<!--      <a href="/exams/clat/" title="CLAT">CLAT</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      <li>-->
+<!--      <a href="/exams/ailet/" title="AILET">AILET</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      <li>-->
+<!--      <a href="/exams/ico/" title="ICO">ICO</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      <li>-->
+<!--      <a href="/exams/icso/" title="ICSO">ICSO</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      <li>-->
+<!--      <a href="/exams/ntse/" title="NTSE">NTSE</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      <li>-->
+<!--      <a href="/exams/nso/" title="NSO">NSO</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      <li>-->
+<!--      <a href="/exams/nstse/" title="NSTSE">NSTSE</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      <li>-->
+<!--      <a href="/exams/kvpy/" title="KVPY">KVPY</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      </ul>-->
+<!--      </div>-->
+<!--      </div>-->
+<!--      </div>-->
+<!--      </div>-->
+<!--      <div class="footer_container_2">-->
+<!--      <div class="mainContainer footer_content footer_content_bottom">-->
+<!--      <div class="footer_content-left">-->
+<!--      <div class="footer_column-left packages">-->
+<!--      <div class="footer_heading js-footer-heading footer_heading-topBorder">-->
+<!--      Plans <svg width="10" height="6" viewBox="0 0 10 6" xmlns="http://www.w3.org/2000/svg"><title>Stroke 396</title><path d="M9 1L5 5 1 1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" /></svg>-->
+<!--      </div>-->
+<!--      <div class="footer_navListContainer js-nav-list">-->
+<!--      <ul class="footer_navList">-->
+<!--      <li>-->
+<!--      <a href="/pricing/basic" title="Basic">Basic</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      <li>-->
+<!--      <a href="/pricing/advanced" title="Advanced">Advanced</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      <li>-->
+<!--      <a href="/pricing/ultimate" title="Ultimate">Ultimate</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      </ul>-->
+<!--      </div>-->
+<!--      </div>-->
+<!--      <div class="footer_column">-->
+<!--      <div class="footer_heading js-footer-heading footer_heading-topBorder">-->
+<!--      Modules <svg width="10" height="6" viewBox="0 0 10 6" xmlns="http://www.w3.org/2000/svg"><title>Stroke 396</title><path d="M9 1L5 5 1 1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" /></svg>-->
+<!--      </div>-->
+<!--      <div class="footer_navListContainer js-nav-list">-->
+<!--      <ul class="footer_navList">-->
+<!--      <li>-->
+<!--      <a href="/features/online-classes" title="Online Classes">Online Classes</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      <li>-->
+<!--      <a href="/features/mock-tests" title="Mock Tests">Mock Tests</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      <li>-->
+<!--      <a href="/features/adaptive-practice" title="Adaptive Practice">Adaptive Practice</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      <li>-->
+<!--      <a href="/features/live-doubts" title="Live Doubts">Live Doubts</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      </ul>-->
+<!--      </div>-->
+<!--      </div>-->
+<!--      <div class="footer_column">-->
+<!--      <div class="footer_heading js-footer-heading footer_heading-topBorder">-->
+<!--      Features <svg width="10" height="6" viewBox="0 0 10 6" xmlns="http://www.w3.org/2000/svg"><title>Stroke 396</title><path d="M9 1L5 5 1 1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" /></svg>-->
+<!--      </div>-->
+<!--      <div class="footer_navListContainer js-nav-list">-->
+<!--      <ul class="footer_navList footer_features">-->
+<!--      <li>-->
+<!--      <a href="/features/online-classes/" title="Video classes">Video classes</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      <li>-->
+<!--      <a href="/features/mock-tests/" title="All India test series">All India test series</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      <li>-->
+<!--      <a href="/features/online-classes/" title="Stories">Stories</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      <li>-->
+<!--      <a href="/features/mock-tests/" title="Previous papers">Previous papers</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      </ul>-->
+<!--      <ul class="footer_navList footer_features">-->
+<!--      <li>-->
+<!--      <a href="/live/" title="Live classes">Live classes</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      <li>-->
+<!--      <a href="/features/mock-tests/" title="Create your own tests">Create your own tests</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      <li>-->
+<!--      <a href="/features/live-doubts/" title="24/7 Help">24/7 Help</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      <li>-->
+<!--      <a href="/features/live-doubts/" title="Expert tutors">Expert tutors</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      </ul>-->
+<!--      </div>-->
+<!--      </div>-->
+<!--      <div class="footer_column socialSection ">-->
+<!--      <div class="footer_heading js-footer-heading footer_heading-topBorder">-->
+<!--      Social <svg width="10" height="6" viewBox="0 0 10 6" xmlns="http://www.w3.org/2000/svg"><title>Stroke 396</title><path d="M9 1L5 5 1 1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" /></svg>-->
+<!--      </div>-->
+<!--      <div class="footer_navListContainer">-->
+<!--      <ul class="footer_socialLinks">-->
+<!--      <li id="js-countries-selection-demo"></li>-->
+<!--      <li class="fb">-->
+<!--      <a href="https://www.facebook.com/beingToppr" target="_blank">-->
+<!--      <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><title>fb_16</title><path d="M10.774 3.002L9.334 3c-1.616 0-2.66.966-2.66 2.461v1.135H5.225c-.125 0-.226.091-.226.204v1.644c0 .112.101.204.226.204h1.447v4.148c0 .113.102.204.227.204h1.887c.125 0 .227-.091.227-.204V8.648h1.692c.125 0 .226-.092.226-.204V6.8a.195.195 0 0 0-.066-.144.24.24 0 0 0-.16-.06H9.014v-.962c0-.463.122-.697.79-.697h.97c.125 0 .226-.092.226-.204V3.206c0-.112-.101-.204-.226-.204z" fill="currentColor" /></svg>-->
+<!--      </a>-->
+<!--      </li>-->
+<!--      <li class="youtube">-->
+<!--      <a href="https://www.youtube.com/channel/UCcErZD9wUPQONYaoRXWX-hw" target="_blank">-->
+<!--      <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><title>youtube_16</title><path d="M13.532 4.687c.435.49.468 1.24.468 2.329v1.968c0 1.248-.208 1.969-.695 2.41-.474.43-1.208.606-2.533.606H5.228C2.499 12 2 10.984 2 8.984V7.016c0-1.033 0-1.779.42-2.285C2.853 4.211 3.667 4 5.229 4h5.544c1.527 0 2.327.199 2.76.687zM9.704 8.272a.365.365 0 0 0 .208-.326.365.365 0 0 0-.209-.325L7.186 6.383a.406.406 0 0 0-.38.012.363.363 0 0 0-.186.313v2.485c0 .128.07.247.187.314a.403.403 0 0 0 .38.011l2.517-1.246z" fill="currentColor" /></svg>-->
+<!--      </a>-->
+<!--      </li>-->
+<!--      <li class="instagram">-->
+<!--      <a href="https://www.instagram.com/mytoppr/" target="_blank">-->
+<!--      <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><title>instagram_16</title><path d="M12 3c.55 0 1 .45 1 1v8c0 .55-.45 1-1 1H4c-.55 0-1-.45-1-1V4c0-.55.45-1 1-1h8zM8 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-3.75 6h7.5c.15 0 .25-.1.25-.25V7.5h-1.05c.05.15.05.35.05.5 0 1.65-1.35 3-3 3S5 9.65 5 8c0-.15 0-.35.05-.5H4v4.25c0 .15.1.25.25.25zM12 5.25v-1c0-.15-.1-.25-.25-.25h-1c-.15 0-.25.1-.25.25v1c0 .15.1.25.25.25h1c.15 0 .25-.1.25-.25z" fill="currentColor" /></svg>-->
+<!--      </a>-->
+<!--      </li>-->
+<!--      <li class="medium">-->
+<!--      <a href="https://blog.toppr.com/" target="_blank">-->
+<!--      <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><title>medium_16</title><path d="M10.111 3.013l3.801 1.84c.048.023.065.08.037.124l-3.741 5.887-2.616-4.116 2.343-3.686a.14.14 0 0 1 .176-.049zM6.354 9.425V5.452L10 11.19 6.354 9.425zm7.314 3.538l-3.35-1.621L14 5.55v7.214c0 .198-.15.288-.332.2zM2.222 3.067L5.95 4.872c.03.015.05.045.05.078v7.817c0 .146-.082.233-.198.233a.311.311 0 0 1-.135-.034l-3.446-1.669A.425.425 0 0 1 2 10.95V3.2a.17.17 0 0 1 .036-.114.122.122 0 0 1 .096-.042c.027 0 .058.007.09.023z" fill="currentColor" /></svg>-->
+<!--      </a>-->
+<!--      </li>-->
+<!--      <li class="twitter">-->
+<!--      <a href="https://twitter.com/myToppr" target="_blank">-->
+<!--      <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><title>twitter_16</title><path d="M13 4.947c-.368.16-.763.27-1.178.318.424-.25.748-.646.902-1.117a4.16 4.16 0 0 1-1.304.49A2.06 2.06 0 0 0 9.923 4c-1.133 0-2.051.905-2.051 2.02 0 .158.018.312.053.46a5.854 5.854 0 0 1-4.228-2.11 1.982 1.982 0 0 0-.278 1.015c0 .7.363 1.32.913 1.681a2.076 2.076 0 0 1-.93-.253v.025a2.03 2.03 0 0 0 1.646 1.98 2.108 2.108 0 0 1-.927.034 2.049 2.049 0 0 0 1.916 1.403 4.156 4.156 0 0 1-2.548.864c-.165 0-.328-.01-.489-.028A5.863 5.863 0 0 0 6.144 12c3.774 0 5.837-3.078 5.837-5.748l-.007-.262A4.063 4.063 0 0 0 13 4.947z" fill="currentColor" /></svg>-->
+<!--      </a>-->
+<!--      </li>-->
+<!--      <li class="linkedin">-->
+<!--      <a href="https://www.linkedin.com/company/3341410" target="_blank">-->
+<!--      <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><title>linkedin_16</title><path d="M5.328 5.213c.089 0 .161.073.161.162v6.463c0 .09-.072.162-.161.162H3.32a.161.161 0 0 1-.161-.162V5.375c0-.09.072-.162.161-.162h2.008zM4.325 2a1.326 1.326 0 0 1 0 2.653 1.327 1.327 0 0 1 0-2.653zm6.109 3.053C12.695 5.053 13 6.69 13 8.293v3.545c0 .09-.072.162-.161.162h-2.004a.161.161 0 0 1-.161-.162V8.696c0-.88-.065-1.553-.882-1.553-.75 0-1.041.42-1.041 1.497v3.198c0 .09-.072.162-.162.162H6.586a.161.161 0 0 1-.161-.162V5.375c0-.09.072-.162.161-.162H8.51c.089 0 .161.073.161.162v.42c.362-.395.958-.742 1.764-.742z" fill="currentColor" /></svg>-->
+<!--      </a>-->
+<!--      </li>-->
+<!--      </ul>-->
+<!--      </div>-->
+<!--      </div>-->
+<!--      </div>-->
+<!--      <div class="subscription">-->
+<!--      <div id="js-newsletter-section"></div>-->
+<!--      </div>-->
+<!--      </div>-->
+<!--      <div class="footer_aboutUs">-->
+<!--      <div class="mainContainer">-->
+<!--      <ul class="footer_navList">-->
+<!--      <li><a href="/about/">About Us</a></li>-->
+<!--      <li>-->
+<!--      <a target="_blank" href="https://s3-us-west-1.amazonaws.com/haygot/Manual.pdf">Brand Resources</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      <li><a href="/press/">Press</a></li>-->
+<!--      <li><a href="/customer-stories/">Customer Stories</a></li>-->
+<!--      <li><a href="/jobs/">Jobs</a></li>-->
+<!--      <li>-->
+<!--      <a target="_blank" href="https://community.toppr.com/">Educators</a-->
+<!--         >-->
+<!--      </li>-->
+<!--      <li><a href="/fellowship/">Fellowship</a></li>-->
+<!--      <li>-->
+<!--      <a rel="noopener" href="https://www.toppr.com/guides/">Guides</a>-->
+<!--      </li>-->
+<!--      <li>-->
+<!--      <a target="_blank" href="https://www.toppr.com/ask/">Ask</a>-->
+<!--      </li>-->
+<!--      <li>-->
+<!--      <a target="_blank" href="https://blog.toppr.com/">Blog</a>-->
+<!--      </li>-->
+<!--      <li>-->
+<!--      <a target="_blank" href="https://www.toppr.com/bytes/">Bytes</a>-->
+<!--      </li>-->
+<!--      <li>-->
+<!--      <a target="_blank" href="https://www.toppr.com/news/">News</a>-->
+<!--      </li>-->
+<!--      <li class="productDemoLink">-->
+<!--      <a class="js-footer-product-demo-link">Take <span class="lc">a</span> Tour</a>-->
+<!--      </li>-->
+<!--      <li>-->
+<!--      <a target="_blank" href="https://www.toppr.com/reviews/student/">Student Reviews</a>-->
+<!--      </li>-->
+<!--      <li>-->
+<!--      <a target="_blank" href="https://www.toppr.com/reviews/parent/">Parent Reviews</a>-->
+<!--      </li>-->
+<!--      <li>-->
+<!--      <a target="_blank" href="https://www.toppr.com/reviews/teacher/">Teacher Reviews</a>-->
+<!--      </li>-->
+<!--      </ul>-->
+<!--      </div>-->
+<!--      </div>-->
+<!--      <div class="mainContainer footer_bottom">-->
+<!--      <ul class="footer_navList footer_services">-->
+<!--      <li><a href="/terms/">Terms of Service</a></li>-->
+<!--      <li><a href="/privacy/">Privacy Policy</a></li>-->
+<!--      <li><a href="/contact-us/">Contact Us</a></li>-->
+<!--      <li><a href="/faq/">FAQs</a></li>-->
+<!--      </ul>-->
+<!--      </div>-->
+<!--      <div class="mainContainer footer_bottom">-->
+<!--      <div class="footer_bottom_appIcon">-->
+<!--      <div class="downloadApp_footer">-->
+<!--      <a target="_blank" rel="noopener" title="Toppr Android App on Google Play" href="https://play.google.com/store/apps/details?id=haygot.togyah.app&referrer=utm_source%3Dreferral%26utm_medium%3Dlanding_app_fragment" class="downloadApp_footer_button js-android-app-link">-->
+<!--      <picture class="downloadApp_footer_icon">-->
+<!--      <source srcset="-->
+<!--         //static-cf.toppr.com/marketing/7af27c4/images/icons/play-store.png,-->
+<!--         //static-cf.toppr.com/marketing/7af27c4/images/icons/play-store@2x.png 2x-->
+<!--         " />-->
+<!--      <img src="//static-cf.toppr.com/marketing/7af27c4/images/icons/play-store.png" alt="Google Play" />-->
+<!--      </picture>-->
+<!--      </a>-->
+<!--      <a target="_blank" rel="noopener" title="Toppr iOS App on App Store" href="https://itunes.apple.com/in/app/toppr-learning-app-class-5-12/id1043125663" class="downloadApp_footer_button js-ios-app-link">-->
+<!--      <picture class="downloadApp_footer_icon">-->
+<!--      <source srcset="-->
+<!--         //static-cf.toppr.com/marketing/7af27c4/images/icons/brand-apple.png,-->
+<!--         //static-cf.toppr.com/marketing/7af27c4/images/icons/brand-apple@2x.png 2x-->
+<!--         " />-->
+<!--      <img src="//static-cf.toppr.com/marketing/7af27c4/images/icons/brand-apple.png" alt="App Store" />-->
+<!--      </picture>-->
+<!--      </a>-->
+<!--      </div>-->
+<!--      </div>-->
+<!--      <ul id="js-countries"></ul>-->
+<!--      <ul class="footer_socialLinks">-->
+<!--      <li id="js-countries-selection"></li>-->
+<!--      </ul>-->
+<!--      </div>-->
+<!--      </div>-->
+<!--      </footer>-->
+      <div id="js-overlay" class="overlay"></div>
+      </div>
+      <div id="js-react-modal"></div>
+      <script>
+         window.__TOPPR_CFG__ = {"isProd":true,"staticPaths":{"webV4":"//static-cf.toppr.com/web-v4/cfac4e1/","mobileWeb":"//static-cf.toppr.com/mobile-web/1498b33/","marketing":"//static-cf.toppr.com/marketing/7af27c4/"},"releaseVersion":"7af27c4","countryList":[{"name":"Afghanistan","isoCode":"AF","phoneCode":93},{"name":"Argentina","isoCode":"AR","phoneCode":54},{"name":"Australia","isoCode":"AU","phoneCode":61},{"name":"Austria","isoCode":"AT","phoneCode":43},{"name":"Bahrain","isoCode":"BH","phoneCode":973},{"name":"Bangladesh","isoCode":"BD","phoneCode":880},{"name":"Belgium","isoCode":"BE","phoneCode":32},{"name":"Bhutan","isoCode":"BT","phoneCode":975},{"name":"Canada","isoCode":"CA","phoneCode":1},{"name":"China","isoCode":"CN","phoneCode":86},{"name":"Hong Kong","isoCode":"HK","phoneCode":852},{"name":"Hungary","isoCode":"HU","phoneCode":36},{"name":"India","isoCode":"IN","phoneCode":91},{"name":"Japan","isoCode":"JP","phoneCode":81},{"name":"Kuwait","isoCode":"KW","phoneCode":965},{"name":"Malaysia","isoCode":"MY","phoneCode":60},{"name":"Maldives","isoCode":"MV","phoneCode":960},{"name":"Nepal","isoCode":"NP","phoneCode":977},{"name":"New Zealand","isoCode":"NZ","phoneCode":64},{"name":"Oman","isoCode":"OM","phoneCode":968},{"name":"Pakistan","isoCode":"PK","phoneCode":92},{"name":"Qatar","isoCode":"QA","phoneCode":974},{"name":"Saudi Arabia","isoCode":"SA","phoneCode":966},{"name":"Singapore","isoCode":"SG","phoneCode":65},{"name":"South Korea","isoCode":"KR","phoneCode":82},{"name":"Spain","isoCode":"ES","phoneCode":34},{"name":"Sri Lanka","isoCode":"LK","phoneCode":94},{"name":"Switzerland","isoCode":"CH","phoneCode":41},{"name":"Thailand","isoCode":"TH","phoneCode":66},{"name":"United Arab Emirates","isoCode":"AE","phoneCode":971},{"name":"United Kingdom","isoCode":"GB","phoneCode":44},{"name":"United States","isoCode":"US","phoneCode":1},{"name":"Uruguay","isoCode":"UY","phoneCode":598}],"country":{"name":"India","isoCode":"IN","currencyCode":"INR","phoneCode":91},"supportContactNo":"1800 2099 199","selectedCountry":{"name":"India","isoCode":"IN","currencyCode":"INR","phoneCode":91},"deviceInfo":{"id":null,"platform":"web","formFactor":"desktop","os":"Mac OS X","family":"Other","device":"Chrome","version":"104.0.0","osVersion":"10.15.7","oauthClientName":"","networkType":null}};
+      </script>
+      <script src="//static-cf.toppr.com/marketing/7af27c4/vendor.js"></script>
+      <script src="//static-cf.toppr.com/marketing/7af27c4/app.js"></script>
+      <script>
+         window.tpr = window.tpr || {};
+         tpr.gTag && tpr.gTag.initialize({
+             gaPropertyId: 'UA-42239720-1'
+         });
+         tpr.Layout && new tpr.Layout({
+             countryIsoCode: 'IN',
+             referralCode : '',
+         });
+         tpr.renderCountriesSelectionModal && new tpr.renderCountriesSelectionModal({
+             countryIsoCode: 'IN',
+             countryList: [{"isoCode":"AU","name":"Australia"},{"isoCode":"BH","name":"Bahrain"},{"isoCode":"CA","name":"Canada"},{"isoCode":"CN","name":"China"},{"isoCode":"IN","name":"India"},{"isoCode":"KW","name":"Kuwait"},{"isoCode":"NZ","name":"New Zealand"},{"isoCode":"OM","name":"Oman"},{"isoCode":"PK","name":"Pakistan"},{"isoCode":"QA","name":"Qatar"},{"isoCode":"SA","name":"Saudi Arabia"},{"isoCode":"ES","name":"Spain"},{"isoCode":"TH","name":"Thailand"},{"isoCode":"AE","name":"United Arab Emirates"},{"isoCode":"GB","name":"United Kingdom"},{"isoCode":"US","name":"United States"}],
+         });
+
+         tpr.renderCountriesSelectionModalMobile && new tpr.renderCountriesSelectionModalMobile({
+             countryIsoCode: 'IN',
+             countryList: [{"isoCode":"AU","name":"Australia"},{"isoCode":"BH","name":"Bahrain"},{"isoCode":"CA","name":"Canada"},{"isoCode":"CN","name":"China"},{"isoCode":"IN","name":"India"},{"isoCode":"KW","name":"Kuwait"},{"isoCode":"NZ","name":"New Zealand"},{"isoCode":"OM","name":"Oman"},{"isoCode":"PK","name":"Pakistan"},{"isoCode":"QA","name":"Qatar"},{"isoCode":"SA","name":"Saudi Arabia"},{"isoCode":"ES","name":"Spain"},{"isoCode":"TH","name":"Thailand"},{"isoCode":"AE","name":"United Arab Emirates"},{"isoCode":"GB","name":"United Kingdom"},{"isoCode":"US","name":"United States"}],
+         });
+
+         tpr.PricingHeaderDropdown && new tpr.PricingHeaderDropdown({
+             data: {"faqs":[{"question":"What is the Tests module?","answer":"The Tests module has 250+ tests in the form of test series and previous years' papers. Test series has 'full syllabus' and 'part syllabus' tests. Previous papers are of last 5 years. Once you attempt a test, you get a detailed report of your performance."},{"question":"Can I use Toppr for free?","answer":"Joining Toppr is absolutely free. You can try it out to see how Toppr works. To take full advantage of Toppr, you will have to subscribe to a paid package."},{"question":"What is the Basic package?","answer":"The Basic package has 3 lakh+ practice questions and 250+ tests. Practice questions have hints & solutions and the tests come in the form of test series & previous years' papers."},{"question":"What is the Master package?","answer":"The Master package has 3 lakh+ practice questions and 1000+ hours of video lectures. Practice questions have hints & solutions. Video lectures also have notes and study links for all the chapters in your syllabus."},{"question":"What is the Advanced package?","answer":"The Advanced package has 3 lakh+ practice questions, 1000+ hours of video lectures and 250+ tests. Practice questions have hints & solutions. Video lectures have chapter notes. Tests are in the form of test series & previous years' papers."},{"question":"What is the Ultimate package?","answer":"The Ultimate package has everything that's available on Toppr: Learn, Practice, Tests, and Doubts. This includes 3 lakh+ questions, 1000+ hours of video lectures, 250+ tests, previous years' papers, and Doubts for clearing doubts."},{"question":"What is the Learn module?","answer":"The Learn module has 1000+ hours of video lectures for all the chapters in your syllabus. This comes with readymade notes with definitions, examples, and external study links."},{"question":"What is the Practice module?","answer":"The Practice module has 3 lakh+ questions, which have hints and solutions. After practicing the question sets for a given concept, you get an instant report of your performance."},{"question":"What is the Doubts module?","answer":"The Doubts module is a 24*7 doubts clearing module where you get instant answers from our subject matter experts. You can ask doubts in the text chat and also attach images."}],"testimonials":[{"testimonial":"When studying, I have a lot of doubts. Even at 3:30 am, there's a tutor around to resolve my doubts.","name":"Shivani Mayekar","name_slug":"shivani-mayekar","designation":"12th, JEE","full_story_slug":""},{"testimonial":"The previous 5 years' question papers improved my aptitude in Maths and Science.","name":"Saurabh Chaughule","name_slug":"saurabh-chaughule","designation":"9th, SSC Board","full_story_slug":""},{"testimonial":"Use Toppr to crack the hardest, toughest exams in India. It's got everything a student needs.","name":"Lomai Narendra Thule","name_slug":"lomai-narendra-thule","designation":"11th, NEET","full_story_slug":""},{"testimonial":"Toppr lets me practice, track my progress and revise. It's like having a private tutor.","name":"Ebrahim Bharmal","name_slug":"ebrahim-bharmal","designation":"12th, JEE, CET","full_story_slug":""},{"testimonial":"You get the same experience as an elite coaching class at one-tenth the cost. What's not to love?","name":"Ghanshyam Tank","name_slug":"ghanshyam-tank","designation":"12th, JEE","full_story_slug":""}],"upgrade_packages":[{"group":2022,"display_name":"class 10","display_class":"class 10","packages":[{"id":101102022,"slug":"advanced","plan_type":"complete","title":"Advanced Plan","sub_title":"Advanced","feature_pitch":[{"id":10108,"name":"Learn","title":"LEARN","sub_title":"Learn","feature_key":"learn","pitch":"Learn","is_free":false,"video_url":"","video":{"author":null,"avg_rating":0,"created_on":"2020-03-31T07:22:32.577723+00:00","duration":48,"description":null,"id":133975,"unique_key":"Avd9K4gp","language":"english","last_published_on":"2020-03-31T16:34:32+05:30","provider":null,"status":"published","size":0,"title":"Live Classes","url":"","video_type":"conceptual","thumbnail":"/static/web/images/video_thumbnail_120X68.jpg","is_story_linked":false,"story_id":null,"source":"youtube","languages":[{"id":147789,"video_id":133975,"language":"english","language_abbr":"eng","duration":"0:48","youtube_id":"8beQuSynfeg","youtube_demo_id":null,"thumbnails":{"120":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/OGJlUXVTeW5mZWc=/","240":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/OGJlUXVTeW5mZWc=/mq/","360":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/OGJlUXVTeW5mZWc=/hq/","640":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/OGJlUXVTeW5mZWc=/sd/"}},{"id":147798,"video_id":133975,"language":"hindi","language_abbr":"hin","duration":"0:50","youtube_id":"mmfFzctpRHM","youtube_demo_id":null,"thumbnails":{"120":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/bW1mRnpjdHBSSE0=/","240":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/bW1mRnpjdHBSSE0=/mq/","360":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/bW1mRnpjdHBSSE0=/hq/","640":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/bW1mRnpjdHBSSE0=/sd/"}}],"thumbnails":{"120":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/OGJlUXVTeW5mZWc=/","240":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/OGJlUXVTeW5mZWc=/mq/","360":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/OGJlUXVTeW5mZWc=/hq/","640":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/OGJlUXVTeW5mZWc=/sd/"}},"allow_recurring":true,"enabled":true},{"id":10109,"name":"practice","title":"PRACTICE","sub_title":"Practice","feature_key":"practice","pitch":"Solve question sets, practice and know your skill score","is_free":false,"video_url":"","video":{"author":null,"avg_rating":0,"created_on":"2020-03-31T07:22:48.810264+00:00","duration":57,"description":null,"id":133979,"unique_key":"86bZaSBh","language":"english","last_published_on":"2020-03-31T16:32:40+05:30","provider":null,"status":"published","size":0,"title":"Adaptive Practice","url":"","video_type":"conceptual","thumbnail":"/static/web/images/video_thumbnail_120X68.jpg","is_story_linked":false,"story_id":null,"source":"youtube","languages":[{"id":147793,"video_id":133979,"language":"english","language_abbr":"eng","duration":"0:57","youtube_id":"s0gMY8Ws6a4","youtube_demo_id":null,"thumbnails":{"120":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/czBnTVk4V3M2YTQ=/","240":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/czBnTVk4V3M2YTQ=/mq/","360":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/czBnTVk4V3M2YTQ=/hq/","640":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/czBnTVk4V3M2YTQ=/sd/"}},{"id":147795,"video_id":133979,"language":"hindi","language_abbr":"hin","duration":"0:53","youtube_id":"c1MIja3KVEU","youtube_demo_id":null,"thumbnails":{"120":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/YzFNSWphM0tWRVU=/","240":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/YzFNSWphM0tWRVU=/mq/","360":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/YzFNSWphM0tWRVU=/hq/","640":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/YzFNSWphM0tWRVU=/sd/"}}],"thumbnails":{"120":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/czBnTVk4V3M2YTQ=/","240":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/czBnTVk4V3M2YTQ=/mq/","360":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/czBnTVk4V3M2YTQ=/hq/","640":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/czBnTVk4V3M2YTQ=/sd/"}},"allow_recurring":true,"enabled":true}],"base_price":30000,"base_list_price":30000,"list_price":30000,"sale_price":30000,"formatted_list_price":"30,000","formatted_sale_price":"30,000","modules_enabled_ids":[10108,10109],"description":"Learn + practice","modules_enabled":["learn","practice"],"package_type":"subscription","is_free":false,"monthly_price":30000,"base_sale_price":30000,"online_price":30000,"formatted_base_sale_price":"30,000","months_left":14,"months_billed_for":12,"validity_txt":"till Apr, 2022","validity_ends_on":"2022-04-30T23:59:59+05:30","validity_ends_on_txt":"Ends on 30 Apr 2022","year":2022,"is_already_bought":false,"validity_sub_txt":"for class 10"},{"id":101112022,"slug":"ultimate","plan_type":"ultimate","title":"Ultimate Plan","sub_title":"Ultimate","feature_pitch":[{"id":10108,"name":"Learn","title":"LEARN","sub_title":"Learn","feature_key":"learn","pitch":"Learn","is_free":false,"video_url":"","video":{"author":null,"avg_rating":0,"created_on":"2020-03-31T07:22:32.577723+00:00","duration":48,"description":null,"id":133975,"unique_key":"Avd9K4gp","language":"english","last_published_on":"2020-03-31T16:34:32+05:30","provider":null,"status":"published","size":0,"title":"Live Classes","url":"","video_type":"conceptual","thumbnail":"/static/web/images/video_thumbnail_120X68.jpg","is_story_linked":false,"story_id":null,"source":"youtube","languages":[{"id":147789,"video_id":133975,"language":"english","language_abbr":"eng","duration":"0:48","youtube_id":"8beQuSynfeg","youtube_demo_id":null,"thumbnails":{"120":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/OGJlUXVTeW5mZWc=/","240":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/OGJlUXVTeW5mZWc=/mq/","360":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/OGJlUXVTeW5mZWc=/hq/","640":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/OGJlUXVTeW5mZWc=/sd/"}},{"id":147798,"video_id":133975,"language":"hindi","language_abbr":"hin","duration":"0:50","youtube_id":"mmfFzctpRHM","youtube_demo_id":null,"thumbnails":{"120":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/bW1mRnpjdHBSSE0=/","240":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/bW1mRnpjdHBSSE0=/mq/","360":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/bW1mRnpjdHBSSE0=/hq/","640":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/bW1mRnpjdHBSSE0=/sd/"}}],"thumbnails":{"120":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/OGJlUXVTeW5mZWc=/","240":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/OGJlUXVTeW5mZWc=/mq/","360":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/OGJlUXVTeW5mZWc=/hq/","640":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/OGJlUXVTeW5mZWc=/sd/"}},"allow_recurring":true,"enabled":true},{"id":10109,"name":"practice","title":"PRACTICE","sub_title":"Practice","feature_key":"practice","pitch":"Solve question sets, practice and know your skill score","is_free":false,"video_url":"","video":{"author":null,"avg_rating":0,"created_on":"2020-03-31T07:22:48.810264+00:00","duration":57,"description":null,"id":133979,"unique_key":"86bZaSBh","language":"english","last_published_on":"2020-03-31T16:32:40+05:30","provider":null,"status":"published","size":0,"title":"Adaptive Practice","url":"","video_type":"conceptual","thumbnail":"/static/web/images/video_thumbnail_120X68.jpg","is_story_linked":false,"story_id":null,"source":"youtube","languages":[{"id":147793,"video_id":133979,"language":"english","language_abbr":"eng","duration":"0:57","youtube_id":"s0gMY8Ws6a4","youtube_demo_id":null,"thumbnails":{"120":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/czBnTVk4V3M2YTQ=/","240":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/czBnTVk4V3M2YTQ=/mq/","360":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/czBnTVk4V3M2YTQ=/hq/","640":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/czBnTVk4V3M2YTQ=/sd/"}},{"id":147795,"video_id":133979,"language":"hindi","language_abbr":"hin","duration":"0:53","youtube_id":"c1MIja3KVEU","youtube_demo_id":null,"thumbnails":{"120":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/YzFNSWphM0tWRVU=/","240":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/YzFNSWphM0tWRVU=/mq/","360":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/YzFNSWphM0tWRVU=/hq/","640":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/YzFNSWphM0tWRVU=/sd/"}}],"thumbnails":{"120":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/czBnTVk4V3M2YTQ=/","240":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/czBnTVk4V3M2YTQ=/mq/","360":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/czBnTVk4V3M2YTQ=/hq/","640":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/czBnTVk4V3M2YTQ=/sd/"}},"allow_recurring":true,"enabled":true},{"id":10140,"name":"Ask","title":"ASK","sub_title":"Ask a Doubt","feature_key":"ask","pitch":"Get unlimited doubts solved by tutors on live chat","is_free":false,"video_url":"","video":{"author":null,"avg_rating":0,"created_on":"2020-03-31T07:22:35.536903+00:00","duration":49,"description":null,"id":133977,"unique_key":"LU2gcKgy","language":"english","last_published_on":"2020-03-31T16:34:09+05:30","provider":null,"status":"published","size":0,"title":"Ask Doubts","url":"","video_type":"conceptual","thumbnail":"/static/web/images/video_thumbnail_120X68.jpg","is_story_linked":false,"story_id":null,"source":"youtube","languages":[{"id":147791,"video_id":133977,"language":"english","language_abbr":"eng","duration":"0:49","youtube_id":"ArGuh4SvZO8","youtube_demo_id":null,"thumbnails":{"120":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/QXJHdWg0U3ZaTzg=/","240":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/QXJHdWg0U3ZaTzg=/mq/","360":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/QXJHdWg0U3ZaTzg=/hq/","640":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/QXJHdWg0U3ZaTzg=/sd/"}},{"id":147797,"video_id":133977,"language":"hindi","language_abbr":"hin","duration":"0:52","youtube_id":"RyHfDQiVLLo","youtube_demo_id":null,"thumbnails":{"120":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/UnlIZkRRaVZMTG8=/","240":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/UnlIZkRRaVZMTG8=/mq/","360":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/UnlIZkRRaVZMTG8=/hq/","640":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/UnlIZkRRaVZMTG8=/sd/"}}],"thumbnails":{"120":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/QXJHdWg0U3ZaTzg=/","240":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/QXJHdWg0U3ZaTzg=/mq/","360":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/QXJHdWg0U3ZaTzg=/hq/","640":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/QXJHdWg0U3ZaTzg=/sd/"}},"allow_recurring":true,"enabled":true}],"base_price":45000,"base_list_price":45000,"list_price":45000,"sale_price":40000,"formatted_list_price":"45,000","formatted_sale_price":"40,000","modules_enabled_ids":[10108,10109,10140],"description":"Learn + practice + Ask","modules_enabled":["learn","practice","ask"],"package_type":"subscription","is_free":false,"monthly_price":45000,"base_sale_price":40000,"online_price":45000,"formatted_base_sale_price":"40,000","months_left":14,"months_billed_for":12,"validity_txt":"till Apr, 2022","validity_ends_on":"2022-04-30T23:59:59+05:30","validity_ends_on_txt":"Ends on 30 Apr 2022","year":2022,"is_already_bought":false,"validity_sub_txt":"for class 10"}],"months_left":14,"modules":[{"cal_year":2021,"cal_month":3,"exp_year":2022,"exp_month":4,"price":15000,"online_price":15000,"module_id":10008,"klass":"10","klass_int":10,"id":45782,"validity_left":14,"billed_for":12,"ending_grace_months":2,"starting_grace_months":0,"validity_paid_for_year":null,"validity_paid_for_month":null,"validity_txt":"till Apr, 2022","n_months_duration":0,"validity_type":"fixed date","validity_ends_on":"2022-04-30T23:59:59+05:30","pricing_type":"yearly","allow_recurring":false},{"cal_year":2021,"cal_month":3,"exp_year":2022,"exp_month":4,"price":15000,"online_price":15000,"module_id":6,"klass":"10","klass_int":10,"id":45781,"validity_left":14,"billed_for":12,"ending_grace_months":2,"starting_grace_months":0,"validity_paid_for_year":null,"validity_paid_for_month":null,"validity_txt":"till Apr, 2022","n_months_duration":0,"validity_type":"fixed date","validity_ends_on":"2022-04-30T23:59:59+05:30","pricing_type":"yearly","allow_recurring":false},{"cal_year":2021,"cal_month":3,"exp_year":2022,"exp_month":4,"price":15000,"online_price":15000,"module_id":2,"klass":"10","klass_int":10,"id":45778,"validity_left":14,"billed_for":12,"ending_grace_months":2,"starting_grace_months":0,"validity_paid_for_year":null,"validity_paid_for_month":null,"validity_txt":"till Apr, 2022","n_months_duration":0,"validity_type":"fixed date","validity_ends_on":"2022-04-30T23:59:59+05:30","pricing_type":"yearly","allow_recurring":false},{"cal_year":2021,"cal_month":3,"exp_year":2022,"exp_month":4,"price":15000,"online_price":15000,"module_id":4,"klass":"10","klass_int":10,"id":45780,"validity_left":14,"billed_for":12,"ending_grace_months":2,"starting_grace_months":0,"validity_paid_for_year":null,"validity_paid_for_month":null,"validity_txt":"till Apr, 2022","n_months_duration":0,"validity_type":"fixed date","validity_ends_on":"2022-04-30T23:59:59+05:30","pricing_type":"yearly","allow_recurring":false},{"cal_year":2021,"cal_month":3,"exp_year":2022,"exp_month":4,"price":15000,"online_price":15000,"module_id":10074,"klass":"10","klass_int":10,"id":45783,"validity_left":14,"billed_for":12,"ending_grace_months":2,"starting_grace_months":0,"validity_paid_for_year":null,"validity_paid_for_month":null,"validity_txt":"till Apr, 2022","n_months_duration":0,"validity_type":"fixed date","validity_ends_on":"2022-04-30T23:59:59+05:30","pricing_type":"yearly","allow_recurring":false},{"cal_year":2021,"cal_month":3,"exp_year":2022,"exp_month":4,"price":15000,"online_price":15000,"module_id":10108,"klass":"10","klass_int":10,"id":45784,"validity_left":14,"billed_for":12,"ending_grace_months":2,"starting_grace_months":0,"validity_paid_for_year":null,"validity_paid_for_month":null,"validity_txt":"till Apr, 2022","n_months_duration":0,"validity_type":"fixed date","validity_ends_on":"2022-04-30T23:59:59+05:30","pricing_type":"yearly","allow_recurring":true},{"cal_year":2021,"cal_month":3,"exp_year":2022,"exp_month":4,"price":15000,"online_price":15000,"module_id":10109,"klass":"10","klass_int":10,"id":45785,"validity_left":14,"billed_for":12,"ending_grace_months":2,"starting_grace_months":0,"validity_paid_for_year":null,"validity_paid_for_month":null,"validity_txt":"till Apr, 2022","n_months_duration":0,"validity_type":"fixed date","validity_ends_on":"2022-04-30T23:59:59+05:30","pricing_type":"yearly","allow_recurring":true},{"cal_year":2021,"cal_month":3,"exp_year":2022,"exp_month":4,"price":15000,"online_price":15000,"module_id":10140,"klass":"10","klass_int":10,"id":45786,"validity_left":14,"billed_for":12,"ending_grace_months":2,"starting_grace_months":0,"validity_paid_for_year":null,"validity_paid_for_month":null,"validity_txt":"till Apr, 2022","n_months_duration":0,"validity_type":"fixed date","validity_ends_on":"2022-04-30T23:59:59+05:30","pricing_type":"yearly","allow_recurring":true},{"cal_year":2021,"cal_month":3,"exp_year":2022,"exp_month":4,"price":15000,"online_price":15000,"module_id":1,"klass":"10","klass_int":10,"id":45777,"validity_left":14,"billed_for":12,"ending_grace_months":2,"starting_grace_months":0,"validity_paid_for_year":null,"validity_paid_for_month":null,"validity_txt":"till Apr, 2022","n_months_duration":0,"validity_type":"fixed date","validity_ends_on":"2022-04-30T23:59:59+05:30","pricing_type":"yearly","allow_recurring":false},{"cal_year":2021,"cal_month":3,"exp_year":2022,"exp_month":4,"price":15000,"online_price":15000,"module_id":3,"klass":"10","klass_int":10,"id":45779,"validity_left":14,"billed_for":12,"ending_grace_months":2,"starting_grace_months":0,"validity_paid_for_year":null,"validity_paid_for_month":null,"validity_txt":"till Apr, 2022","n_months_duration":0,"validity_type":"fixed date","validity_ends_on":"2022-04-30T23:59:59+05:30","pricing_type":"yearly","allow_recurring":false}],"validity_txt":"till Apr, 2022","validity_ends_on":"2022-04-30T23:59:59+05:30","validity_ends_on_txt":"Ends on 30 Apr 2022","price_table":{"10108":{"rule_id":1,"rule_type":"one-module","priority":10,"allow_others":false,"billed_for":12,"billed_for_without_gp":14,"discount":0,"discount_with_gp":0,"payable_amount_before_discount":15000,"sale_price":15000,"list_price":15000,"online_price":15000,"monthly_sale_price":1250,"monthly_online_price":1250,"toppr_cash_available_for_use":0,"max_limit_of_toppr_cash":0,"payable_amount":15000,"discount_factor_with_gp":1,"grace_periods":[2],"has_access_till_year":null,"has_access_till_month":null,"monthly_list_price":1250},"10109":{"rule_id":1,"rule_type":"one-module","priority":10,"allow_others":false,"billed_for":12,"billed_for_without_gp":14,"discount":0,"discount_with_gp":0,"payable_amount_before_discount":15000,"sale_price":15000,"list_price":15000,"online_price":15000,"monthly_sale_price":1250,"monthly_online_price":1250,"toppr_cash_available_for_use":0,"max_limit_of_toppr_cash":0,"payable_amount":15000,"discount_factor_with_gp":1,"grace_periods":[2],"has_access_till_year":null,"has_access_till_month":null,"monthly_list_price":1250},"10140":{"rule_id":1,"rule_type":"one-module","priority":10,"allow_others":false,"billed_for":12,"billed_for_without_gp":14,"discount":0,"discount_with_gp":0,"payable_amount_before_discount":15000,"sale_price":15000,"list_price":15000,"online_price":15000,"monthly_sale_price":1250,"monthly_online_price":1250,"toppr_cash_available_for_use":0,"max_limit_of_toppr_cash":0,"payable_amount":15000,"discount_factor_with_gp":1,"grace_periods":[2],"has_access_till_year":null,"has_access_till_month":null,"monthly_list_price":1250},"10108:10109":{"rule_id":2,"rule_type":"two-module","priority":10,"allow_others":false,"billed_for":12,"billed_for_without_gp":14,"discount":0,"discount_with_gp":0,"payable_amount_before_discount":30000,"sale_price":30000,"list_price":30000,"online_price":30000,"monthly_sale_price":2500,"monthly_online_price":2500,"toppr_cash_available_for_use":0,"max_limit_of_toppr_cash":0,"payable_amount":30000,"discount_factor_with_gp":1,"grace_periods":[2,2],"has_access_till_year":null,"has_access_till_month":null,"monthly_list_price":2500},"10108:10140":{"rule_id":2,"rule_type":"two-module","priority":10,"allow_others":false,"billed_for":12,"billed_for_without_gp":14,"discount":0,"discount_with_gp":0,"payable_amount_before_discount":30000,"sale_price":30000,"list_price":30000,"online_price":30000,"monthly_sale_price":2500,"monthly_online_price":2500,"toppr_cash_available_for_use":0,"max_limit_of_toppr_cash":0,"payable_amount":30000,"discount_factor_with_gp":1,"grace_periods":[2,2],"has_access_till_year":null,"has_access_till_month":null,"monthly_list_price":2500},"10109:10140":{"rule_id":2,"rule_type":"two-module","priority":10,"allow_others":false,"billed_for":12,"billed_for_without_gp":14,"discount":0,"discount_with_gp":0,"payable_amount_before_discount":30000,"sale_price":30000,"list_price":30000,"online_price":30000,"monthly_sale_price":2500,"monthly_online_price":2500,"toppr_cash_available_for_use":0,"max_limit_of_toppr_cash":0,"payable_amount":30000,"discount_factor_with_gp":1,"grace_periods":[2,2],"has_access_till_year":null,"has_access_till_month":null,"monthly_list_price":2500},"10108:10109:10140":{"rule_id":3,"rule_type":"three-module","priority":10,"allow_others":false,"billed_for":12,"billed_for_without_gp":14,"discount":5000,"discount_with_gp":5000,"payable_amount_before_discount":40000,"sale_price":40000,"list_price":40000,"online_price":40000,"monthly_sale_price":3340,"monthly_online_price":3340,"toppr_cash_available_for_use":0,"max_limit_of_toppr_cash":0,"payable_amount":40000,"discount_factor_with_gp":0.8888888888888888,"grace_periods":[2,2,2],"has_access_till_year":null,"has_access_till_month":null,"monthly_list_price":3340}},"part_wise_pricing_enabled":false,"group_type":"year"},{"group":2024,"display_name":"class 10-12","display_class":"class 10-12","packages":[{"id":101102024,"slug":"advanced","plan_type":"complete","title":"Advanced Plan","sub_title":"Advanced","feature_pitch":[{"id":10108,"name":"Learn","title":"LEARN","sub_title":"Learn","feature_key":"learn","pitch":"Learn","is_free":false,"video_url":"","video":{"author":null,"avg_rating":0,"created_on":"2020-03-31T07:22:32.577723+00:00","duration":48,"description":null,"id":133975,"unique_key":"Avd9K4gp","language":"english","last_published_on":"2020-03-31T16:34:32+05:30","provider":null,"status":"published","size":0,"title":"Live Classes","url":"","video_type":"conceptual","thumbnail":"/static/web/images/video_thumbnail_120X68.jpg","is_story_linked":false,"story_id":null,"source":"youtube","languages":[{"id":147789,"video_id":133975,"language":"english","language_abbr":"eng","duration":"0:48","youtube_id":"8beQuSynfeg","youtube_demo_id":null,"thumbnails":{"120":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/OGJlUXVTeW5mZWc=/","240":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/OGJlUXVTeW5mZWc=/mq/","360":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/OGJlUXVTeW5mZWc=/hq/","640":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/OGJlUXVTeW5mZWc=/sd/"}},{"id":147798,"video_id":133975,"language":"hindi","language_abbr":"hin","duration":"0:50","youtube_id":"mmfFzctpRHM","youtube_demo_id":null,"thumbnails":{"120":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/bW1mRnpjdHBSSE0=/","240":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/bW1mRnpjdHBSSE0=/mq/","360":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/bW1mRnpjdHBSSE0=/hq/","640":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/bW1mRnpjdHBSSE0=/sd/"}}],"thumbnails":{"120":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/OGJlUXVTeW5mZWc=/","240":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/OGJlUXVTeW5mZWc=/mq/","360":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/OGJlUXVTeW5mZWc=/hq/","640":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/OGJlUXVTeW5mZWc=/sd/"}},"allow_recurring":true,"enabled":true},{"id":10109,"name":"practice","title":"PRACTICE","sub_title":"Practice","feature_key":"practice","pitch":"Solve question sets, practice and know your skill score","is_free":false,"video_url":"","video":{"author":null,"avg_rating":0,"created_on":"2020-03-31T07:22:48.810264+00:00","duration":57,"description":null,"id":133979,"unique_key":"86bZaSBh","language":"english","last_published_on":"2020-03-31T16:32:40+05:30","provider":null,"status":"published","size":0,"title":"Adaptive Practice","url":"","video_type":"conceptual","thumbnail":"/static/web/images/video_thumbnail_120X68.jpg","is_story_linked":false,"story_id":null,"source":"youtube","languages":[{"id":147793,"video_id":133979,"language":"english","language_abbr":"eng","duration":"0:57","youtube_id":"s0gMY8Ws6a4","youtube_demo_id":null,"thumbnails":{"120":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/czBnTVk4V3M2YTQ=/","240":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/czBnTVk4V3M2YTQ=/mq/","360":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/czBnTVk4V3M2YTQ=/hq/","640":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/czBnTVk4V3M2YTQ=/sd/"}},{"id":147795,"video_id":133979,"language":"hindi","language_abbr":"hin","duration":"0:53","youtube_id":"c1MIja3KVEU","youtube_demo_id":null,"thumbnails":{"120":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/YzFNSWphM0tWRVU=/","240":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/YzFNSWphM0tWRVU=/mq/","360":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/YzFNSWphM0tWRVU=/hq/","640":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/YzFNSWphM0tWRVU=/sd/"}}],"thumbnails":{"120":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/czBnTVk4V3M2YTQ=/","240":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/czBnTVk4V3M2YTQ=/mq/","360":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/czBnTVk4V3M2YTQ=/hq/","640":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/czBnTVk4V3M2YTQ=/sd/"}},"allow_recurring":true,"enabled":true}],"base_price":70000,"base_list_price":70000,"list_price":70000,"sale_price":70000,"formatted_list_price":"70,000","formatted_sale_price":"70,000","modules_enabled_ids":[10108,10109],"description":"Learn + practice","modules_enabled":["learn","practice"],"package_type":"subscription","is_free":false,"monthly_price":70000,"base_sale_price":70000,"online_price":70000,"formatted_base_sale_price":"70,000","months_left":40,"months_billed_for":38,"validity_txt":"till Jun, 2024","validity_ends_on":"2024-06-30T23:59:59+05:30","validity_ends_on_txt":"Ends on 30 Jun 2024","year":2024,"is_already_bought":false,"validity_sub_txt":"for class 10-12"},{"id":101112024,"slug":"ultimate","plan_type":"ultimate","title":"Ultimate Plan","sub_title":"Ultimate","feature_pitch":[{"id":10108,"name":"Learn","title":"LEARN","sub_title":"Learn","feature_key":"learn","pitch":"Learn","is_free":false,"video_url":"","video":{"author":null,"avg_rating":0,"created_on":"2020-03-31T07:22:32.577723+00:00","duration":48,"description":null,"id":133975,"unique_key":"Avd9K4gp","language":"english","last_published_on":"2020-03-31T16:34:32+05:30","provider":null,"status":"published","size":0,"title":"Live Classes","url":"","video_type":"conceptual","thumbnail":"/static/web/images/video_thumbnail_120X68.jpg","is_story_linked":false,"story_id":null,"source":"youtube","languages":[{"id":147789,"video_id":133975,"language":"english","language_abbr":"eng","duration":"0:48","youtube_id":"8beQuSynfeg","youtube_demo_id":null,"thumbnails":{"120":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/OGJlUXVTeW5mZWc=/","240":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/OGJlUXVTeW5mZWc=/mq/","360":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/OGJlUXVTeW5mZWc=/hq/","640":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/OGJlUXVTeW5mZWc=/sd/"}},{"id":147798,"video_id":133975,"language":"hindi","language_abbr":"hin","duration":"0:50","youtube_id":"mmfFzctpRHM","youtube_demo_id":null,"thumbnails":{"120":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/bW1mRnpjdHBSSE0=/","240":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/bW1mRnpjdHBSSE0=/mq/","360":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/bW1mRnpjdHBSSE0=/hq/","640":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/bW1mRnpjdHBSSE0=/sd/"}}],"thumbnails":{"120":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/OGJlUXVTeW5mZWc=/","240":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/OGJlUXVTeW5mZWc=/mq/","360":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/OGJlUXVTeW5mZWc=/hq/","640":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/OGJlUXVTeW5mZWc=/sd/"}},"allow_recurring":true,"enabled":true},{"id":10109,"name":"practice","title":"PRACTICE","sub_title":"Practice","feature_key":"practice","pitch":"Solve question sets, practice and know your skill score","is_free":false,"video_url":"","video":{"author":null,"avg_rating":0,"created_on":"2020-03-31T07:22:48.810264+00:00","duration":57,"description":null,"id":133979,"unique_key":"86bZaSBh","language":"english","last_published_on":"2020-03-31T16:32:40+05:30","provider":null,"status":"published","size":0,"title":"Adaptive Practice","url":"","video_type":"conceptual","thumbnail":"/static/web/images/video_thumbnail_120X68.jpg","is_story_linked":false,"story_id":null,"source":"youtube","languages":[{"id":147793,"video_id":133979,"language":"english","language_abbr":"eng","duration":"0:57","youtube_id":"s0gMY8Ws6a4","youtube_demo_id":null,"thumbnails":{"120":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/czBnTVk4V3M2YTQ=/","240":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/czBnTVk4V3M2YTQ=/mq/","360":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/czBnTVk4V3M2YTQ=/hq/","640":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/czBnTVk4V3M2YTQ=/sd/"}},{"id":147795,"video_id":133979,"language":"hindi","language_abbr":"hin","duration":"0:53","youtube_id":"c1MIja3KVEU","youtube_demo_id":null,"thumbnails":{"120":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/YzFNSWphM0tWRVU=/","240":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/YzFNSWphM0tWRVU=/mq/","360":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/YzFNSWphM0tWRVU=/hq/","640":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/YzFNSWphM0tWRVU=/sd/"}}],"thumbnails":{"120":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/czBnTVk4V3M2YTQ=/","240":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/czBnTVk4V3M2YTQ=/mq/","360":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/czBnTVk4V3M2YTQ=/hq/","640":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/czBnTVk4V3M2YTQ=/sd/"}},"allow_recurring":true,"enabled":true},{"id":10140,"name":"Ask","title":"ASK","sub_title":"Ask a Doubt","feature_key":"ask","pitch":"Get unlimited doubts solved by tutors on live chat","is_free":false,"video_url":"","video":{"author":null,"avg_rating":0,"created_on":"2020-03-31T07:22:35.536903+00:00","duration":49,"description":null,"id":133977,"unique_key":"LU2gcKgy","language":"english","last_published_on":"2020-03-31T16:34:09+05:30","provider":null,"status":"published","size":0,"title":"Ask Doubts","url":"","video_type":"conceptual","thumbnail":"/static/web/images/video_thumbnail_120X68.jpg","is_story_linked":false,"story_id":null,"source":"youtube","languages":[{"id":147791,"video_id":133977,"language":"english","language_abbr":"eng","duration":"0:49","youtube_id":"ArGuh4SvZO8","youtube_demo_id":null,"thumbnails":{"120":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/QXJHdWg0U3ZaTzg=/","240":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/QXJHdWg0U3ZaTzg=/mq/","360":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/QXJHdWg0U3ZaTzg=/hq/","640":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/QXJHdWg0U3ZaTzg=/sd/"}},{"id":147797,"video_id":133977,"language":"hindi","language_abbr":"hin","duration":"0:52","youtube_id":"RyHfDQiVLLo","youtube_demo_id":null,"thumbnails":{"120":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/UnlIZkRRaVZMTG8=/","240":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/UnlIZkRRaVZMTG8=/mq/","360":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/UnlIZkRRaVZMTG8=/hq/","640":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/UnlIZkRRaVZMTG8=/sd/"}}],"thumbnails":{"120":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/QXJHdWg0U3ZaTzg=/","240":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/QXJHdWg0U3ZaTzg=/mq/","360":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/QXJHdWg0U3ZaTzg=/hq/","640":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/QXJHdWg0U3ZaTzg=/sd/"}},"allow_recurring":true,"enabled":true}],"base_price":105000,"base_list_price":105000,"list_price":105000,"sale_price":90000,"formatted_list_price":"105,000","formatted_sale_price":"90,000","modules_enabled_ids":[10108,10109,10140],"description":"Learn + practice + Ask","modules_enabled":["learn","practice","ask"],"package_type":"subscription","is_free":false,"monthly_price":105000,"base_sale_price":90000,"online_price":105000,"formatted_base_sale_price":"90,000","months_left":40,"months_billed_for":38,"validity_txt":"till Jun, 2024","validity_ends_on":"2024-06-30T23:59:59+05:30","validity_ends_on_txt":"Ends on 30 Jun 2024","year":2024,"is_already_bought":false,"validity_sub_txt":"for class 10-12"}],"months_left":40,"modules":[{"cal_year":2021,"cal_month":3,"exp_year":2024,"exp_month":6,"price":35000,"online_price":35000,"module_id":10008,"klass":"10","klass_int":10,"id":45802,"validity_left":40,"billed_for":38,"ending_grace_months":2,"starting_grace_months":0,"validity_paid_for_year":null,"validity_paid_for_month":null,"validity_txt":"till Jun, 2024","n_months_duration":0,"validity_type":"fixed date","validity_ends_on":"2024-06-30T23:59:59+05:30","pricing_type":"yearly","allow_recurring":false},{"cal_year":2021,"cal_month":3,"exp_year":2024,"exp_month":6,"price":35000,"online_price":35000,"module_id":6,"klass":"10","klass_int":10,"id":45801,"validity_left":40,"billed_for":38,"ending_grace_months":2,"starting_grace_months":0,"validity_paid_for_year":null,"validity_paid_for_month":null,"validity_txt":"till Jun, 2024","n_months_duration":0,"validity_type":"fixed date","validity_ends_on":"2024-06-30T23:59:59+05:30","pricing_type":"yearly","allow_recurring":false},{"cal_year":2021,"cal_month":3,"exp_year":2024,"exp_month":6,"price":35000,"online_price":35000,"module_id":2,"klass":"10","klass_int":10,"id":45798,"validity_left":40,"billed_for":38,"ending_grace_months":2,"starting_grace_months":0,"validity_paid_for_year":null,"validity_paid_for_month":null,"validity_txt":"till Jun, 2024","n_months_duration":0,"validity_type":"fixed date","validity_ends_on":"2024-06-30T23:59:59+05:30","pricing_type":"yearly","allow_recurring":false},{"cal_year":2021,"cal_month":3,"exp_year":2024,"exp_month":6,"price":35000,"online_price":35000,"module_id":4,"klass":"10","klass_int":10,"id":45800,"validity_left":40,"billed_for":38,"ending_grace_months":2,"starting_grace_months":0,"validity_paid_for_year":null,"validity_paid_for_month":null,"validity_txt":"till Jun, 2024","n_months_duration":0,"validity_type":"fixed date","validity_ends_on":"2024-06-30T23:59:59+05:30","pricing_type":"yearly","allow_recurring":false},{"cal_year":2021,"cal_month":3,"exp_year":2024,"exp_month":6,"price":35000,"online_price":35000,"module_id":10074,"klass":"10","klass_int":10,"id":45803,"validity_left":40,"billed_for":38,"ending_grace_months":2,"starting_grace_months":0,"validity_paid_for_year":null,"validity_paid_for_month":null,"validity_txt":"till Jun, 2024","n_months_duration":0,"validity_type":"fixed date","validity_ends_on":"2024-06-30T23:59:59+05:30","pricing_type":"yearly","allow_recurring":false},{"cal_year":2021,"cal_month":3,"exp_year":2024,"exp_month":6,"price":35000,"online_price":35000,"module_id":10108,"klass":"10","klass_int":10,"id":45804,"validity_left":40,"billed_for":38,"ending_grace_months":2,"starting_grace_months":0,"validity_paid_for_year":null,"validity_paid_for_month":null,"validity_txt":"till Jun, 2024","n_months_duration":0,"validity_type":"fixed date","validity_ends_on":"2024-06-30T23:59:59+05:30","pricing_type":"yearly","allow_recurring":true},{"cal_year":2021,"cal_month":3,"exp_year":2024,"exp_month":6,"price":35000,"online_price":35000,"module_id":10109,"klass":"10","klass_int":10,"id":45805,"validity_left":40,"billed_for":38,"ending_grace_months":2,"starting_grace_months":0,"validity_paid_for_year":null,"validity_paid_for_month":null,"validity_txt":"till Jun, 2024","n_months_duration":0,"validity_type":"fixed date","validity_ends_on":"2024-06-30T23:59:59+05:30","pricing_type":"yearly","allow_recurring":true},{"cal_year":2021,"cal_month":3,"exp_year":2024,"exp_month":6,"price":35000,"online_price":35000,"module_id":10140,"klass":"10","klass_int":10,"id":45806,"validity_left":40,"billed_for":38,"ending_grace_months":2,"starting_grace_months":0,"validity_paid_for_year":null,"validity_paid_for_month":null,"validity_txt":"till Jun, 2024","n_months_duration":0,"validity_type":"fixed date","validity_ends_on":"2024-06-30T23:59:59+05:30","pricing_type":"yearly","allow_recurring":true},{"cal_year":2021,"cal_month":3,"exp_year":2024,"exp_month":6,"price":35000,"online_price":35000,"module_id":3,"klass":"10","klass_int":10,"id":45799,"validity_left":40,"billed_for":38,"ending_grace_months":2,"starting_grace_months":0,"validity_paid_for_year":null,"validity_paid_for_month":null,"validity_txt":"till Jun, 2024","n_months_duration":0,"validity_type":"fixed date","validity_ends_on":"2024-06-30T23:59:59+05:30","pricing_type":"yearly","allow_recurring":false},{"cal_year":2021,"cal_month":3,"exp_year":2024,"exp_month":6,"price":35000,"online_price":35000,"module_id":1,"klass":"10","klass_int":10,"id":45797,"validity_left":40,"billed_for":38,"ending_grace_months":2,"starting_grace_months":0,"validity_paid_for_year":null,"validity_paid_for_month":null,"validity_txt":"till Jun, 2024","n_months_duration":0,"validity_type":"fixed date","validity_ends_on":"2024-06-30T23:59:59+05:30","pricing_type":"yearly","allow_recurring":false}],"validity_txt":"till Jun, 2024","validity_ends_on":"2024-06-30T23:59:59+05:30","validity_ends_on_txt":"Ends on 30 Jun 2024","price_table":{"10108":{"rule_id":1,"rule_type":"one-module","priority":10,"allow_others":false,"billed_for":38,"billed_for_without_gp":40,"discount":0,"discount_with_gp":0,"payable_amount_before_discount":35000,"sale_price":35000,"list_price":35000,"online_price":35000,"monthly_sale_price":930,"monthly_online_price":930,"toppr_cash_available_for_use":0,"max_limit_of_toppr_cash":0,"payable_amount":35000,"discount_factor_with_gp":1,"grace_periods":[2],"has_access_till_year":null,"has_access_till_month":null,"monthly_list_price":930},"10109":{"rule_id":1,"rule_type":"one-module","priority":10,"allow_others":false,"billed_for":38,"billed_for_without_gp":40,"discount":0,"discount_with_gp":0,"payable_amount_before_discount":35000,"sale_price":35000,"list_price":35000,"online_price":35000,"monthly_sale_price":930,"monthly_online_price":930,"toppr_cash_available_for_use":0,"max_limit_of_toppr_cash":0,"payable_amount":35000,"discount_factor_with_gp":1,"grace_periods":[2],"has_access_till_year":null,"has_access_till_month":null,"monthly_list_price":930},"10140":{"rule_id":1,"rule_type":"one-module","priority":10,"allow_others":false,"billed_for":38,"billed_for_without_gp":40,"discount":0,"discount_with_gp":0,"payable_amount_before_discount":35000,"sale_price":35000,"list_price":35000,"online_price":35000,"monthly_sale_price":930,"monthly_online_price":930,"toppr_cash_available_for_use":0,"max_limit_of_toppr_cash":0,"payable_amount":35000,"discount_factor_with_gp":1,"grace_periods":[2],"has_access_till_year":null,"has_access_till_month":null,"monthly_list_price":930},"10108:10109":{"rule_id":2,"rule_type":"two-module","priority":10,"allow_others":false,"billed_for":38,"billed_for_without_gp":40,"discount":0,"discount_with_gp":0,"payable_amount_before_discount":70000,"sale_price":70000,"list_price":70000,"online_price":70000,"monthly_sale_price":1850,"monthly_online_price":1850,"toppr_cash_available_for_use":0,"max_limit_of_toppr_cash":0,"payable_amount":70000,"discount_factor_with_gp":1,"grace_periods":[2,2],"has_access_till_year":null,"has_access_till_month":null,"monthly_list_price":1850},"10108:10140":{"rule_id":2,"rule_type":"two-module","priority":10,"allow_others":false,"billed_for":38,"billed_for_without_gp":40,"discount":0,"discount_with_gp":0,"payable_amount_before_discount":70000,"sale_price":70000,"list_price":70000,"online_price":70000,"monthly_sale_price":1850,"monthly_online_price":1850,"toppr_cash_available_for_use":0,"max_limit_of_toppr_cash":0,"payable_amount":70000,"discount_factor_with_gp":1,"grace_periods":[2,2],"has_access_till_year":null,"has_access_till_month":null,"monthly_list_price":1850},"10109:10140":{"rule_id":2,"rule_type":"two-module","priority":10,"allow_others":false,"billed_for":38,"billed_for_without_gp":40,"discount":0,"discount_with_gp":0,"payable_amount_before_discount":70000,"sale_price":70000,"list_price":70000,"online_price":70000,"monthly_sale_price":1850,"monthly_online_price":1850,"toppr_cash_available_for_use":0,"max_limit_of_toppr_cash":0,"payable_amount":70000,"discount_factor_with_gp":1,"grace_periods":[2,2],"has_access_till_year":null,"has_access_till_month":null,"monthly_list_price":1850},"10108:10109:10140":{"rule_id":3,"rule_type":"three-module","priority":10,"allow_others":false,"billed_for":38,"billed_for_without_gp":40,"discount":15000,"discount_with_gp":15000,"payable_amount_before_discount":90000,"sale_price":90000,"list_price":90000,"online_price":90000,"monthly_sale_price":2370,"monthly_online_price":2370,"toppr_cash_available_for_use":0,"max_limit_of_toppr_cash":0,"payable_amount":90000,"discount_factor_with_gp":0.8571428571428571,"grace_periods":[2,2,2],"has_access_till_year":null,"has_access_till_month":null,"monthly_list_price":2370}},"part_wise_pricing_enabled":false,"group_type":"year"}],"modules":[{"id":10108,"name":"Learn","title":"LEARN","sub_title":"Learn","feature_key":"learn","pitch":"Learn","is_free":false,"video_url":"","video":{"author":null,"avg_rating":0,"created_on":"2020-03-31T07:22:32.577723+00:00","duration":48,"description":null,"id":133975,"unique_key":"Avd9K4gp","language":"english","last_published_on":"2020-03-31T16:34:32+05:30","provider":null,"status":"published","size":0,"title":"Live Classes","url":"","video_type":"conceptual","thumbnail":"/static/web/images/video_thumbnail_120X68.jpg","is_story_linked":false,"story_id":null,"source":"youtube","languages":[{"id":147789,"video_id":133975,"language":"english","language_abbr":"eng","duration":"0:48","youtube_id":"8beQuSynfeg","youtube_demo_id":null,"thumbnails":{"120":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/OGJlUXVTeW5mZWc=/","240":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/OGJlUXVTeW5mZWc=/mq/","360":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/OGJlUXVTeW5mZWc=/hq/","640":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/OGJlUXVTeW5mZWc=/sd/"}},{"id":147798,"video_id":133975,"language":"hindi","language_abbr":"hin","duration":"0:50","youtube_id":"mmfFzctpRHM","youtube_demo_id":null,"thumbnails":{"120":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/bW1mRnpjdHBSSE0=/","240":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/bW1mRnpjdHBSSE0=/mq/","360":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/bW1mRnpjdHBSSE0=/hq/","640":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/bW1mRnpjdHBSSE0=/sd/"}}],"thumbnails":{"120":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/OGJlUXVTeW5mZWc=/","240":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/OGJlUXVTeW5mZWc=/mq/","360":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/OGJlUXVTeW5mZWc=/hq/","640":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/OGJlUXVTeW5mZWc=/sd/"}},"allow_recurring":true,"long_description":"Learn","features":[]},{"id":10109,"name":"practice","title":"PRACTICE","sub_title":"Practice","feature_key":"practice","pitch":"Solve question sets, practice and know your skill score","is_free":false,"video_url":"","video":{"author":null,"avg_rating":0,"created_on":"2020-03-31T07:22:48.810264+00:00","duration":57,"description":null,"id":133979,"unique_key":"86bZaSBh","language":"english","last_published_on":"2020-03-31T16:32:40+05:30","provider":null,"status":"published","size":0,"title":"Adaptive Practice","url":"","video_type":"conceptual","thumbnail":"/static/web/images/video_thumbnail_120X68.jpg","is_story_linked":false,"story_id":null,"source":"youtube","languages":[{"id":147793,"video_id":133979,"language":"english","language_abbr":"eng","duration":"0:57","youtube_id":"s0gMY8Ws6a4","youtube_demo_id":null,"thumbnails":{"120":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/czBnTVk4V3M2YTQ=/","240":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/czBnTVk4V3M2YTQ=/mq/","360":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/czBnTVk4V3M2YTQ=/hq/","640":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/czBnTVk4V3M2YTQ=/sd/"}},{"id":147795,"video_id":133979,"language":"hindi","language_abbr":"hin","duration":"0:53","youtube_id":"c1MIja3KVEU","youtube_demo_id":null,"thumbnails":{"120":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/YzFNSWphM0tWRVU=/","240":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/YzFNSWphM0tWRVU=/mq/","360":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/YzFNSWphM0tWRVU=/hq/","640":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/YzFNSWphM0tWRVU=/sd/"}}],"thumbnails":{"120":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/czBnTVk4V3M2YTQ=/","240":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/czBnTVk4V3M2YTQ=/mq/","360":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/czBnTVk4V3M2YTQ=/hq/","640":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/czBnTVk4V3M2YTQ=/sd/"}},"allow_recurring":true,"long_description":"As you practice on Toppr, our adaptive algorithm evaluates your learning and gives you questions that help you master the concept.","features":[]},{"id":10140,"name":"Ask","title":"ASK","sub_title":"Ask a Doubt","feature_key":"ask","pitch":"Get unlimited doubts solved by tutors on live chat","is_free":false,"video_url":"","video":{"author":null,"avg_rating":0,"created_on":"2020-03-31T07:22:35.536903+00:00","duration":49,"description":null,"id":133977,"unique_key":"LU2gcKgy","language":"english","last_published_on":"2020-03-31T16:34:09+05:30","provider":null,"status":"published","size":0,"title":"Ask Doubts","url":"","video_type":"conceptual","thumbnail":"/static/web/images/video_thumbnail_120X68.jpg","is_story_linked":false,"story_id":null,"source":"youtube","languages":[{"id":147791,"video_id":133977,"language":"english","language_abbr":"eng","duration":"0:49","youtube_id":"ArGuh4SvZO8","youtube_demo_id":null,"thumbnails":{"120":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/QXJHdWg0U3ZaTzg=/","240":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/QXJHdWg0U3ZaTzg=/mq/","360":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/QXJHdWg0U3ZaTzg=/hq/","640":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/QXJHdWg0U3ZaTzg=/sd/"}},{"id":147797,"video_id":133977,"language":"hindi","language_abbr":"hin","duration":"0:52","youtube_id":"RyHfDQiVLLo","youtube_demo_id":null,"thumbnails":{"120":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/UnlIZkRRaVZMTG8=/","240":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/UnlIZkRRaVZMTG8=/mq/","360":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/UnlIZkRRaVZMTG8=/hq/","640":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/UnlIZkRRaVZMTG8=/sd/"}}],"thumbnails":{"120":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/QXJHdWg0U3ZaTzg=/","240":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/QXJHdWg0U3ZaTzg=/mq/","360":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/QXJHdWg0U3ZaTzg=/hq/","640":"https://d1hhj0t1vdqi7c.cloudfront.net/v1/QXJHdWg0U3ZaTzg=/sd/"}},"allow_recurring":true,"long_description":"Ask your doubts anytime, anywhere! Our experts are available on chat 24x7 to solve your doubts instantly!","features":[]}],"year":2022,"selected_klass":10,"selected_klass_title":"10","klasses":[{"title":"5","value":5},{"title":"6","value":6},{"title":"7","value":7},{"title":"8","value":8},{"title":"9","value":9},{"title":"10","value":10},{"title":"11","value":11},{"title":"12","value":12},{"title":"12+","value":13}],"signin_required":false,"signup_required":false},
+             currencyCode: 'INR',
+             countryIsoCode:  'IN',
+             user: "",
+         });
+
+
+
+
+
+
+         tpr.Segment.initialize({
+         writeKey: 'ib74kexjd5',
+
+         attribution: {},
+         });
+
+
+
+
+      </script>
+      <script>
+         !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+         n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+         n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+         t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+         document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+         fbq('init', '1577924339104777');
+         fbq('track', "PageView");
+         fbq('track', 'ViewContent');
+
+         fbq('track', 'CompleteRegistration');
+
+      </script>
+      <noscript>
+         <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1577924339104777&ev=PageView&noscript=1"/>
+      </noscript>
+      <script type='text/javascript'>
+         (function(h,o,t,j,a,r){
+             h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+             h._hjSettings={hjid:1624465,hjsv:6};
+             a=o.getElementsByTagName('body')[0];
+             r=o.createElement('script');r.defer=1;
+             r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+             a.appendChild(r);
+         })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+      </script>
+      <script src="https://cdn.jsdelivr.net/npm/uuid@latest/dist/umd/uuidv4.min.js"></script>
+      <script>
+         if(localStorage && uuidv4 && !localStorage.getItem('device_id')) {
+             localStorage.setItem('device_id', uuidv4());
+         }
+      </script>
+      <script>
+         var globalUser = {};
+         new tpr.ExamPage({
+             pageType: 'exams',
+             examTitle: 'JEE Main',
+             exam: "jee-main",
+             user: globalUser,
+             countryIsoCode: 'IN',
+             gPlaceAPIKey: 'AIzaSyDLafCi6D6iExRiAiTAo5Uz_kGU8hJOqMI',
+         });
+         tpr.Segment.trackPageView('exam_page_jee-main');
+         // tpr.Webengage.trackEvent('viewed_exam_screen_web', {
+         //     ui_screen_name: 'exam',
+         //     exam: 'JEE Main',
+         // });
+      </script>
+      <script>(function(){window['__CF$cv$params']={r:'73ccccb50c621bd4',m:'32h8P7tti105Q7UEGhk2CWfDBxhRGpN3mVq2Z91eLy4-1660848254-0-AQTPaRqCHUfAgAZJ7MIz4YkdEUWNdtK0E25PFp0ZbXp9fTr1VQN5KGGOGED2sN6sXZBp6Kpf1ezMN5oGrN+Sx0+V0uzBrsnjwAkYcbtU8Mh5JfGo/lqhPTIfUXPH33GT5Q==',s:[0xb196d02234,0xc3cdc3aa0e],}})();</script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194" integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw==" data-cf-beacon='{"rayId":"73ccccb50c621bd4","token":"0f0da08eca7543a596a3d0a4a983918e","version":"2022.8.0","si":100}' crossorigin="anonymous"></script>
+   </body>
+</html>

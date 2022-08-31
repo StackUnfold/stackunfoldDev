@@ -1,0 +1,293 @@
+
+.boardExamHeader_background{
+    background: linear-gradient(91.14deg,#13294B 0,#000000 122.55%) !important;
+    height: 409px !important;
+
+}
+
+@media (min-width: 40em)
+{
+
+}
+
+#root{
+    font-family: "Mark Pro", -apple-system, blinkmacsystemfont, "Segoe UI", roboto, helvetica, arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+
+.knowMore_button{
+position: relative;
+    -webkit-box-pack: center;
+    justify-content: center;
+    font-weight: bold;
+    -webkit-box-align: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 6px;
+    min-height: 48px;
+    color: var(--color-base-1);
+    -webkit-user-drag: none;
+    user-select: none;
+    background-color: white;
+    transition: box-shadow 300ms ease-in-out 0s, transform 300ms ease-in-out 0s, background-color 300ms ease-in-out 0s;
+    width: 185px;
+    height: 48px;
+}
+
+
+.startLearning{
+position: relative;
+    -webkit-box-pack: center;
+    justify-content: center;
+    font-weight: bold;
+    -webkit-box-align: center;
+    align-items: center;
+    cursor: pointer;
+    color: var(--color-base-1);
+    -webkit-user-drag: none;
+    user-select: none;
+    color: white;
+
+}
+
+.tiers[data-v-45836930] {
+    margin: 45px auto;
+}
+
+.slp-row[data-v-2d4c763f] {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+div.slp-col-md.column.free-container[data-v-45836930] {
+    z-index: 2;
+}
+
+div.slp-col-md.column[data-v-45836930] {
+    height: 100%;
+    padding: 0 8px;
+    position: relative;
+    width: 366px;
+    max-width: 366px;
+}
+
+data-aos^=fade][data-aos^=fade].aos-animate {
+    opacity: 1;
+    transform: translateZ(0);
+}
+
+[data-aos][data-aos][data-aos-duration="800"], body[data-aos-duration="800"] [data-aos] {
+    transition-duration: .8s;
+}
+
+.tiers .tier.plan-free[data-v-45836930] {
+    background-color: #f2f1f5;
+}
+
+.tiers .tier[data-v-45836930] {
+    text-align: left;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    padding: 24px;
+    margin: 0 auto 32px;
+    height: 362px;
+}
+
+.tiers .content[data-v-45836930] {
+    height: 100%;
+}
+
+.slp-text-heading3-bold[data-v-6a852df4], .slp-text-heading3-bold[data-v-6a852df4] * {
+    font-size: 40px;
+    line-height: 48px;
+    font-weight: 600;
+    letter-spacing: -1px;
+}
+
+.tiers .content .description[data-v-45836930] {
+    margin-bottom: 8px;
+}
+
+slp-text-body1-bold[data-v-6a852df4], .slp-text-body1-bold[data-v-6a852df4] * {
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 600;
+}
+
+.tiers .content .price-detail-container[data-v-45836930] {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 16px;
+}
+
+.tiers .content .price-detail-container .price-container[data-v-45836930] {
+    display: flex;
+    margin-right: 8px;
+}
+
+.tiers .content .price-detail-container .price-container .dollar-sign[data-v-45836930] {
+    position: relative;
+    top: 15px;
+}
+
+.slp-text-heading1-bold[data-v-6a852df4], .slp-text-heading1-bold[data-v-6a852df4] * {
+    font-size: 80px;
+    line-height: 90px;
+    font-weight: 600;
+    letter-spacing: -2.1px;
+}
+
+.tiers .content .price-detail-container__detail[data-v-45836930] {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 130px;
+}
+
+.slp-text-body3[data-v-6a852df4], .slp-text-body3[data-v-6a852df4] * {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+}
+
+.slp-text-body3[data-v-6a852df4], .slp-text-body3[data-v-6a852df4] * {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+}
+
+.tiers .tier.plan-free .asterisk[data-v-45836930] {
+    vertical-align: top;
+}
+
+.slp-text-body3[data-v-6a852df4], .slp-text-body3[data-v-6a852df4] * {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+}
+
+.pricing-feature-list-container .header[data-v-1bcdb7b9] {
+    margin-bottom: 8px;
+}
+
+.pricing-feature-list-container .list[data-v-1bcdb7b9] {
+    margin-bottom: 40px;
+}
+
+div.slp-col-md.column.silver-premium-container[data-v-45836930] {
+    z-index: 1;
+}
+
+div.slp-col-md.column[data-v-45836930] {
+    height: 100%;
+    padding: 0 8px;
+    position: relative;
+    width: 366px;
+    max-width: 366px;
+}
+
+data-aos^=fade][data-aos^=fade].aos-animate {
+    opacity: 1;
+    transform: translateZ(0);
+}
+
+tiers .tier.plan-silver-premium[data-v-45836930] {
+    background-color: #eee7fd;
+}
+
+.tiers .tier[data-v-45836930] {
+    text-align: left;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    padding: 24px;
+    margin: 0 auto 32px;
+    height: 362px;
+}
+
+div.slp-col-md.column.gold-ultimate-container[data-v-45836930] {
+    z-index: 0;
+}
+
+div.slp-col-md.column[data-v-45836930] {
+    height: 100%;
+    padding: 0 8px;
+    position: relative;
+    width: 360px;
+    max-width: 360px;
+}
+
+.tiers .tier.plan-gold-ultimate[data-v-45836930] {
+    border-radius: 4px 4px 100px 4px;
+    background: url(https://about.gitlab.com/nuxt-images/backgrounds/ultimate_tier_gradient.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+
+.tiers .tier[data-v-45836930] {
+    text-align: left;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    padding: 24px;
+    margin: 0 auto 32px;
+    height: 362px;
+}
+
+/* side menu css */
+
+@media (min-width: 1400px)
+.side-menu[data-v-4f32527a] {
+    transform: none;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    position: fixed;
+    padding-bottom: 0;
+    display: block;
+}
+
+side-menu[data-v-4f32527a] {
+    display: none;
+    top: 6rem;
+    right: 0;
+    max-width: 32rem;
+    padding-top: 5rem;
+    max-height: 90vh;
+    overflow-y: scroll;
+}
+
+.side-menu__list[data-v-4f32527a] {
+    margin-bottom: 18px;
+    text-align: left;
+    padding: 0;
+    list-style-type: none;
+}
+
+.side-menu__item[data-v-4f32527a] {
+    width: 20rem;
+}
+
+.side-menu__item__container[data-v-4f32527a] {
+    display: flex;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+side-menu__link[data-v-4f32527a], .side-menu__link[data-v-4f32527a]:hover {
+    text-decoration: none;
+}
+
+.side-menu__link[data-v-4f32527a] {
+    position: relative;
+    font-size: 18px;
+    line-height: 20px;
+    padding-right: 10px;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: all .2s ease-in;
+}
+
+.side-menu__item__container > a{
+    color: #13294B !important;
+}
+/* ends here */
