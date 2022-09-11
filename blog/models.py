@@ -53,6 +53,7 @@ class jee_mains(models.Model):
     options = ArrayField(models.CharField(max_length=5000, default=[]))
     question_images = ArrayField(models.CharField(max_length=5000, default=[]))
     solution_images = ArrayField(models.CharField(max_length=5000, default=[]))
+    option_images = ArrayField(models.CharField(max_length=5000, default=[]))
     correct_option = models.CharField(max_length=100, default="", null=True)
     solution = models.TextField()
     times_loaded = models.CharField(max_length=1000, default="", null=True)
