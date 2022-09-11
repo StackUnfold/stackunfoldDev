@@ -110,4 +110,4 @@ class JeeView(TemplateView):
 
 
 class JeeViewQnA(TemplateView):
-    template_name="home/jee-qna.html"
+    template_name="home/jee-qna-new.html"
