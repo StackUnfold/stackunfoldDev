@@ -2,4 +2,4 @@
 /.gitignore.swp
 /unfold/
 .idea
-/*.pyc
+*.pyc
