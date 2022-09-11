@@ -1,0 +1,30 @@
+.home-links, .header-container, .footer, .blog-section {
+    font-family: "Mark Pro", -apple-system, blinkmacsystemfont, "Segoe UI", roboto, helvetica, arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.header-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    z-index: 10;
+    padding-bottom: 1.5rem;
+    padding-top: 1.5rem;
+    height: 7.2rem;
+    box-shadow: 0 0 1.8rem transparent;
+    transition: box-shadow .3s,color .5s,background-color .5s;
+}
+@media (min-width: 40em)
+.container {
+    padding: 0 calc(18vw - 10rem);
+}
+
+abbr, address, article, aside, audio, b, blockquote, body, canvas, caption, cite, code, dd, del, details, dfn, div, dl, dt, em, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, p, pre, q, samp, section, small, span, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, ul, var, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    background: 0 0;
+}
