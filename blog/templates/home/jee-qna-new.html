@@ -28,9 +28,9 @@
 
       <div id="root">
 
-        <div class="site-header">
-            <div class="site-header--container">
-                <a class="site-header--link d-flex ai-center fs-headline1 fw-bold" href="">
+        <div class="stack-header">
+            <div class="stack-header--container">
+                <a class="stack-header--link flex" href="">
                         <img class="center-subject-class" src="../static/images/goals-logo.svg" alt="Physics">
                 </a>
 
@@ -43,15 +43,15 @@
             <div class="" style="max-width: 1264px;width: 100%;background: none;display: flex;justify-content: space-between;margin: 0 auto;">
 
 
-<div id="left-sidebar" data-is-here-when="md lg" class="left-sidebar js-pinned-left-sidebar ps-relative">
-    <div class="left-sidebar--sticky-container js-sticky-leftnav">
-        <aside class="flex-none lg:sticky lg:block lg:self-start">
-   <div class="lg:sticky lg:text-center">
-<!--      <a id="js-forum-reply-button" data-js="reply-button" class="btn btn-blue mx-auto mb-3 block py-4 font-semibold normal-case">Reply to Thread</a>-->
-      <form class="text-center text-white"><button type="submit" class="btn btn-outlined mb-8 w-full border-transparent bg-grey-500 py-4 font-semibold normal-case dark-bg dark:bg-blue/10 text-grey-800 dark:text-white" title="Want an email each time this conversation receives a new reply?">IIT JEE</button></form>
-      <ul class="hide-scrollbar left-sidebar-items mobile:hidden lg:max-h-[80vh] lg:overflow-y-auto text-white">
+<div id="left-sidebar" class="left-sidebar">
+    <div class="left-sidebar-sticky">
+        <aside class="">
+   <div class="">
+<!--      <a>Reply to Thread</a>-->
+      <form class="text-black"><button type="submit" class=" mb-8 w-full py-4 dark-bg">IIT JEE</button></form>
+      <ul class="left-sidebar-items text-black">
          <li>
-            <a class="mb-[5px] remove-deco flex items-center border py-25 px-6 text-sm hover:text-blue dark:font-medium border-transparent text-white text-opacity-85" href="/discuss">
+            <a class="mb-5 remove-deco flex py-25 px-6 text-sm text-black text-opacity-85" href="/discuss">
                <div class="flex-center mr-4" style="width: 22px;">
                   <svg width="16" height="15" viewBox="0 0 16 15" class="fill-current text-grey-800 dark:text-blue-300">
                      <g fill-rule="nonzero">
@@ -66,7 +66,7 @@
          </li>
          <!---->
          <li>
-            <a class="mb-[5px] remove-deco flex items-center border py-25 px-6 text-sm hover:text-blue dark:font-medium border-transparent text-white text-opacity-85" href="/discuss?trending=1">
+            <a class="mb-5 remove-deco flex py-25 px-6 text-sm text-black text-opacity-85" href="/discuss?trending=1">
                <div class="flex-center mr-4" style="width: 22px;">
                   <svg width="16" height="15" viewBox="0 0 16 15" class="fill-current text-grey-800 dark:text-blue-300">
                      <path fill-rule="nonzero" d="M3.277 15a.46.46 0 0 1-.192-.063.347.347 0 0 1-.128-.347l1.409-5.168L.14 6.05c-.128-.063-.16-.22-.128-.346a.307.307 0 0 1 .288-.22L5.743 5.2 7.696.19c.064-.095.192-.19.32-.19s.256.095.288.19l1.953 5.01 5.443.283c.128 0 .256.095.288.22a.352.352 0 0 1-.096.347l-4.226 3.372 1.408 5.168a.312.312 0 0 1-.128.347c-.096.063-.256.095-.352 0l-4.578-2.9-4.579 2.9c-.064.063-.096.063-.16.063z"></path>
@@ -76,7 +76,7 @@
             </a>
          </li>
          <li>
-            <a class="mb-[5px] remove-deco flex items-center border py-25 px-6 text-sm hover:text-blue dark:font-medium border-transparent text-white text-opacity-85" href="/discuss?popular=1">
+            <a class="mb-5 remove-deco flex py-25 px-6 text-sm text-black text-opacity-85" href="/discuss?popular=1">
                <div class="flex-center mr-4" style="width: 22px;">
                   <svg width="16" height="15" viewBox="0 0 16 15" class="fill-current text-grey-800 dark:text-blue-300">
                      <path fill-rule="nonzero" d="M3.277 15a.46.46 0 0 1-.192-.063.347.347 0 0 1-.128-.347l1.409-5.168L.14 6.05c-.128-.063-.16-.22-.128-.346a.307.307 0 0 1 .288-.22L5.743 5.2 7.696.19c.064-.095.192-.19.32-.19s.256.095.288.19l1.953 5.01 5.443.283c.128 0 .256.095.288.22a.352.352 0 0 1-.096.347l-4.226 3.372 1.408 5.168a.312.312 0 0 1-.128.347c-.096.063-.256.095-.352 0l-4.578-2.9-4.579 2.9c-.064.063-.096.063-.16.063z"></path>
@@ -86,52 +86,18 @@
             </a>
          </li>
          <li>
-            <a class="mb-[5px] remove-deco flex items-center border py-25 px-6 text-sm hover:text-blue dark:font-medium border-transparent text-white text-opacity-85" href="/discuss?answered=1">
+            <a class="mb-5 remove-deco flex py-25 px-6 text-sm text-black text-opacity-85" href="/discuss?answered=1">
                <div class="flex-center mr-4" style="width: 22px;">
                   <svg width="16" height="16" viewBox="0 0 16 16" class="fill-current text-grey-800 dark:text-blue-300">
                      <g fill="none" fill-rule="evenodd">
                         <circle cx="8" cy="8" r="8" class="fill-current"></circle>
-                        <path class="fill-current text-white dark:text-deep-black" d="M6.997 9.562L5.207 7.78a.386.386 0 0 0-.557 0 .382.382 0 0 0 0 .554l2.347 2.337 4.494-4.476a.382.382 0 0 0 0-.554.386.386 0 0 0-.556 0L6.997 9.56z"></path>
+                        <path class="fill-current text-black dark:text-deep-black" d="M6.997 9.562L5.207 7.78a.386.386 0 0 0-.557 0 .382.382 0 0 0 0 .554l2.347 2.337 4.494-4.476a.382.382 0 0 0 0-.554.386.386 0 0 0-.556 0L6.997 9.56z"></path>
                      </g>
                   </svg>
                </div>
                Popular
             </a>
          </li>
-<!--         <li>-->
-<!--            <a class="mb-[5px] remove-deco flex items-center border py-25 px-6 text-sm hover:text-blue dark:font-medium border-transparent text-white text-opacity-85" href="/discuss?answered=0">-->
-<!--               <div class="flex-center mr-4" style="width: 22px;">-->
-<!--                  <svg width="16" height="16" viewBox="0 0 16 16" class="fill-current text-grey-800 dark:text-blue-300">-->
-<!--                     <g fill="none" fill-rule="evenodd">-->
-<!--                        <circle cx="8" cy="8" r="8" class="fill-current"></circle>-->
-<!--                        <path class="fill-current text-white dark:text-deep-black" d="M5.667 5L5 5.667 7.333 8 5 10.333l.667.667L8 8.667 10.333 11l.667-.667L8.667 8 11 5.667 10.333 5 8 7.334z"></path>-->
-<!--                     </g>-->
-<!--                  </svg>-->
-<!--               </div>-->
-<!--               Unsolved-->
-<!--            </a>-->
-<!--         </li>-->
-<!--         <li>-->
-<!--            <a class="mb-[5px] remove-deco flex items-center border py-25 px-6 text-sm hover:text-blue dark:font-medium border-transparent text-white text-opacity-85" href="/discuss?fresh=1">-->
-<!--               <div class="flex-center mr-4" style="width: 22px;">-->
-<!--                  <svg width="16" height="12" viewBox="0 0 16 12" class="fill-current text-grey-800 dark:text-blue-300">-->
-<!--                     <path fill-rule="nonzero" d="M15.206 7.366v4.401s-1.882-4.202-4.203-4.202h-4.5v3.602L0 5.664l6.503-5.5v2.999h4.5a4.204 4.204 0 0 1 4.203 4.203z"></path>-->
-<!--                  </svg>-->
-<!--               </div>-->
-<!--               No Replies Yet-->
-<!--            </a>-->
-<!--         </li>-->
-<!--         <li>-->
-<!--            <a class="mb-[5px] remove-deco flex items-center border py-25 px-6 text-sm hover:text-blue dark:font-medium border-transparent text-white text-opacity-85" href="/discuss/leaderboard">-->
-<!--               <div class="flex-center mr-4" style="width: 22px;">-->
-<!--                  <svg width="16" height="16" viewBox="0 0 12 16" class="fill-current text-grey-800 dark:text-blue-300">-->
-<!--                     <path fill-rule="nonzero" d="M10.08 1.6L9.12 4H2.08l-.96-2.4C.504 1.6 0 2.104 0 2.72v12.16C0 15.496.504 16 1.12 16h8.96c.616 0 1.12-.504 1.12-1.12V2.72c0-.616-.504-1.12-1.12-1.12zm-1.6 1.6l.72-1.6H7.456L6.88 0H4.32l-.576 1.6H2l.72 1.6h5.76z"></path>-->
-<!--                  </svg>-->
-<!--               </div>-->
-<!--               Leaderboard-->
-<!--            </a>-->
-<!--         </li>-->
-         <!---->
       </ul>
    </div>
 </aside>
@@ -149,56 +115,47 @@
 
 
 <div itemscope="">
-    <div class="inner-content clearfix">
+    <div class="main-content">
 
 
 
-            <div id="question-header" class="d-flex sm:fd-column">
-                        <h1 itemprop="name" class="fs-headline1 ow-break-word mb8 flex--item fl1"><a href="#" class="question-hyperlink ">The rms speed of the molecules of Hydrogen, Oxygen and Carbondioxide at the same temperature are $V_h ,V_o and V_c$ respectively then: </a></h1>
+            <div id="stack-question-header" class="flex">
+                        <h1 class="q-break-word mb8"><a href="#" class="stack-question-hyperlink">On heating water, bubbles being formed at the bottom of the vessel detach and rise. Take the bubbles to be spheres of radius R and making a circular contact of radius r with the bottom of the vessel. If $r << R,$ and the surface tension of water is T, value of r just before bubbles detach is : (density of water is $\rho_w$).</a></h1>
             </div>
-        <div class="d-flex fw-wrap pb8 mb16 bb bc-black-075" style="    border-bottom-style: solid !important;
+        <div class="flex" style="    border-bottom-style: solid !important;
     border-bottom-width: 1px;
     border-color: lightgrey;">
             </div>
-            <div id="mainbar" role="main" aria-label="question and answers">
+            <div id="mainbar-content" role="main" aria-label="question and answers">
 
 
-<div class="question js-question" data-questionid="725542" data-position-on-page="0" data-score="0" id="question">
-    <style>
-    </style>
-<div class="js-zone-container zone-container-main">
-    <div id="dfp-tlb" class="everyonelovesstackoverflow everyoneloves__top-leaderboard everyoneloves__leaderboard" data-dfp-zone="true" style="min-height: auto; height: auto; display: none;" data-google-query-id="CPD9r8GI7_kCFTKX2AUdgBUJ8g" data-clc-ready="true"><div id="google_ads_iframe_/248424177/physics.stackexchange.com/lb/question-pages_0__container__" style="border: 0pt none; width: 728px; height: auto; min-height: auto; display: none;"></div></div>
-    <div class="js-report-ad-button-container " style="width: 728px"></div>
-</div>
+<div class="stack-question js-question">
 
-    <div class="post-layout">
+    <div class="stack-a-layout">
 
 
 
-<div class="postcell post-layout--right">
+<div class="stack-a-block stack-a-block-right">
     <span class="d-none"><span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-1-Frame" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; />" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-1" style="width: 0em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0em; height: 0px; font-size: 122%;"><span style="position: absolute; clip: rect(3.786em, 1000em, 4.165em, -999.997em); top: -3.969em; left: 0em;"><span class="mrow" id="MathJax-Span-2"></span><span style="display: inline-block; width: 0px; height: 3.975em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.073em; border-left: 0px solid; width: 0px; height: 0.158em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"></math></span></span><script type="math/tex" id="MathJax-Element-1">\begingroup</script></span>
     <div class="s-prose js-post-body" itemprop="text">
 
-<p>$V_{rms} = \sqrt{\frac{3RT}{M}}  \\ V_{rms} \propto \frac{1}{\sqrt{M}}  at constant T \\
-V_H : V_O :V_{CO_2} = \frac{1}{\sqrt{1}}:\frac{1}{\sqrt{16}}:\frac{1}{\sqrt{44}} \\
-= 1:\frac{1}{4}:\frac{1}{2\sqrt{11}} \\
-V_H > V_O > V_{CO_2}$</p>
+<p>The buoyant force acting on the bubble is given by: $\\$
+$F_b = \rho_w Vg$ $\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .........(i) \\$
+where $\rho_w$  = density of water, V = volume of the bubble and g = acceleration due to gravity $\\$
+The force due to surface tension is given: $\\$
+$F_s = Tl \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .........(ii) \\$
+where T = surface tension, l = length of the bubble in contact = $(2\pi r)sin\theta \\$
+So, the bubble will detach when these forces are equal. $\\$
+$F_b = F_s \\$
+$\rho_w Vg = Tl \\$
+Substitute $V = \frac{4}{3}\pi R^3$ and $sin\theta = \frac{r}{R}$ in the above equation $\\$
+$\rho_w \Bigg(\frac{4}{3}\pi R^3 \Bigg)g = T \times 2\pi r sin\theta \\$
+$\rho_w \Bigg(\frac{4}{3}\pi R^3 \Bigg)g = T \times 2\pi r \times \frac{r}{R} \\$
+$\therefore r = R^2 \sqrt{\frac{2\rho_w g}{3T}} \\$</p>
 
     </div>
 
 </div>
-
-
-
-
-            <span class="d-none" itemprop="commentCount"></span>
-    <div class="post-layout--right js-post-comments-component">
-        <div id="comments-725542" class="comments js-comments-container bt bc-black-075 mt12  dno" data-post-id="725542" data-min-length="15">
-            <ul class="comments-list js-comments-list" data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
-
-            </ul>
-	    </div>
-    </div>
     </div>
 
 </div>
@@ -209,8 +166,6 @@ V_H > V_O > V_{CO_2}$</p>
 
 
     </div>
-<noscript><div><img src="/posts/725542/ivc/ea88" class="dno" alt="" width="0" height="0"></div></noscript></div>
-
 
         </div>
     </div>
@@ -221,14 +176,6 @@ V_H > V_O > V_{CO_2}$</p>
 
       <div id="js-overlay" class="overlay"></div>
       </div>
-    <script>
-        $('.knowMore_button').on('click', function(){
-
-            window.location.href = `${base_url}jee/qna`
-
-        })
-    </script>
-
    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/katex.min.js" integrity="sha384-Qsn9KnoKISj6dI8g7p1HBlNpVx0I8p1SvlwOldgi3IorMle61nQy4zEahWYtljaz" crossorigin="anonymous"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
 <script>

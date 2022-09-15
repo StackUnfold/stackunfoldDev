@@ -1,5 +1,5 @@
 
-.text-white{
+.text-black{
     color:black;
 }
 
@@ -28,7 +28,7 @@
     align-items: center;
 }
 
-.mb-\[5px\] {
+.mb-5 {
     margin-bottom: 5px;
 }
 
@@ -102,7 +102,7 @@
 
 .dark-bg {
     background-color: rgb(104 113 123 / 10%);
-    border-radius: 0.934rem;
+    border-radius: 1.934rem;
 
 }
 
