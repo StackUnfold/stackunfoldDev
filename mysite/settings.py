@@ -14,8 +14,9 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-TEMPLATE_DIR=os.path.join(BASE_DIR,"blog/templates/blog")
+TEMPLATE_DIR=os.path.join(BASE_DIR,"blog/templates/html")
 TEMPLATE_DIR_2=os.path.join(BASE_DIR,"main_app")
+TEMPLATE_DIR_3=os.path.join(BASE_DIR,"jee_mains")
 
 
 # Quick-start development settings - unsuitable for production
@@ -48,6 +49,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
+    'jee_mains'
 ]
 
 MIDDLEWARE = [
@@ -65,7 +67,7 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [ TEMPLATE_DIR,TEMPLATE_DIR_2],
+        'DIRS': [ TEMPLATE_DIR,TEMPLATE_DIR_2,TEMPLATE_DIR_3],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
