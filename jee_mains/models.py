@@ -3,7 +3,8 @@ from django.contrib.postgres.fields import ArrayField, JSONField
 
 # Create your models here.
 class jee_mains(models.Model): 
-    url   = models.CharField(max_length=1000, default="", null=True)
+    # url   = models.CharField(max_length=1000, default="", null=True)
+    url   = models.SlugField(max_length=1000, default="", null=True)
     year  =  models.IntegerField() 
     date  = models.IntegerField()
     month  = models.IntegerField()
@@ -17,4 +18,5 @@ class jee_mains(models.Model):
     correct_option = models.CharField(max_length=100, default="", null=True)
     solution = models.TextField()
     times_loaded = models.CharField(max_length=1000, default="", null=True)
-  
+    def get_absolute_url(self):
+        return reverse("jee_mains_single", kwargs={"url": self.url})

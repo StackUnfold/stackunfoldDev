@@ -27,7 +27,8 @@ urlpatterns=[
     path('api-auth/', include('rest_framework.urls')),
 
     path('jee_mains_ques/', JeeMainsList.as_view()),
-    path('jee_mains_ques/<int:pk>/', JeeMainsDetail.as_view()),
+    path('<slug:url>/', JeeMainsDetail.as_view(), name='jee_mains_single'),
+
     # path('geeks' ,views.GeeksView.as_view(),name="geeks"),
     # path('explore' ,views.ExploreView.as_view(),name="explore"),
 

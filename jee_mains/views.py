@@ -34,26 +34,26 @@ class JeeMainsDetail(APIView):
     Retrieve, update or delete a snippet instance.
     """
 
-    def get_object(self, pk):
+    def get_object(self, url):
         try:
-            return jee_mains.objects.get(pk=pk)
+            return jee_mains.objects.get(url=url)
         except Snippet.DoesNotExist:
             raise Http404
 
-    def get(self, request, pk, format=None):
-        jee_mains_obj = self.get_object(pk)
+    def get(self, request, url, format=None):
+        jee_mains_obj = self.get_object(url)
         serializer = JeeSerializer(jee_mains_obj)
         return Response(serializer.data)
 
-    def put(self, request, pk, format=None):
-        jee_mains_obj = self.get_object(pk)
+    def put(self, request, url, format=None):
+        jee_mains_obj = self.get_object(url)
         serializer = JeeSerializer(jee_mains_obj, data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-    def delete(self, request, pk, format=None):
-        snippet = self.get_object(pk)
+    def delete(self, request, url, format=None):
+        snippet = self.get_object(url)
         snippet.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
