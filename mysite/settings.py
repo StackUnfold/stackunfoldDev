@@ -24,7 +24,7 @@ TEMPLATE_DIR_3=os.path.join(BASE_DIR,"jee_mains")
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'cfvqlo@g=u-!xfu+4&pv$_v5t6%v!gtp4jedd#&$l%8)!dcrb_'
-
+            
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -49,7 +49,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
-    'jee_mains'
+    'jee_mains',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -147,6 +148,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT=''
+STATIC_ROOT = ''
 STATICFILES_DIRS = (os.path.join('static'), )
 LOGIN_REDIRECT_URL='/'

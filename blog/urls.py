@@ -1,6 +1,8 @@
 from django.conf.urls import url
 from blog import views
-from django.urls import path
+from django.urls import path, include
+from jee_mains.views import JeeMainsList, JeeMainsDetail
+
 
 urlpatterns=[
     # url(r'^main/$' , views.PostListView.as_view(), name='post_list'),
@@ -24,6 +26,10 @@ urlpatterns=[
     path('jee/test-series', views.JeeTestSeries.as_view(),name="jee_test_series"),
     path('jee/goal-preparation', views.GoalPrepartion.as_view(),name="jee_goal_preparation"),
     path('jee/The-rms-speed-of-the-molecules-of-Hydrogen-Oxygen-and-Carbondioxide-at-the-same-temperature-are', views.JeeViewQnA.as_view(),name="jee_ana"),
+    path('api-auth/', include('rest_framework.urls')),
+
+    path('jee_mains_ques/', JeeMainsList.as_view()),
+    path('<slug:url>/', JeeMainsDetail.as_view(), name='jee_mains_single'),
 
     # path('geeks' ,views.GeeksView.as_view(),name="geeks"),
     # path('explore' ,views.ExploreView.as_view(),name="explore"),
