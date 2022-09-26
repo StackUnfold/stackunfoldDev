@@ -106,16 +106,7 @@ DATABASES = {
 
 
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'xten_1',
-#         'USER': 'postgres',
-#         'PASSWORD': 'Xyz@9045',
-#         'HOST': 'localhost',
-#         'PORT': '5432',
-#     },
-# }
+
 
 
 

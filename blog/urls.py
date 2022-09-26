@@ -21,6 +21,8 @@ urlpatterns=[
     # url(r'^post/(?P<pk>\d+)/publish/$',views.post_publish,name='post_publish'),
     path('jee', views.JeeView.as_view(),name="goal_jee"),
     path('jee/qna', views.JeeViewQnA.as_view(),name="jee_ana"),
+    path('jee/test-series', views.JeeTestSeries.as_view(),name="jee_test_series"),
+    path('jee/goal-preparation', views.GoalPrepartion.as_view(),name="jee_goal_preparation"),
     path('jee/The-rms-speed-of-the-molecules-of-Hydrogen-Oxygen-and-Carbondioxide-at-the-same-temperature-are', views.JeeViewQnA.as_view(),name="jee_ana"),
 
     # path('geeks' ,views.GeeksView.as_view(),name="geeks"),
