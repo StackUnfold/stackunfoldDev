@@ -10,8 +10,8 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 class AboutView(TemplateView):
-    # template_name="index.html"
     template_name="index.html"
+    # template_name="terms-of-use.html"
 
 class AboutaboutView(TemplateView):
     template_name="about_2.html"

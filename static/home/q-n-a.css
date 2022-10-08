@@ -191,7 +191,7 @@
     align-items: start;
     background-color: #8d8b8b1f;
     border-radius: 10px;
-    padding: 5px 32px;
+    padding: 15px 32px;
 }
 
 .css-g9gnjt-Submit.multiple {
@@ -205,7 +205,7 @@
     font-size: 14px;
     height: 40px;
     min-height: 40px;
-    width: 104px;
+    width: 105px;
 }
 
 <style>
@@ -231,4 +231,163 @@
     user-select: none;
     background-color: var(--color-base-1);
     transition: box-shadow 300ms ease-in-out 0s, transform 300ms ease-in-out 0s, background-color 300ms ease-in-out 0s;
+}
+
+.css-1rba5so-QuestionList {
+    overflow: hidden scroll;
+}
+
+
+.css-1ew8ent-Wrapper {
+    margin-bottom: 24px;
+}
+
+css-1s0ok04-Wrapper {
+    z-index: 1;
+    top: 0px;
+    position: sticky;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    background: var(--color-base-1);
+    padding: 12px 0px;
+}
+
+.css-11eainj-SectionInfoLeft {
+    width: 70%;
+}
+
+css-52ychw-H5 {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    color: var(--color-text-primary);
+    margin: 0px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    overflow-wrap: break-word;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
+.css-1bg1qfq-SectionMaxAttemptInfo {
+    font-size: 14px;
+    margin-top: 8px;
+    color: var(--color-text-primary);
+}
+
+.css-k0mwn8-SectionInfoRight {
+    display: flex;
+    flex-direction: row-reverse;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 30%;
+}
+
+
+
+.css-1w7mrty-BulletPoint {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.css-8yvmvz-Bullet {
+    height: 8px;
+    width: 8px;
+    margin-right: 8px;
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 1px;
+    background-color: var(--color-i-green);
+    border-color: var(--color-i-green);
+}
+
+.css-13n8k7n-P1 {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 150%;
+    color: var(--color-text-primary);
+    margin: 0px;
+}
+
+.css-19haqro-SectionQuestionList {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(auto-fill, 40px);
+}
+
+.css-1gsrn3b-Wrapper {
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    opacity: 1;
+    height: 40px;
+    width: 40px;
+    border-radius: 4px;
+    border: 1px solid #3C4852;
+    background: #FFFFFF;
+}
+
+.css-16q8x4n-Wrapper {
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    opacity: 1;
+    height: 40px;
+    width: 40px;
+    border-radius: 4px;
+    border: 1px solid #E9EEF2;
+    background: #FFFFFF;
+}
+
+.css-1ew8ent-Wrapper {
+    margin-bottom: 24px;
+}
+
+.css-1s0ok04-Wrapper {
+    z-index: 1;
+    top: 0px;
+    position: sticky;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    background: var(--color-base-1);
+    padding: 12px 0px;
+}
+
+* {
+    text-rendering: optimizelegibility;
+    box-sizing: border-box;
+    word-break: break-word;
+    outline: none;
+    text-decoration: none;
+    margin: 0px;
+    -webkit-font-smoothing: antialiased;
+    overscroll-behavior: none;
+
+}
+
+.css-1rtrtjl-Wrapper {
+    min-width: 1024px;
+    max-width: 1292px;
+    height: 100vh;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 22% 39%;
+
 }
