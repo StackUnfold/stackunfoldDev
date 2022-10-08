@@ -11,6 +11,7 @@ from django.contrib.auth.decorators import login_required
 
 class AboutView(TemplateView):
     template_name="index.html"
+    # template_name="terms-of-use.html"
 
 class AboutaboutView(TemplateView):
     template_name="about_2.html"
@@ -111,3 +112,10 @@ class JeeView(TemplateView):
 
 class JeeViewQnA(TemplateView):
     template_name="home/jee-qna-new.html"
+
+class JeeTestSeries(TemplateView):
+    template_name="home/jee-test-series.html"
+
+
+class GoalPrepartion(TemplateView):
+    template_name="home/jee-goal-preparation.html"

@@ -1,22 +1,254 @@
 {% include '../base_main_app.html' %}
+
+<style>
+    .site-header-nav-left {
+    -ms-flex: 1;
+    flex: 1;
+    margin-top: 11px;
+    margin-left: 34px;
+}
+
+.site-header-nav {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.site-header .nav-menu-browse, .site-header .nav-menu-teach {
+    padding-right: 16px;
+}
+
+.site-header .nav-item {
+    color: #fff;
+    font-weight: 700;
+    font-size: 15px;
+    padding: 0 9px;
+    position: relative;
+}
+
+.site-header .nav-menu-browse .nav-item-link, .site-header .nav-menu-teach .nav-item-link {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.site-header .nav-item-link {
+    font-size: 15px;
+    white-space: nowrap;
+    font-weight: 700;
+    text-decoration: none;
+    cursor:pointer;
+}
+
+.site-header .nav-menu-browse-text, .site-header .nav-menu-teach-text {
+    margin-right: 4px;
+    color:#394649;
+    cursor:pointer;
+}
+
+.site-header .nav-menu-browse .chevron-down, .site-header .nav-menu-teach .chevron-down {
+    width: 12px;
+    height: 12px;
+    margin-top: 1px;
+}
+
+.site-header .nav-menu-browse .chevron-down use, .site-header .nav-menu-teach .chevron-down use {
+    fill: black;
+    color: black;
+    stroke: black;
+}
+
+.popover.shadow .inner-popover {
+    background-color: #fff;
+    box-sizing: border-box;
+    box-shadow: rgb(0 0 0 / 10%) 0 4px 8px 0;
+    border: 4px solid #dcdee175;
+    border-radius: 8px;
+}
+
+.site-header .nav-menu-browse .nav-menu-list {
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.site-header .nav-menu-browse .nav-menu-subcategory {
+    padding-left: 16px;
+    margin-left: -16px;
+    line-height: 20px;
+    width: 224px;
+    height: 40px;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 15px;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+a.primary:hover {
+    color: #394649;
+}
+
+.site-header .nav-menu-list {
+    padding: 16px 20px;
+}
+
+.site-header .nav-item-link:hover {
+    color: rgb(254, 57, 60);
+}
+
+
+.site-header .nav-menu-browse .nav-menu-categories {
+    display: -ms-flexbox;
+    display: flex;
+    margin-right: 16px;
+}
+
+
+.site-header .nav-menu-browse .nav-menu-category-left-col {
+    padding-left: 15px;
+}
+
+.site-header .nav-menu-browse .nav-menu-category {
+    width: 224px;
+    height: 30px;
+    font-size: 12px;
+    font-style: normal;
+    border-bottom: #dcdee1 1px solid;
+    font-stretch: normal;
+    line-height: 3.2;
+    letter-spacing: 1px;
+    color: #394649;
+    margin-bottom: 10px;
+}
+
+a.primary.no-bold {
+    font-weight: 400;
+}
+
+a.primary {
+    color: #002333;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.site-header .nav-menu-browse .nav-menu-category-list {
+    /*width: 139px;*/
+    margin: 12px 72px 11px 8px;
+}
+
+.site-header .nav-menu-browse .nav-menu-category-short-list {
+    margin-bottom: 30px;
+}
+
+.site-header .nav-menu-browse .nav-menu-category-short-list {
+    margin-bottom: 30px;
+}
+
+.site-header .nav-item .popover {
+    margin-top: 14px;
+    min-width: 120px;
+    position: absolute;
+}
+
+.site-header .nav-menu-browse .nav-menu-subcategory:hover {
+    background-color: #dcdee1;
+    border-radius: 4px;
+    color: #394649;
+}
+
+</style>
+
+
+
+
 <div class="header-scroll-trigger"></div>
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none;" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol viewBox="0 0 16 16" id="chevron-down" xmlns="http://www.w3.org/2000/svg"><path d="M8.477 11.123a.647.647 0 0 1-.954 0L2.106 5.33a.407.407 0 0 1 0-.549.346.346 0 0 1 .513 0L8 10.537l5.381-5.757a.346.346 0 0 1 .513 0 .407.407 0 0 1 0 .549l-5.417 5.795z" fill="#747777"></path></symbol></svg>
+
 <div class="container header-container" style="width:100%!important">
    <div class="container-inner">
       <nav class="header">
-         <a aria-label="Skillds" class="logo" href="" data-toggle=".header" style="text-decoration: none!important;color: #13294B!important;font-size: 28px!important;font-weight: 600!important;">stackunfold</a>
-         <a class="button light header-login" href=".">Login</a>
+         <a aria-label="stackunfold" class="logo" href="" data-toggle=".header" style="text-decoration: none!important;color: #13294B!important;font-size: 28px!important;font-weight: 600!important;">stackunfold</a>
+          <div class="site-header">
+            <div class="site-header-nav site-header-nav-left">
+
+
+
+<div class="nav-item nav-menu-browse js-nav-menu-browse">
+    <a class="nav-item-link js-nav-link-browse initialized" onclick="openGoalsPopover()">
+        <span class="nav-menu-browse-text">Browse</span>
+        <svg class="ss-svg-icon chevron-down"><use xlink:href="#chevron-down"></use></svg>
+    </a>
+    <div class="popover shadow bottom goals-popover" style="display:none;">
+    <div class="inner-popover">
+        <div class="content">
+
+    <div class="nav-menu-list">
+        <div class="nav-menu-categories">
+                            <ul class="nav-menu-category-list nav-menu-category-left-col">
+                    <li class="nav-menu-category">CREATE</li>
+                                            <a class="primary no-bold" href="https://www.skillshare.com/en/browse/animation?via=header"><li class="nav-menu-subcategory">Animation</li></a>
+                                            <a class="primary no-bold" href="https://www.skillshare.com/en/browse/creative-writing?via=header"><li class="nav-menu-subcategory">Creative Writing</li></a>
+                                            <a class="primary no-bold" href="https://www.skillshare.com/en/browse/film-and-video?via=header"><li class="nav-menu-subcategory">Film &amp; Video</li></a>
+                                            <a class="primary no-bold" href="https://www.skillshare.com/en/browse/fine-art?via=header"><li class="nav-menu-subcategory">Fine Art</li></a>
+                                            <a class="primary no-bold" href="https://www.skillshare.com/en/browse/graphic-design?via=header"><li class="nav-menu-subcategory">Graphic Design</li></a>
+                                            <a class="primary no-bold" href="https://www.skillshare.com/en/browse/illustration?via=header"><li class="nav-menu-subcategory">Illustration</li></a>
+                                            <a class="primary no-bold" href="https://www.skillshare.com/en/browse/music?via=header"><li class="nav-menu-subcategory">Music</li></a>
+                                            <a class="primary no-bold" href="https://www.skillshare.com/en/browse/photography?via=header"><li class="nav-menu-subcategory">Photography</li></a>
+                                            <a class="primary no-bold" href="https://www.skillshare.com/en/browse/ui-ux-design?via=header"><li class="nav-menu-subcategory">UI/UX Design</li></a>
+                                            <a class="primary no-bold" href="https://www.skillshare.com/en/browse/web-development?via=header"><li class="nav-menu-subcategory">Web Development</li></a>
+                                    </ul>
+                        <div class="nav-menu-category-list">
+                                    <ul class="nav-menu-category-short-list">
+                        <li class="nav-menu-category">BUILD</li>
+                                                    <a class="primary no-bold" href="https://www.skillshare.com/en/browse/business-analytics?via=header"><li class="nav-menu-subcategory">Business Analytics</li></a>
+                                                    <a class="primary no-bold" href="https://www.skillshare.com/en/browse/freelance-and-entrepreneurship?via=header"><li class="nav-menu-subcategory">Freelance &amp; Entrepreneurship</li></a>
+                                                    <a class="primary no-bold" href="https://www.skillshare.com/en/browse/leadership-and-management?via=header"><li class="nav-menu-subcategory">Leadership &amp; Management</li></a>
+                                                    <a class="primary no-bold" href="https://www.skillshare.com/en/browse/marketing?via=header"><li class="nav-menu-subcategory">Marketing</li></a>
+                                            </ul>
+                                    <ul class="nav-menu-category-short-list">
+                        <li class="nav-menu-category">THRIVE</li>
+                                                    <a class="primary no-bold" href="https://www.skillshare.com/en/browse/lifestyle?via=header"><li class="nav-menu-subcategory">Lifestyle</li></a>
+                                                    <a class="primary no-bold" href="https://www.skillshare.com/en/browse/productivity?via=header"><li class="nav-menu-subcategory">Productivity</li></a>
+                                            </ul>
+                            </div>
+        </div>
+<!--        <div class="nav-menu-other">-->
+<!--                            <div class="nav-menu-link">-->
+<!--                    <a class="primary site-nav-link no-bold" href="https://www.skillshare.com/en/browse?via=header">All Classes</a>-->
+<!--                </div>-->
+<!--                            <div class="nav-menu-link">-->
+<!--                    <a class="primary site-nav-link no-bold" href="https://www.skillshare.com/en/projects?via=header">Student Projects</a>-->
+<!--                </div>-->
+<!--                    </div>-->
+    </div>
+                    </div>
+    </div>
+</div>
+</div>
+
+
+
+            </div>
+          </div>
+         <a class="button light header-login" href=".">Sign In</a>
 <!--         <a class="button header-signup"  data-show="signup" >Subscribe</a><button class="hamburger" data-toggle=".header"><span class="hamburger-inner"></span><span class="visually-hidden">Toggle menu</span></button>-->
-<!--         <a class="button header-signup" href="/about" >Subscribe</a><button class="hamburger" data-toggle=".header"><span class="hamburger-inner"></span><span class="visually-hidden">Toggle menu</span></button>-->
+         <a class="button header-signup" href="/" >Get Started</a>
+<!--          <button class="hamburger" data-toggle=".header"><span class="hamburger-inner"></span><span class="visually-hidden">Toggle menu</span></button>-->
          <div class="menu" style="color: #13294B;">
-            <a class="home" style= "text-decoration: none!important;" data-toggle=".header" href="http://www.skillds.com">Home</a>
-            <a class='about' style= "text-decoration: none!important;" data-toggle='.header' href='/about'>About</a>
-            <a class='explore' style= "text-decoration: none!important;" data-toggle='.header' href='/explore'>Explore</a>
+<!--            <a class="home" style= "text-decoration: none!important;" data-toggle=".header" href="">Home</a>-->
+<!--            <a class='about' style= "text-decoration: none!important;" data-toggle='.header' href='/about'>About</a>-->
+<!--            <a class='explore' style= "text-decoration: none!important;" data-toggle='.header' href=''>Explore</a>-->
 <!--            <a class='Blog active' style= "text-decoration: none!important;" data-toggle='.header' href='/blogs'>Blogs</a>-->
             <a class='jobs' data-toggle='.header' href='about.html#hiring'  style="display: none;">Jobs<span class="jobs-count"></span></a>
          </div>
       </nav>
    </div>
 </div>
+
+
+
 <script type="text/javascript">
    my_url = window.location.href;
 if(my_url.indexOf("stackunfold.com") != -1){
@@ -32,3 +264,21 @@ $('.home').attr('href',base_url)
 $('.logo').attr('href',base_url)
 </script>
 
+<script>
+    function openGoalsPopover(){
+
+        if($('.goals-popover').is(":visible")){
+            $('.goals-popover').hide();
+        }
+        else
+        {
+            $('.goals-popover').show();
+        }
+
+    }
+
+
+$(document).on('blur','.popover', function(){
+   $(this).hide();
+});
+</script>
