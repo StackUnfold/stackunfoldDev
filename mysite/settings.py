@@ -88,15 +88,25 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
 DATABASES = {
+        # 'default': {
+        #     'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        #     'NAME': 'stackunfold',
+        #     'USER': 'stackunfold',
+        #     'PASSWORD': 'Destiney@123',
+        #     'HOST': 'stackunfold.com',
+        #     'PORT': '5432',
+        # },
+
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': 'stackunfold',
-            'USER': 'stackunfold',
-            'PASSWORD': 'Destiney@123',
-            'HOST': 'stackunfold.com',
+            'NAME': 'stackunfoldlocal',
+            'USER': 'postgres',
+            'PASSWORD': 'champis1',
+            'HOST': 'localhost',
             'PORT': '5432',
         },
 }
+
 
 # DATABASES = {
 #     'default': {
