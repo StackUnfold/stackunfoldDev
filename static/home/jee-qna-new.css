@@ -119,7 +119,7 @@
     display: grid;
     gap: 8px;
     grid-template-columns: 1fr 1fr;
-    margin-bottom: 69px;
+    margin-bottom: 50px;
     width: 75%;
 }
 
