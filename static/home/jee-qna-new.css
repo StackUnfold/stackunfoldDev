@@ -142,3 +142,9 @@ input[type="checkbox"]:disabled{
   background: gray;
   border: 1px solid #d4d4d5;
 }
+
+.css-txl7bc-Answer:hover{
+   box-shadow: rgb(241 239 239 / 0%) 0 4px 8px 0;
+   outline: 1px solid rgb(104 113 123 / 25%);
+   cursor: pointer;
+}

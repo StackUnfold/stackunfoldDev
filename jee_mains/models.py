@@ -5,9 +5,10 @@ from django.contrib.postgres.fields import ArrayField, JSONField
 class jee_mains(models.Model): 
     # url   = models.CharField(max_length=1000, default="", null=True)
     url   = models.SlugField(max_length=1000, default="", null=True)
-    year  =  models.IntegerField() 
-    date  = models.IntegerField()
-    month  = models.IntegerField()
+    year  = models.IntegerField(null=True) 
+    date  = models.IntegerField(null=True)
+    # month  = models.IntegerField()
+    month  = models.CharField(max_length=100, default="", null=True)
     shift  = models.CharField(max_length=100, default="", null=True)
     question = models.TextField()
     options = ArrayField(models.CharField(max_length=5000, default=[]))
@@ -20,3 +21,8 @@ class jee_mains(models.Model):
     times_loaded = models.CharField(max_length=1000, default="", null=True)
     def get_absolute_url(self):
         return reverse("jee_mains_single", kwargs={"url": self.url})
+
+class TestSeriesMap(models.Model):
+    physics_ques_map = ArrayField(models.IntegerField(default=[]))
+    chemistry_ques_map = ArrayField(models.IntegerField( default=[]))
+    maths_ques_map = ArrayField(models.IntegerField(default=[]))

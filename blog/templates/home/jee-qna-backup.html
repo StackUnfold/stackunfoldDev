@@ -1,4 +1,3 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en" style="background-color: white;">
    <head>
@@ -25,57 +24,23 @@
 
 
    </head>
-   <style type="text/css">
-    .option_image{
-      box-shadow: none !important;
-    }
-
-    {% if data.options|length  %}
-
-    {% else %}
-
-    .css-txl7bc-Answer{
-      background-color: white;
-      outline: 1px solid #0808084d;
-
-    }
-
-
-
-
-    {% endif %}
-
-   
-
-   </style>   
-     <script>
-      let correct_option = {{data.correct_option}} 
-     </script>
-
    <body>
 
       <div id="root">
-      <div class="stack-header">
 
-        <div class="stack-header--container" style="display: flex;">
-           <a class="stack-header--link" href="" style="color: white;margin-left: auto;margin-right: auto;font-size: 3rem;">
-            {% if data.subject == 'P' %}
-            PHYSICS
-            {% elif data.subject == 'C' %}
-            CHEMISTRY
-            {% elif data.subject == 'M' %}
-            MATHEMATICS
-            {% endif %}
-           </a>
+        <div class="stack-header">
+            <div class="stack-header--container">
+                <a class="stack-header--link flex" href="">
+                        <img class="center-subject-class" src="../static/images/goals-logo.svg" alt="Physics">
+                </a>
+
+            </div>
         </div>
-      </div>
-
-
 
 
       <section id="content container" style="background-color:white;">
       <section class="">
-            <div class="" style="max-width: 1264px;width: 100%;background: none;display: flex;margin: 0 auto;">
+            <div class="" style="max-width: 1264px;width: 100%;background: none;display: flex;justify-content: space-between;margin: 0 auto;">
 
 
 <div id="left-sidebar" class="left-sidebar">
@@ -107,17 +72,17 @@
                      <path fill-rule="nonzero" d="M3.277 15a.46.46 0 0 1-.192-.063.347.347 0 0 1-.128-.347l1.409-5.168L.14 6.05c-.128-.063-.16-.22-.128-.346a.307.307 0 0 1 .288-.22L5.743 5.2 7.696.19c.064-.095.192-.19.32-.19s.256.095.288.19l1.953 5.01 5.443.283c.128 0 .256.095.288.22a.352.352 0 0 1-.096.347l-4.226 3.372 1.408 5.168a.312.312 0 0 1-.128.347c-.096.063-.256.095-.352 0l-4.578-2.9-4.579 2.9c-.064.063-.096.063-.16.063z"></path>
                   </svg>
                </div>
-               Syllabus
+               Solved
             </a>
          </li>
          <li>
-            <a class="mb-5 remove-deco flex py-25 px-6 text-sm text-black text-opacity-85" target="_blank" href="/jee/test-series">
+            <a class="mb-5 remove-deco flex py-25 px-6 text-sm text-black text-opacity-85" href="/discuss?popular=1">
                <div class="flex-center mr-4" style="width: 22px;">
                   <svg width="16" height="15" viewBox="0 0 16 15" class="fill-current text-grey-800 dark:text-blue-300">
                      <path fill-rule="nonzero" d="M3.277 15a.46.46 0 0 1-.192-.063.347.347 0 0 1-.128-.347l1.409-5.168L.14 6.05c-.128-.063-.16-.22-.128-.346a.307.307 0 0 1 .288-.22L5.743 5.2 7.696.19c.064-.095.192-.19.32-.19s.256.095.288.19l1.953 5.01 5.443.283c.128 0 .256.095.288.22a.352.352 0 0 1-.096.347l-4.226 3.372 1.408 5.168a.312.312 0 0 1-.128.347c-.096.063-.256.095-.352 0l-4.578-2.9-4.579 2.9c-.064.063-.096.063-.16.063z"></path>
                   </svg>
                </div>
-               Tests
+               Unsolved
             </a>
          </li>
          <li>
@@ -130,7 +95,7 @@
                      </g>
                   </svg>
                </div>
-               Other Courses
+               Popular
             </a>
          </li>
       </ul>
@@ -154,8 +119,13 @@
 
 
 
-            <div id="stack-question-header" class="flex" style="width: 80%">
-                        <h1 class="q-break-word mb8"><a href="#" class="stack-question-hyperlink">Q. {{data.question}}.</a></h1>
+            <div id="stack-question-header" class="flex">
+                        <h1 class="q-break-word mb8"><a href="#" class="stack-question-hyperlink">On heating water, bubbles being formed at the bottom of the vessel detach and rise. Take the bubbles to be spheres of radius R and making a circular contact of radius r with the bottom of the vessel. If $r << R,$ and the surface tension of water is T, value of r just before bubbles detach is : (density of water is $\rho_w$).</a></h1>
+                        <h1 class="q-break-word mb8"><a href="#" class="stack-question-hyperlink">On heating water, bubbles being formed at the bottom of the vessel detach and rise. Take the bubbles to be spheres of radius R and making a circular contact of radius r with the bottom of the vessel. If $r << R,$ and the surface tension of water is T, value of r just before bubbles detach is : (density of water is $\rho_w$).</a></h1>
+            </div>
+        <div class="flex" style="    border-bottom-style: solid !important;
+    border-bottom-width: 1px;
+    border-color: lightgrey;">
             </div>
             <div id="mainbar-content" role="main" aria-label="question and answers">
 
@@ -168,68 +138,9 @@
 
 <div class="stack-a-block stack-a-block-right">
     <span class="d-none"><span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-1-Frame" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; />" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-1" style="width: 0em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0em; height: 0px; font-size: 122%;"><span style="position: absolute; clip: rect(3.786em, 1000em, 4.165em, -999.997em); top: -3.969em; left: 0em;"><span class="mrow" id="MathJax-Span-2"></span><span style="display: inline-block; width: 0px; height: 3.975em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.073em; border-left: 0px solid; width: 0px; height: 0.158em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"></math></span></span><script type="math/tex" id="MathJax-Element-1">\begingroup</script></span>
-    {% if data.question_images|length  %}
+    <div class="s-prose js-post-body" itemprop="text">
 
-    <div class="css-1ksp1cg-QuestionWrapper" style="margin-bottom: 16px">
-      <div class="">
-         <div data-image-preview="true" class="css-1q8fm30-HTMLWrapper e1qv8z1j0">
-                <p><img class= "" style="box-shadow:none; margin-left: auto;margin-right:auto;display: block;max-height:150px;max-width:150px; auto;"  src="{{STATICFILES_DIRS.0}}/static/images/jee_mains_ques/{{data.question_images.0}}"></p>
-         </div>
-      </div>
-    </div>
-    {% endif %} 
-
-            <div class="flex" style="border-bottom-style: solid !important;border-bottom-width: 1px;border-color: lightgrey;margin-bottom: 3rem;"></div>
-
-
-    <p style="font-weight:bold;margin-bottom:1em;">Options:</p>
-
-    <div class="css-1ksp1cg-AnswersWrapper e1pjfy309">
-            <div class="css-txl7bc-Answer e1pjfy3010">
-               <div data-image-preview="true" class="css-1q8fm30-HTMLWrapper e1qv8z1j0" style="display:flex">
-                   <input  class = "opt_radio" type="radio"  style="margin-right: 20px;margin-top: 6px;">
-                   {% if data.options|length  %}
-                      <p>{{data.options.0}}</p>
-                   {% else %}
-                      <p><img class= "option_image" style="max-height:100px;max-width:100px;" src="{{STATICFILES_DIRS.0}}/static/images/jee_mains_options/{{data.option_images.0}}"></p>
-                   {% endif %}
-               </div>
-            </div>
-            <div class="css-txl7bc-Answer e1pjfy3010">
-               <div data-image-preview="true" class="css-1q8fm30-HTMLWrapper e1qv8z1j0" style="display:flex">
-                   <input  class = "opt_radio" type="radio"  style="margin-right: 20px;margin-top: 6px;">
-                   {% if data.options|length  %}
-                      <p>{{data.options.1}}</p>
-                   {% else %}
-                      <p><img class= "option_image" style="max-height:100px;max-width:100px;" src="{{STATICFILES_DIRS.0}}/static/images/jee_mains_options/{{data.option_images.1}}"></p>
-                   {% endif %}
-               </div>
-            </div>
-            <div class="css-txl7bc-Answer e1pjfy3010">
-               <div data-image-preview="true" class="css-1q8fm30-HTMLWrapper e1qv8z1j0" style="display:flex">
-                   <input  class = "opt_radio" type="radio"  style="margin-right: 20px;margin-top: 6px;">
-                   {% if data.options|length %}
-                      <p>{{data.options.2}}</p>
-                   {% else %}
-                      <p><img class= "option_image" style="max-height:100px;max-width:100px;" src="{{STATICFILES_DIRS.0}}/static/images/jee_mains_options/{{data.option_images.2}}"></p>
-                   {% endif %}
-               </div>
-            </div>
-            <div class="css-txl7bc-Answer e1pjfy3010">
-               <div data-image-preview="true" class="css-1q8fm30-HTMLWrapper e1qv8z1j0" style="display:flex">
-                   <input  class = "opt_radio" type="radio"  style="margin-right: 20px;margin-top: 6px;">
-                   {% if data.options|length  %}
-                      <p>{{data.options.3}}</p>
-                   {% else %}
-                      <p><img class= "option_image" style="max-height:100px;max-width:100px;" src="{{STATICFILES_DIRS.0}}/static/images/jee_mains_options/{{data.option_images.3}}"></p>
-                   {% endif %}
-               </div>
-            </div>
-         </div>
-        <div class="s-prose js-post-body" itemprop="text" style="
-              padding: 13px;box-sizing: border-box;box-shadow: rgb(241 239 239 / 0%) 0 4px 8px 0;border: 2px solid #dcdee175;border-radius: 8px;">
-
-<!-- <p>The buoyant force acting on the bubble is given by: $\\$
+<p>The buoyant force acting on the bubble is given by: $\\$
 $F_b = \rho_w Vg$ $\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .........(i) \\$
 where $\rho_w$  = density of water, V = volume of the bubble and g = acceleration due to gravity $\\$
 The force due to surface tension is given: $\\$
@@ -241,15 +152,7 @@ $\rho_w Vg = Tl \\$
 Substitute $V = \frac{4}{3}\pi R^3$ and $sin\theta = \frac{r}{R}$ in the above equation $\\$
 $\rho_w \Bigg(\frac{4}{3}\pi R^3 \Bigg)g = T \times 2\pi r sin\theta \\$
 $\rho_w \Bigg(\frac{4}{3}\pi R^3 \Bigg)g = T \times 2\pi r \times \frac{r}{R} \\$
-$\therefore r = R^2 \sqrt{\frac{2\rho_w g}{3T}} \\$</p> -->
-  <p style="font-weight:bold;">Solution:</p>
-  {% if data.solution_images|length %}
-    <p><img class= "option_image" style="margin-bottom: 2rem;margin-left: auto;margin-right: auto;display: block;max-height:200px;max-width:200px;" src="{{STATICFILES_DIRS.0}}/static/images/jee_mains_soln/{{data.solution_images.0}}"></p>
-
-  {% endif %}
-  {% if data.solution|length  %}
-    <p>{{data.solution}}</p>
-  {% endif %}
+$\therefore r = R^2 \sqrt{\frac{2\rho_w g}{3T}} \\$</p>
 
     </div>
 
@@ -287,29 +190,7 @@ $\therefore r = R^2 \sqrt{\frac{2\rho_w g}{3T}} \\$</p> -->
           // • rendering keys, e.g.:
           throwOnError : false
         });
-    
-      $('.css-txl7bc-Answer').eq(correct_option-1).addClass('correct_opt')
     });
-
-  $('.css-txl7bc-Answer').click(function () {
-    $('.css-txl7bc-Answer').css('outline', 'none')
-    $('.opt_radio').prop('checked',false)
-
-
-    if($(this).hasClass('correct_opt')){
-      $(this).css('outline', '1px solid green')
-      $(this).find('.opt_radio').prop('checked',true)
-    }
-    else{
-      $(this).css('outline', '1px solid red')
-      $(this).find('.opt_radio').prop('checked',true)
-
-
-    }
-
-  })
-
-
 </script>
 
 
