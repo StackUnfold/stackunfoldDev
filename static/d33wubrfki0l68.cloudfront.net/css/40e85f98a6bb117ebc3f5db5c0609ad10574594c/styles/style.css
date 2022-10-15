@@ -462,7 +462,8 @@ iframe{
     background-color:#f6f6f6
 }
 .container.blue{
-    background:#4966f7 linear-gradient(95.24deg,#4966f7 0,#8253ff 122.55%)
+    background:#1a27c9d1;
+    /*background:#4966f7 linear-gradient(95.24deg,#4966f7 0,#8253ff 122.55%)*/
 }
 .container.green{
     background-color:#7dd2c7
@@ -1913,10 +1914,10 @@ body{
     }
 }
 .hero-gurl-center{
-    width:5em;
-    margin-top:-.25em;
+    width:3em;
+    margin-top:.75em;
     position:relative;
-    margin-left:1.1em
+
 }
 .hero-hand{
     left:50%;
@@ -2266,7 +2267,7 @@ h4+.newsletter{
     }
 }
 .hero.about{
-    font-size:calc(6.75vw + 1.5rem);
+    font-size:7rem;
     height:6.25em;
     padding-top:0;
     position:relative;
@@ -2311,7 +2312,7 @@ h4+.newsletter{
 .hero.about .hero-headline{
     color:#fff;
     margin-bottom:0;
-    max-width:9ch;
+    max-width:13ch;
     position:absolute;
     top:.8em;
     will-change:transform
