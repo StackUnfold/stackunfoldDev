@@ -133,7 +133,7 @@ html{
     box-sizing:inherit
 }
 img:not([alt]){
-    box-shadow:0 0 5px 5px red!important
+    box-shadow:0 0 5px 5px red;
 }
 @font-face{
     font-family:'Mark Pro';

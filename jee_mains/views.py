@@ -9,6 +9,7 @@ from django.http import Http404
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
+from rest_framework.renderers import TemplateHTMLRenderer
 
 
 class JeeMainsList(APIView):
@@ -33,6 +34,8 @@ class JeeMainsDetail(APIView):
     """
     Retrieve, update or delete a snippet instance.
     """
+    renderer_classes = [TemplateHTMLRenderer]
+    template_name = "home/jee-qna-new.html"
 
     def get_object(self, url):
         try:
@@ -43,6 +46,13 @@ class JeeMainsDetail(APIView):
     def get(self, request, url, format=None):
         jee_mains_obj = self.get_object(url)
         serializer = JeeSerializer(jee_mains_obj)
+        return Response(
+            {
+                "data": serializer.data,
+            },
+            template_name="home/jee-qna-new.html",
+        )
+
         return Response(serializer.data)
 
     def put(self, request, url, format=None):

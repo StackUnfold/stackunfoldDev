@@ -99,12 +99,32 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # }
 
 DATABASES = {
-    'default': {
-        'ENGINE':  'django.db.backends.sqlite3',
-        "NAME" :  os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+        # 'default': {
+        #     'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        #     'NAME': 'stackunfold',
+        #     'USER': 'stackunfold',
+        #     'PASSWORD': 'Destiney@123',
+        #     'HOST': 'stackunfold.com',
+        #     'PORT': '5432',
+        # },
+
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'stackunfoldlocal',
+            'USER': 'postgres',
+            'PASSWORD': 'champis1',
+            'HOST': 'localhost',
+            'PORT': '5432',
+        },
 }
 
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE':  'django.db.backends.sqlite3',
+#         "NAME" :  os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
 
 
 
@@ -149,5 +169,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = ''
+STATIC_FOLDER = os.path.join(BASE_DIR,'static')
 STATICFILES_DIRS = (os.path.join('static'), )
 LOGIN_REDIRECT_URL='/'
