@@ -1,7 +1,7 @@
 from django.conf.urls import url
 from blog import views
 from django.urls import path, include
-from jee_mains.views import JeeMainsList, JeeMainsDetail
+from jee_mains.views import JeeMainsList, JeeMainsDetail, RenderTestSeriesQuestion
 from jee_mains.scripts import CreateTestSeries
 
 urlpatterns=[
@@ -30,8 +30,10 @@ urlpatterns=[
     path('api-auth/', include('rest_framework.urls')),
 
     path('jee_mains_ques/', JeeMainsList.as_view()),
-    path('<slug:url>/', JeeMainsDetail.as_view(), name='jee_mains_single'),
-    path('CreateTestSeries/',CreateTestSeries.as_view(),name='CreateTestSeries')
+    path('jee/<slug:url>/', JeeMainsDetail.as_view(), name='jee_mains_single'),
+    path('CreateTestSeries/', CreateTestSeries.as_view(), name='CreateTestSeries'),
+    path('jee/test-series/<slug:test_series_id>/<slug:ques_id>', RenderTestSeriesQuestion.as_view(),
+         name='RenderTestSeriesQuestion'),
 
     # path('geeks' ,views.GeeksView.as_view(),name="geeks"),
     # path('explore' ,views.ExploreView.as_view(),name="explore"),

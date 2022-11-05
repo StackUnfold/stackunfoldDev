@@ -1,0 +1,102 @@
+{% include 'partials/header.html' %}
+
+<link rel="stylesheet" href="/static/home/q-n-a.css">
+
+<meta content="website" property="og:type"><link rel='stylesheet' href='/static/d33wubrfki0l68.cloudfront.net/css/40e85f98a6bb117ebc3f5db5c0609ad10574594c/styles/style.css'/>
+
+
+<div class="css-1rtrtjl-Wrapper">
+
+<div class="css-1rba5so-QuestionList e177c5l62">
+   <div class="css-1ew8ent-Wrapper e1t8w1ph0">
+      <div class="css-1s0ok04-Wrapper e24mr6r0">
+         <div class="css-11eainj-SectionInfoLeft e24mr6r1">
+            <h5 color="var(--color-text-primary)" class="css-52ychw-H5 e97kqng0">MCQ</h5>
+         </div>
+         <div class="css-k0mwn8-SectionInfoRight e24mr6r2"></div>
+      </div>
+      <div class="css-19haqro-SectionQuestionList e1t8w1ph1">
+         {% for i in range %}
+            <div class="css-1gsrn3b-Wrapper eyeswky0 question_series" question_number = {{i}}>{{i}}</div>
+         {% endfor %}
+      </div>
+      <div class="multiple css-g9gnjt-Submit e1xg0zb01">
+             <button type="button" aria-label="End Test" style="margin-top:49%;width:50%;margin-left: auto;margin-right: auto;" class="button light  css-15ty8rt-StyledButton e1wp3nh0" data-analytics="">Submit Test</button>
+          </div>
+   </div>
+</div>
+
+
+
+
+<div class="css-nov55f-AppContainer-QuizLandingContainer ery2jdn0">
+   <div class="css-1b7yu9z-ProgressBarWrapper e1njj5280"></div>
+   <div data-image-preview-boundary="data-image-preview-boundary" class="css-1mgb3h9-Wrapper ek1zis70">
+      <div class="MuiPaper-root css-w7qrx4-Paper-Wrapper edgmrv10 MuiPaper-elevation1 MuiPaper-rounded">
+         <div class="css-duj8jm-Header e1pjfy300">
+            <div class="css-vt6q5y-Flex e1pjfy301">
+               <h5 color="var(--color-text-primary)" class="css-reg4s5-H5 e97kqng0">Question {{data.id}}</h5>
+            </div>
+         </div>
+         <div class="css-18utuf-QuestionContainer e1pjfy303">
+
+            <div data-image-preview="true" class="css-y2nz9j-HTMLWrapper e1qv8z1j0">
+               <p>{{data.question}}}</p>
+            </div>
+         </div>
+         <div class="css-1ksp1cg-AnswersWrapper e1pjfy309">
+            <div class="css-txl7bc-Answer e1pjfy3010">
+               <div data-image-preview="true" class="css-1q8fm30-HTMLWrapper e1qv8z1j0">
+                {% if data.option1|length  %}
+                   <p>{{data.option1}}</p>
+                {% else %}
+                   <p><img class= "option_image" style="max-height:100px;max-width:100px;" src="{{STATICFILES_DIRS.0}}/static/images/jee_mains_options/{{data.id}}_1_option.png"></p>
+                {% endif %}
+               </div>
+            </div>
+            <div class="css-txl7bc-Answer e1pjfy3010">
+               <div data-image-preview="true" class="css-1q8fm30-HTMLWrapper e1qv8z1j0">
+               {% if data.option2|length  %}
+                   <p>{{data.option2}}</p>
+                {% else %}
+                   <p><img class= "option_image" style="max-height:100px;max-width:100px;" src="{{STATICFILES_DIRS.0}}/static/images/jee_mains_options/{{data.id}}_2_option.png"></p>
+                {% endif %}
+               </div>
+            </div>
+            <div class="css-txl7bc-Answer e1pjfy3010">
+               <div data-image-preview="true" class="css-1q8fm30-HTMLWrapper e1qv8z1j0">
+               {% if data.option3|length  %}
+                   <p>{{data.option3}}</p>
+                {% else %}
+                   <p><img class= "option_image" style="max-height:100px;max-width:100px;" src="{{STATICFILES_DIRS.0}}/static/images/jee_mains_options/{{data.id}}_3_option.png"></p>
+                {% endif %}
+               </div>
+            </div>
+            <div class="css-txl7bc-Answer e1pjfy3010">
+               <div data-image-preview="true" class="css-1q8fm30-HTMLWrapper e1qv8z1j0">
+                {% if data.option4|length  %}
+                   <p>{{data.option4}}</p>
+                {% else %}
+                   <p><img class= "option_image" style="max-height:100px;max-width:100px;" src="{{STATICFILES_DIRS.0}}/static/images/jee_mains_options/{{data.id}}_4_option.png"></p>
+                {% endif %}
+               </div>
+            </div>
+         </div>
+          <div class="multiple css-g9gnjt-Submit e1xg0zb01">
+             <button type="button" aria-label="Previous"class="button light  css-15ty8rt-StyledButton e1wp3nh0" data-analytics="">Previous</button>
+             <button type="button" aria-label="Submit" style="background-color: #13294B;" class="button css-1l60y9v-StyledButton e1wp3nh0" data-analytics="">Next</button>
+          </div>
+
+      </div>
+
+   </div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+   $('.question_series').on('click',function(){
+      window.location.href=window.location.href.split('/').slice(0,-1).join("/")+'/'+$(this).attr('question_number')
+   })
+
+</script>

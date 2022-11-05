@@ -1,4 +1,4 @@
-from jee_mains.models import jee_mains
+from jee_mains.models import jee_mains, TestSeriesMap
 import random
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -14,19 +14,19 @@ class CreateTestSeries(APIView):
 		random.shuffle(chemistry_questions)
 		random.shuffle(maths_questions)
 
-		splitted_physics_questions = np.array_split(physics_questions, 11)
-		splitted_chemistry_questions = np.array_split(chemistry_questions, 11)
-		splitted_maths_questions = np.array_split(maths_questions, 11)
+		splitted_physics_questions = np.array_split(physics_questions, 10)
+		splitted_chemistry_questions = np.array_split(chemistry_questions, 10)
+		splitted_maths_questions = np.array_split(maths_questions, 10)
 
 		# print("splitted_physics_questions >> ",splitted_physics_questions)
 		# print("splitted_chemistry_questions >> ",splitted_chemistry_questions)
 		# print("splitted_maths_questions >> ",splitted_maths_questions)
-		for splitted_questions_set in splitted_physics_questions:
-			TestSeriesMap.objects.create()
-		for splitted_questions_set in splitted_chemistry_questions:
-			TestSeriesMap.objects.create()
-		for splitted_questions_set in splitted_maths_questions:
-			TestSeriesMap.objects.create()
+		
+
+
+		for x in range(0,10):
+			TestSeriesMap.objects.create(physics_ques_map = splitted_physics_questions[x].tolist() , chemistry_ques_map =splitted_chemistry_questions[x].tolist() , maths_ques_map=splitted_maths_questions[x].tolist() )
+
 
 		return Response({"splitted_physics_questions": splitted_physics_questions, "splitted_chemistry_questions": splitted_chemistry_questions,
 						"splitted_maths_questions": splitted_maths_questions
