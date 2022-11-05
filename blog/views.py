@@ -119,3 +119,17 @@ class JeeTestSeries(TemplateView):
 
 class GoalPrepartion(TemplateView):
     template_name="home/jee-goal-preparation.html"
+
+
+class UserEntry(TemplateView):
+    def post(self, request):
+        print("coming in register")
+
+        username = request.POST.get('username')
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+
+
+
+
+

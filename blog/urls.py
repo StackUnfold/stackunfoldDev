@@ -21,6 +21,7 @@ urlpatterns=[
     # url(r'^comment/(?P<pk>\d+)/$',views.comment_approve,name='comment_approve'),
     # url(r'^comment/(?P<pk>\d+)/remove/$',views.comment_remove,name='comment_remove'),
     # url(r'^post/(?P<pk>\d+)/publish/$',views.post_publish,name='post_publish'),
+    path('user-entry', views.UserEntry.as_view(),name="user_entry"),
     path('jee', views.JeeView.as_view(),name="goal_jee"),
     path('jee/qna', views.JeeViewQnA.as_view(),name="jee_ana"),
     path('jee/test-series', views.JeeTestSeries.as_view(),name="jee_test_series"),
@@ -29,7 +30,7 @@ urlpatterns=[
     path('api-auth/', include('rest_framework.urls')),
 
     path('jee_mains_ques/', JeeMainsList.as_view()),
-    path('jee/<slug:url>/', JeeMainsDetail.as_view(), name='jee_mains_single'),
+    path('<slug:url>/', JeeMainsDetail.as_view(), name='jee_mains_single'),
     path('CreateTestSeries/',CreateTestSeries.as_view(),name='CreateTestSeries')
 
     # path('geeks' ,views.GeeksView.as_view(),name="geeks"),

@@ -110,9 +110,9 @@ DATABASES = {
 
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': 'stackunfoldlocal',
+            'NAME': 'unfold',
             'USER': 'postgres',
-            'PASSWORD': 'champis1',
+            'PASSWORD': 'Xyz@9045',
             'HOST': 'localhost',
             'PORT': '5432',
         },

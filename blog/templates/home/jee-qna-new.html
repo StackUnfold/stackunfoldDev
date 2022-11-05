@@ -45,6 +45,78 @@
 
     {% endif %}
 
+      .max-w-\[266px\] {
+    max-width: 266px;
+}
+
+.h-screen {
+    height: 100vh;
+}
+
+.pb-15 {
+    padding-bottom: 5rem;
+}
+
+.overflow-auto {
+    overflow: auto;
+}
+.max-h-screen {
+    max-height: 100vh;
+}
+
+.flex-1 {
+    flex: 1 1 0%;
+}
+
+.duration-300 {
+    transition-duration: .3s;
+}
+.transition-colors {
+    transition-duration: .15s;
+    transition-property: color,background-color,border-color,fill,stroke,-webkit-text-decoration-color;
+    transition-property: color,background-color,border-color,text-decoration-color,fill,stroke;
+    transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,-webkit-text-decoration-color;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+}
+
+.px-5 {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+}
+
+.py-4 {
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+}
+.rounded-2xl {
+    border-radius: 1.25rem;
+}
+.gap-y-4 {
+    row-gap: 1rem;
+}
+.justify-between {
+    justify-content: space-between;
+}
+.items-center {
+    align-items: center;
+}
+.flex-col {
+    flex-direction: column;
+}
+.h-full {
+    height: 100%;
+}
+
+img.lazyloaded {
+    opacity: 1;
+    transition: opacity .5s ease;
+}
+
+img.lazyloaded {
+    opacity: 1;
+    transition: opacity .5s ease;
+}
+
    
 
    </style>   
@@ -86,7 +158,7 @@
       <form class="text-black"><button type="submit" class=" mb-8 w-full py-4 dark-bg">IIT JEE</button></form>
       <ul class="left-sidebar-items text-black">
          <li>
-            <a class="mb-5 remove-deco flex py-25 px-6 text-sm text-black text-opacity-85" href="/discuss">
+            <a class="mb-5 remove-deco flex py-25 px-6 text-sm text-opacity-85" href="/discuss">
                <div class="flex-center mr-4" style="width: 22px;">
                   <svg width="16" height="15" viewBox="0 0 16 15" class="fill-current text-grey-800 dark:text-blue-300">
                      <g fill-rule="nonzero">
@@ -101,7 +173,7 @@
          </li>
          <!---->
          <li>
-            <a class="mb-5 remove-deco flex py-25 px-6 text-sm text-black text-opacity-85" href="/discuss?trending=1">
+            <a class="mb-5 remove-deco flex py-25 px-6 text-sm text-opacity-85" href="/discuss?trending=1">
                <div class="flex-center mr-4" style="width: 22px;">
                   <svg width="16" height="15" viewBox="0 0 16 15" class="fill-current text-grey-800 dark:text-blue-300">
                      <path fill-rule="nonzero" d="M3.277 15a.46.46 0 0 1-.192-.063.347.347 0 0 1-.128-.347l1.409-5.168L.14 6.05c-.128-.063-.16-.22-.128-.346a.307.307 0 0 1 .288-.22L5.743 5.2 7.696.19c.064-.095.192-.19.32-.19s.256.095.288.19l1.953 5.01 5.443.283c.128 0 .256.095.288.22a.352.352 0 0 1-.096.347l-4.226 3.372 1.408 5.168a.312.312 0 0 1-.128.347c-.096.063-.256.095-.352 0l-4.578-2.9-4.579 2.9c-.064.063-.096.063-.16.063z"></path>
@@ -111,17 +183,18 @@
             </a>
          </li>
          <li>
-            <a class="mb-5 remove-deco flex py-25 px-6 text-sm text-black text-opacity-85" target="_blank" href="/jee/test-series">
+            <a class="mb-5 remove-deco flex py-25 px-6 text-sm text-opacity-85" target="_blank" href="/jee/test-series">
                <div class="flex-center mr-4" style="width: 22px;">
                   <svg width="16" height="15" viewBox="0 0 16 15" class="fill-current text-grey-800 dark:text-blue-300">
                      <path fill-rule="nonzero" d="M3.277 15a.46.46 0 0 1-.192-.063.347.347 0 0 1-.128-.347l1.409-5.168L.14 6.05c-.128-.063-.16-.22-.128-.346a.307.307 0 0 1 .288-.22L5.743 5.2 7.696.19c.064-.095.192-.19.32-.19s.256.095.288.19l1.953 5.01 5.443.283c.128 0 .256.095.288.22a.352.352 0 0 1-.096.347l-4.226 3.372 1.408 5.168a.312.312 0 0 1-.128.347c-.096.063-.256.095-.352 0l-4.578-2.9-4.579 2.9c-.064.063-.096.063-.16.063z"></path>
                   </svg>
                </div>
-               Tests
+
+                <div>Tests<span class="flex-center ml-3 rounded-xl bg-panel-600 px-3 py-px text-2xs font-semibold text-white">New!</span></div>
             </a>
          </li>
          <li>
-            <a class="mb-5 remove-deco flex py-25 px-6 text-sm text-black text-opacity-85" href="/discuss?answered=1">
+            <a class="mb-5 remove-deco flex py-25 px-6 text-sm text-opacity-85" href="/discuss?answered=1">
                <div class="flex-center mr-4" style="width: 22px;">
                   <svg width="16" height="16" viewBox="0 0 16 16" class="fill-current text-grey-800 dark:text-blue-300">
                      <g fill="none" fill-rule="evenodd">
@@ -150,12 +223,12 @@
 
 
 <div itemscope="">
-    <div class="main-content">
+    <div class="main-content" style="margin-top:18px;">
 
 
 
             <div id="stack-question-header" class="flex" style="width: 80%">
-                        <h1 class="q-break-word mb8"><a href="#" class="stack-question-hyperlink">Q. {{data.question}}.</a></h1>
+                        <h1 class="q-break-word mb8"><a href="#" class="stack-question-hyperlink">{{data.question}}</a></h1>
             </div>
             <div id="mainbar-content" role="main" aria-label="question and answers">
 
@@ -170,23 +243,23 @@
     <span class="d-none"><span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-1-Frame" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; />" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-1" style="width: 0em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0em; height: 0px; font-size: 122%;"><span style="position: absolute; clip: rect(3.786em, 1000em, 4.165em, -999.997em); top: -3.969em; left: 0em;"><span class="mrow" id="MathJax-Span-2"></span><span style="display: inline-block; width: 0px; height: 3.975em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.073em; border-left: 0px solid; width: 0px; height: 0.158em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"></math></span></span><script type="math/tex" id="MathJax-Element-1">\begingroup</script></span>
     {% if data.question_images|length  %}
 
-    <div class="css-1ksp1cg-QuestionWrapper" style="margin-bottom: 16px">
+    <div class="css-1ksp1cg-QuestionWrapper" style="margin-bottom: 4rem;">
       <div class="">
          <div data-image-preview="true" class="css-1q8fm30-HTMLWrapper e1qv8z1j0">
-                <p><img class= "" style="box-shadow:none; margin-left: auto;margin-right:auto;display: block;max-height:150px;max-width:150px; auto;"  src="{{STATICFILES_DIRS.0}}/static/images/jee_mains_ques/{{data.question_images.0}}"></p>
+                <p><img class= "" style="box-shadow:none; margin-left: auto;margin-right:auto;display: block;max-height:150px;max-width:190px; auto;"  src="{{STATICFILES_DIRS.0}}/static/images/jee_mains_ques/{{data.question_images.0}}"></p>
          </div>
       </div>
     </div>
     {% endif %} 
 
-            <div class="flex" style="border-bottom-style: solid !important;border-bottom-width: 1px;border-color: lightgrey;margin-bottom: 3rem;"></div>
+<!--            <div class="flex" style="border-bottom-style: solid !important;border-bottom-width: 1px;border-color: lightgrey;margin-bottom: 3rem;"></div>-->
 
 
-    <p style="font-weight:bold;margin-bottom:1em;">Options:</p>
+    <p style="font-size:16px;margin-bottom:1em;">Options:</p>
 
     <div class="css-1ksp1cg-AnswersWrapper e1pjfy309">
             <div class="css-txl7bc-Answer e1pjfy3010">
-               <div data-image-preview="true" class="css-1q8fm30-HTMLWrapper e1qv8z1j0" style="display:flex">
+               <div data-image-preview="true" class="css-1q8fm30-HTMLWrapper e1qv8z1j0" style="display:flex;font-size: 16px;">
                    <input  class = "opt_radio" type="radio"  style="margin-right: 20px;margin-top: 6px;">
                    {% if data.options|length  %}
                       <p>{{data.options.0}}</p>
@@ -196,7 +269,7 @@
                </div>
             </div>
             <div class="css-txl7bc-Answer e1pjfy3010">
-               <div data-image-preview="true" class="css-1q8fm30-HTMLWrapper e1qv8z1j0" style="display:flex">
+               <div data-image-preview="true" class="css-1q8fm30-HTMLWrapper e1qv8z1j0" style="display:flex;font-size: 16px;">
                    <input  class = "opt_radio" type="radio"  style="margin-right: 20px;margin-top: 6px;">
                    {% if data.options|length  %}
                       <p>{{data.options.1}}</p>
@@ -206,7 +279,7 @@
                </div>
             </div>
             <div class="css-txl7bc-Answer e1pjfy3010">
-               <div data-image-preview="true" class="css-1q8fm30-HTMLWrapper e1qv8z1j0" style="display:flex">
+               <div data-image-preview="true" class="css-1q8fm30-HTMLWrapper e1qv8z1j0" style="display:flex;font-size: 16px;">
                    <input  class = "opt_radio" type="radio"  style="margin-right: 20px;margin-top: 6px;">
                    {% if data.options|length %}
                       <p>{{data.options.2}}</p>
@@ -216,7 +289,7 @@
                </div>
             </div>
             <div class="css-txl7bc-Answer e1pjfy3010">
-               <div data-image-preview="true" class="css-1q8fm30-HTMLWrapper e1qv8z1j0" style="display:flex">
+               <div data-image-preview="true" class="css-1q8fm30-HTMLWrapper e1qv8z1j0" style="display:flex;font-size: 16px;">
                    <input  class = "opt_radio" type="radio"  style="margin-right: 20px;margin-top: 6px;">
                    {% if data.options|length  %}
                       <p>{{data.options.3}}</p>
@@ -242,9 +315,9 @@ Substitute $V = \frac{4}{3}\pi R^3$ and $sin\theta = \frac{r}{R}$ in the above e
 $\rho_w \Bigg(\frac{4}{3}\pi R^3 \Bigg)g = T \times 2\pi r sin\theta \\$
 $\rho_w \Bigg(\frac{4}{3}\pi R^3 \Bigg)g = T \times 2\pi r \times \frac{r}{R} \\$
 $\therefore r = R^2 \sqrt{\frac{2\rho_w g}{3T}} \\$</p> -->
-  <p style="font-weight:bold;">Solution:</p>
+  <p style="font-weight:bold;font-size:16px;">Solution:</p>
   {% if data.solution_images|length %}
-    <p><img class= "option_image" style="margin-bottom: 2rem;margin-left: auto;margin-right: auto;display: block;max-height:200px;max-width:200px;" src="{{STATICFILES_DIRS.0}}/static/images/jee_mains_soln/{{data.solution_images.0}}"></p>
+    <p><img class= "option_image" style="margin-bottom: 2rem;margin-left: auto;margin-right: auto;display: block;max-height:200px;max-width:280px;" src="{{STATICFILES_DIRS.0}}/static/images/jee_mains_soln/{{data.solution_images.0}}"></p>
 
   {% endif %}
   {% if data.solution|length  %}
@@ -256,6 +329,36 @@ $\therefore r = R^2 \sqrt{\frac{2\rho_w g}{3T}} \\$</p> -->
 </div>
     </div>
 
+</div>
+
+               <div class="sticky h-screen 2xl:block" style="top: 40px;max-width: 240px;">
+   <div class="max-h-screen space-y-4 pb-15">
+      <a class="inherits-color block flex-1" href="/signup">
+         <div class="panel relative transition-colors duration-300 dark text-white bg-panel-800 hover:bg-panel-700 rounded-2xl px-px py-px text-center" style=" background: linear-gradient(148deg, rgb(33, 200, 246) -11%, rgba(33, 200, 246, 0) 42%);">
+            <div class="flex h-full flex-col items-center justify-between gap-y-4 rounded-2xl px-5 py-4" style="    background-image: radial-gradient(circle at 0% 2%, rgb(0 117 255), rgb(31 64 106 / 28%) 100%);">
+               <div class="w-full"><button class="btn btn-blue mb-2 border-none text-xs normal-case">Join stackunfold today!</button></div>
+            </div>
+         </div>
+      </a>
+<!--      <a class="inherits-color block flex-1" href="/series/laravel-explained">-->
+<!--         <div class="panel relative transition-colors duration-300 dark text-white bg-panel-800 hover:bg-panel-700 px-5 py-4 rounded-2xl flex flex-col items-center justify-between gap-y-4 text-center" style="height: 225px;">-->
+<!--            <div class="flex flex-col items-center">-->
+<!--               <div class="flex w-full flex-col items-center justify-between"><img loading="lazy" class="lazy lazyloaded" src="https://laracasts.nyc3.cdn.digitaloceanspaces.com/series/thumbnails/laravel-explained.png" alt="Laravel Explained thumbnail" width="85" height="85"></div>-->
+<!--               <div class="mt-3 flex-1">-->
+<!--                  <h5 class="clamp one-line font-poppins text-sm font-semibold tracking-normal dark:text-white xl:text-xs">Laravel Explained</h5>-->
+<!--                  <p class="clamp two-lines mt-1 text-[11px] dark:text-grey-100">In this series, for each episode, I'll answer one Laravel-related question that has cropped up in the Laracasts community.  Who knows, maybe your question will be the next one I answer in video form!</p>-->
+<!--               </div>-->
+<!--            </div>-->
+<!--            <div class="w-full w-full max-w-[200px] rounded-xl bg-black/10 px-4 py-1 text-center text-[11px] font-medium leading-loose text-grey-800 dark:bg-blue/10 dark:text-grey-600 2xl:text-[9px]"> Laracasts Recommends This Series </div>-->
+<!--         </div>-->
+<!--      </a>-->
+<!--      <div class="panel relative transition-colors duration-300 dark text-white bg-panel-800 hover:bg-panel-700 px-5 py-4 rounded-2xl flex flex-1 items-center">-->
+<!--         <div class="carbon-ads"></div>-->
+<!--         <style>#carbonads .carbon-img{width:130px;margin-bottom:2ex;border-radius:8px;overflow:hidden}#carbonads .carbon-wrap{flex-direction:column}#carbonads .carbon-text{margin:0}#carbonads .carbon-poweredby{text-align:center}@media only screen and (min-width: 320px) and (max-width: 759px){#carbonads{position:relative}#carbonads .carbon-wrap{flex-direction:row}#carbonads .carbon-img{margin:0}#carbonads .carbon-text{padding:0 1em 3ex;font-size:.875rem}#carbonads .carbon-poweredby{position:absolute;right:0;bottom:0;border-radius:0;border-top-left-radius:3px;text-align:center}}</style>-->
+<!--         <script id="_carbonads_js" src="//cdn.carbonads.com/carbon.js?serve=CKYILK77&amp;placement=laracastscom"></script>-->
+<!--         <div id="carbonads"><span><span class="carbon-wrap"><a href="https://srv.carbonads.net/ads/click/x/GTND42JNCWAI427LC6ALYKQNCYSDT2QWCYAIEZ3JCYSDKK3JCYSD453KCABD5KJICVBIV5QNCABI6K3WCYYDE27KC6SDK2Q7CTYDTK3EHJNCLSIZ?segment=placement:laracastscom;" class="carbon-img" target="_blank" rel="noopener sponsored"><img src="https://cdn4.buysellads.net/uu/1/81016/1609783196-authentic-260x200-variation-3.jpg" alt="ads via Carbon" border="0" height="100" width="130" style="max-width: 130px;"></a><a href="https://srv.carbonads.net/ads/click/x/GTND42JNCWAI427LC6ALYKQNCYSDT2QWCYAIEZ3JCYSDKK3JCYSD453KCABD5KJICVBIV5QNCABI6K3WCYYDE27KC6SDK2Q7CTYDTK3EHJNCLSIZ?segment=placement:laracastscom;" class="carbon-text" target="_blank" rel="noopener sponsored">Your new development career awaits. Check out the latest listings.</a></span><a href="http://carbonads.net/?utm_source=laracastscom&amp;utm_medium=ad_via_link&amp;utm_campaign=in_unit&amp;utm_term=carbon" class="carbon-poweredby" target="_blank" rel="noopener sponsored">ads via Carbon</a></span></div>-->
+<!--      </div>-->
+   </div>
 </div>
 
             </div>

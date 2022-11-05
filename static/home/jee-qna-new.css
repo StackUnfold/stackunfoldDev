@@ -8,13 +8,13 @@
 }
 
 .text-sm {
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 100 !important;
 }
 
 .py-25 {
-    padding-bottom: 1.58rem;
-    padding-top: 0.58rem;
+    padding-bottom: 1.2rem;
+    padding-top: 0.8rem;
 }
 .px-6 {
     padding-left: 0.5rem;
@@ -75,6 +75,7 @@
 
 .remove-deco {
   text-decoration: none !important;
+  color: #383838e0 !important
 }
 
 .normal-case {
@@ -107,7 +108,7 @@
 }
 
 .w-full {
-    width: 100%;
+    width: 80%;
 }
 
 
@@ -120,7 +121,7 @@
     gap: 8px;
     grid-template-columns: 1fr 1fr;
     margin-bottom: 50px;
-    width: 75%;
+
 }
 
 .css-txl7bc-Answer {
@@ -130,9 +131,11 @@
     justify-content: center;
     -webkit-box-align: start;
     align-items: start;
-    background-color: #9f9f9f0d;
+    /*background-color: #9f9f9f0d;*/
     border-radius: 10px;
     padding: 18px 32px;
+    border: 1px solid #e6e6e6;
+    box-shadow: 0 0 1px #888;
 }
 
 input[type="checkbox"]:disabled{
